@@ -430,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    174
+                    768
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -467,7 +467,35 @@
 <blockquote>
 <p><strong>输入：</strong> <code>intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]</code><br><strong>输出：</strong> <code>[[1,2],[3,10],[12,16]]</code><br>**解释： ** 新的区间<code>[4,8]</code> 与给出的区间集合中的区间有重合部分，取所有重合部分的并集合，得到最终无重合有序区间集合。</p>
 </blockquote>
-<p>解题思路：</p>
+<p><strong>解题思路：</strong></p>
+<p>插入一个新的区间，需要考虑的是新的区间是否和现有的区间有重叠的部分，已知现有的区间集合中所有区间无交叉且有序，则</p>
+<blockquote>
+<p>从头遍历区间数组，比较新区间的右端点与所有区间的左端点，来定位新区间的右边界；比较新区间的左端点与所有区间的右端点，定位新区间的左边界；</p>
+<p>遍历时有如下判断：</p>
+</blockquote>
+<ul>
+<li>创建一个存放区间的集合，进行区间的添加</li>
+<li>如果新区间的左端点 &gt; 当前遍历区间的右端点：<ul>
+<li>加入当前区间，迭代下一个区间进行判断</li>
+</ul>
+</li>
+<li>如果新区间的右端点 &lt; 当前遍历区间的左端点<ul>
+<li>则要加入新区间，设定完成标识，迭代加入余下区间</li>
+</ul>
+</li>
+<li>都不满足时，新区间和现有区间有重叠，合并重叠的区间<ul>
+<li>合并区间时左端点选择两个左端点中较小的一个</li>
+<li>合并区间时右端点选择两个右端点中较大的一个</li>
+<li>合并成一个区间后作为新区间去迭代完成遍历</li>
+</ul>
+</li>
+<li>如果遍历完成后，新区间仍然没有完成添加，则最终加入新区间</li>
+</ul>
+<p>算法代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//执行用时：1 ms, 在所有 Java 提交中击败了99.48%的用户</span></span><br><span class="line"><span class="comment">//内存消耗：40.6 MB, 在所有 Java 提交中击败了92.52%的用户</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[][] insert1(<span class="keyword">int</span>[][] intervals, <span class="keyword">int</span>[] newInterval) &#123;</span><br><span class="line">    <span class="keyword">if</span>(newInterval.length == <span class="number">0</span>) <span class="keyword">return</span> intervals;</span><br><span class="line">    List&lt;<span class="keyword">int</span>[]&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">int</span> l = newInterval[<span class="number">0</span>], r = newInterval[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;   <span class="comment">//记录新集合是否已经添加进去，true的话后续不用比较</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span>[] interval : intervals)&#123;</span><br><span class="line">        <span class="keyword">if</span>(interval[<span class="number">0</span>] &gt; r)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!flag)&#123;</span><br><span class="line">                list.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;l,r&#125;);</span><br><span class="line">                flag = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            list.add(interval);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(interval[<span class="number">1</span>] &lt; l)&#123;</span><br><span class="line">            list.add(interval);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//此时，当前集合与新集合一定有交集的，合并称为一个集合作为新集合</span></span><br><span class="line">            l = Math.min(l,interval[<span class="number">0</span>]);</span><br><span class="line">            r = Math.max(r,interval[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果遍历结束后新集合仍然没有加入，则最后加入</span></span><br><span class="line">    <span class="keyword">if</span>(!flag) list.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;l,r&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将list中的集合转到二维数组进行结果返回</span></span><br><span class="line">    <span class="keyword">int</span>[][] res = <span class="keyword">new</span> <span class="keyword">int</span>[list.size()][<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; res.length; i++)&#123;</span><br><span class="line">        res[i] = list.get(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 
             </div>
             <hr/>
@@ -1046,7 +1074,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.9k</span>&nbsp;字
+                class="white-color">5.5k</span>&nbsp;字
             
             
             
