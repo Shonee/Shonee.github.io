@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Dusx">
+    <meta name="keywords" content="MySQL学习笔记, Dusx">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Dusx</title>
+    <title>MySQL学习笔记 | Dusx</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">MySQL学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -365,9 +365,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/MySQL/">
+                                <span class="chip bg-color">MySQL</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -379,7 +387,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-06
+                    2020-11-07
                 </div>
                 
 
@@ -388,14 +396,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    75
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    10 分
                 </div>
                 
 
@@ -410,20 +418,193 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <p>[TOC]</p>
+<h1 id="MySQL学习笔记"><a href="#MySQL学习笔记" class="headerlink" title="MySQL学习笔记"></a>MySQL学习笔记</h1><h2 id="1-MySQL基础知识"><a href="#1-MySQL基础知识" class="headerlink" title="1. MySQL基础知识"></a>1. MySQL基础知识</h2><blockquote>
+<p>参考文章： <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg2MjEwMjI1Mg==&mid=2247503444&idx=3&sn=1e307a247838092dd22c4ccfcde71193&chksm=ce0e79d7f979f0c14c3e1e31e6ea951e5c71b13489257cd7df1607187a675860b120964d689c&mpshare=1&scene=24&srcid=1014ASyBj2RHmR9v2JM1GuDk&sharer_sharetime=1602682491574&sharer_shareid=c90d89447bde2426811e6f3556bd276d&key=835fcd8fd3846f683526f41906c3982d2f303c23d653002d6947ac25bb1c332794d85350653a9eac1b7a20380ac49ae95952ff218bffba0224cb5a3b581f20c568af940776c741d7fbffd77fb9647c67df3e940b7f59ea77e7b0ba4ebce9357650b49bdf376a089ce8f43f53669dd5d856948c18ccb46f14aef65a209fbb82f0&ascene=14&uin=MTU0NTA1NjAwMQ==&devicetype=Windows+10+x64&version=62090523&lang=zh_CN&exportkey=AZIVNnQgDS02YP26FewfMQA=&pass_ticket=WRKQP3G1bylvRFp+5dyKejmrjQcdw0gXiZjVA4XQVd8YXHZJBv66H4lgfERtCxdO&wx_header=0">mysql零散的基础知识</a> </p>
+</blockquote>
+<h3 id="1-1-SQL命令"><a href="#1-1-SQL命令" class="headerlink" title="1.1 SQL命令"></a>1.1 SQL命令</h3><blockquote>
+<p>数据库SQL命令可以分为四组：DDL、DML、DCL和TCL</p>
+</blockquote>
+<img src="assets/SQL命令结构图.png" alt="image-20201107212233910" style="zoom:80%;" />
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+<p><strong>DDL(Data Definition Language)：</strong>  </p>
+<blockquote>
+<p>数据定义语言，处理数据库schemas和描述数据应如何驻留在数据库中</p>
+</blockquote>
+<p><strong>DML(Data Manipulation Language)：</strong> </p>
+<blockquote>
+<p>数据操纵语言，包括常见的SQL语句，用于存储、修改、检索和删除数据库中的数据</p>
+</blockquote>
+<p><strong>DCL(Data Control Language)：</strong> </p>
+<blockquote>
+<p>数据控制语言，包含如Grant之类的命令，主要涉及数据库系统的权限等控件</p>
+</blockquote>
+<p><strong>TCL(Transaction Control Language)：</strong> </p>
+<blockquote>
+<p>事务控制语言，用于处理数据库中的事务</p>
+</blockquote>
+<h3 id="1-2-数据库范式"><a href="#1-2-数据库范式" class="headerlink" title="1.2 数据库范式"></a>1.2 数据库范式</h3><blockquote>
+<p>现在数据库范式最多满足3NF，普遍认为范式过高虽然对数据关系有更好的约束性，但也导致数据关系表增加而令数据库IO更易繁忙</p>
+</blockquote>
+<p><strong>第一范式：</strong></p>
+<blockquote>
+<p>第一范式要求数据库中的所有字段列都是单一属性，不可再分的。</p>
+</blockquote>
+<p><strong>第二范式：</strong> </p>
+<blockquote>
+<p>在满足第一范式的基础上，数据库中的表不存在非关键字段对任意关键字段的部分依赖</p>
+</blockquote>
+<p><strong>第三范式：</strong> </p>
+<blockquote>
+<p>在满足第二范式的基础上，所有的非主键列之间不存在传递依赖</p>
+</blockquote>
+<p>数据库设计时，遵循范式和反范式一直都是一个颇受争议的问题。遵循范式对数据关系有更好的约束性，并且减少数据冗余，可以更好的保证数据一致性。而反范式则是为了获得更好的性能。因此实际中要选择适合自己业务场景的。</p>
+<p>反范式设计时，要考虑到关系表之间的<strong>插入异常</strong>、<strong>更新异常</strong>和<strong>删除异常</strong>。</p>
+<h3 id="1-3-横表纵表"><a href="#1-3-横表纵表" class="headerlink" title="1.3 横表纵表"></a>1.3 横表纵表</h3><h2 id="2-MySQL架构"><a href="#2-MySQL架构" class="headerlink" title="2. MySQL架构"></a>2. MySQL架构</h2><blockquote>
+<p>待完成。   <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650565395&idx=1&sn=e9c779d36d944fa13703d9b8c2fd88b2&chksm=f1fedd90c6895486fb19073d3b1016d8ec4ca9cc13a5a87c198164a4ca683d193fd687e95840&scene=0&xtrack=1&key=e06e340bd7692e7ccc5311bb7eaa5a0d03ea4713c20c146872bf4607bee010784ef3ffdb4da9542a6cd49e6f2e471ea59aa59ee6c8bc84543c1da7e88392dbee7724847c1548a1dcf6bbeb45e9520f2a7b56b824cc8536c41a193bff45db1244a76dc0c8d882d97656c32ad70820e93c9a47f87b6c3de1d6011136fcbbc58dc1&ascene=14&uin=MTU0NTA1NjAwMQ==&devicetype=Windows+10+x64&version=62090523&lang=zh_CN&exportkey=Af5ZwF/scurohiRR5ZXz03s=&pass_ticket=WRKQP3G1bylvRFp+5dyKejmrjQcdw0gXiZjVA4XQVd8YXHZJBv66H4lgfERtCxdO&wx_header=0">为什么别人能用好MySQL？</a>  </p>
+</blockquote>
+<h2 id="3-MySQL存储引擎"><a href="#3-MySQL存储引擎" class="headerlink" title="3. MySQL存储引擎"></a>3. MySQL存储引擎</h2><blockquote>
+<p>参考文章： <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg2MjEwMjI1Mg==&mid=2247492928&idx=3&sn=09b88a89ef9c742d7a9d2d9d0eb93eba&chksm=ce0e52c3f979dbd58f039f197c3b88972addd72b4ee72df23d4bb5e8d6ca66b684fbb692c07f&scene=0&xtrack=1&key=e034db9a26a6579db731d5a6725742b6d2ce8046ca9d607206c72a754ede7a2ae2b36e2d5a564c6e1287ffbf5215cffb6584d6321a974c7cc8cb408b145ea760e682bf0ad25f743247a4bb86ef5d1a504e00fe7a5cb0a33e15514e6c0cf997dc3c2dced71ec34e47e50ff6cdbdf8e2200b9641bc93d710e4eda04c00a853de2a&ascene=14&uin=MTU0NTA1NjAwMQ==&devicetype=Windows+10+x64&version=62090523&lang=zh_CN&exportkey=AfLZNfcbdI+feRZ+DkWDxiE=&pass_ticket=WRKQP3G1bylvRFp+5dyKejmrjQcdw0gXiZjVA4XQVd8YXHZJBv66H4lgfERtCxdO&wx_header=0">MySQL存储引擎 - InnoDB-一棵树可以放多少数据</a>  </p>
+</blockquote>
+<h3 id="3-1-存储引擎的设置和修改"><a href="#3-1-存储引擎的设置和修改" class="headerlink" title="3.1 存储引擎的设置和修改"></a>3.1 存储引擎的设置和修改</h3><h3 id="3-2-常见存储引擎"><a href="#3-2-常见存储引擎" class="headerlink" title="3.2 常见存储引擎"></a>3.2 常见存储引擎</h3><h2 id="4-MySQL索引"><a href="#4-MySQL索引" class="headerlink" title="4. MySQL索引"></a>4. MySQL索引</h2><blockquote>
+<p>参考文章： <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAwNDA2OTM1Ng==&mid=2453147214&idx=1&sn=d6ef2e8b8c139db9dc302753050f535e&chksm=8cfd2ccdbb8aa5db91198f30c6968b1ec92525887627bd7cae10a713ab8f4bf06365c3c17223&mpshare=1&scene=24&srcid=1022j7TO5jHev6IPdSbLZ79i&sharer_sharetime=1603340755611&sharer_shareid=c90d89447bde2426811e6f3556bd276d&key=5d2345c4aa1f52aaf825be37640a0b159e9539d8e5830feeca500a629fd9f8078c25bc935d814b4cd141ab30f039a9642f8ce52e77f44fb6c167c48ebdd57ff4e3fd9a22c7b571b447af00fe10d0fbf7f36ddf54141f8cc267f065ebc57772861063c0c27ecfc389689ccc4535dc79ea7cef89ca9e74df68c3a0841bd1e7e3bb&ascene=14&uin=MTU0NTA1NjAwMQ==&devicetype=Windows+10+x64&version=62090523&lang=zh_CN&exportkey=AbAkE7xGgvGeXvDTs2+UCUY=&pass_ticket=WRKQP3G1bylvRFp+5dyKejmrjQcdw0gXiZjVA4XQVd8YXHZJBv66H4lgfERtCxdO&wx_header=0">一口气搞懂MySQL索引所有知识点</a> </p>
+</blockquote>
+<h3 id="4-1-索引的介绍"><a href="#4-1-索引的介绍" class="headerlink" title="4.1 索引的介绍"></a>4.1 索引的介绍</h3><blockquote>
+<p>索引是帮助MySQL高效获取数据的数据机构，类似一本书的目录索引。</p>
+</blockquote>
+<p>通常所说的索引，有聚集索引、覆盖索引、组合索引、前缀索引、唯一索引等，默认都是使用B+树的结构组织索引。</p>
+<p><strong>使用索引的好处和坏处</strong></p>
+<p><strong>好处：</strong> </p>
+<ul>
+<li>索引可以提高数据检索的效率，降低数据库的IO成本</li>
+<li>通过索引列对数据进行排序，降低了数据排序对CPU的消耗<ul>
+<li>索引列会自动排序，包括单列索引和组合索引</li>
+<li>如果按照索引列进行排序，order by 语句的效率会非常高</li>
+</ul>
+</li>
+</ul>
+<p><strong>坏处：</strong> </p>
+<ul>
+<li>索引会占据磁盘空间</li>
+<li>索引虽然能够提高数据查询效率，但是会降低数据更新的效率，因为每次增删改数据操作是，都要保存或更新相应的索引文件。</li>
+</ul>
+<h3 id="4-2-索引的类型"><a href="#4-2-索引的类型" class="headerlink" title="4.2 索引的类型"></a>4.2 索引的类型</h3><ul>
+<li><strong>唯一索引：</strong>索引列中的值必须是唯一的额，但是允许为null值</li>
+<li><strong>主键索引：</strong>特殊的唯一索引，值唯一且不允许为null值</li>
+<li><strong>普通索引：</strong>MySQL中基本索引类型，允许列值重复，也允许为null</li>
+<li><strong>全文索引：</strong>只能在CHAR、VARCHAR、TEXT类型字段上创建全文索引。当字段长度比较大时，普通索引中使用like进行模糊查询效率比较低，可以使用全文索引 </li>
+<li><strong>空间索引：</strong>5.7后支持全文索引，支持OpenGIS集合数据模型</li>
+<li><strong>前缀索引：</strong>在CHAR、VARCHAR、TEXT类型的列上创建索引时，可以指定索引列的长度，即列内容的前缀进行索引。</li>
+</ul>
+<p>按照索引列的数量分类</p>
+<ul>
+<li><strong>单列索引</strong></li>
+<li><strong>组合索引：</strong>组合索引使用时要遵循最左前缀匹配元组，条件允许的情况下使用组合索引替代多个单列索引</li>
+</ul>
+<h3 id="4-3-索引的数据结构"><a href="#4-3-索引的数据结构" class="headerlink" title="4.3 索引的数据结构"></a>4.3 索引的数据结构</h3><p><strong>Hash表：</strong></p>
+<p>Hash表在等值查询时效率很高，但是不支持范围快速查找，范围查找时还是只能通过扫描全表方式；因此不适合作为经常需要查找和范围查找的数据库索引。</p>
+<p><strong>二叉查找树：</strong></p>
+<p>二叉树正常情况下可以进行折半查找而减少IO次数，但是二叉树不稳定，容易形成单链，查找时仍然很复杂，这种不稳定的结构选择设计时会尽量避免。</p>
+<p><strong>平衡二叉树：</strong></p>
+<p>平衡二叉树除了具备二叉查找树的特点，最主要的特征就是左右两个子树的层级最多相差1，在插入删除数据时要使用左旋/右旋操作来保持二叉树的平衡。平衡二叉树的查询性能最接近二分查找法，但是仍有一些不足之处：</p>
+<ul>
+<li>时间复杂度和树高有关，每个节点的读取对应一次磁盘IO操作，数据量大时查询性能会比较差</li>
+<li>平衡二叉树不支持范围快速查找，范围查询时要从根节点进行多次遍历</li>
+</ul>
+<p><strong>B树：</strong></p>
+<blockquote>
+<p>MySQL的数据是存储在磁盘文件中的，查询处理数据时，需要把磁盘中的数据加载到内存中，磁盘IO操作非常耗时，因此我们优化的重点就是要尽量减少磁盘IO操作的次数。二叉树访问时每个节点就会发生一次磁盘IO，因此可以通过降低树的高度来减少磁盘IO的次数。</p>
+<p>二叉树一个节点的数据结构为一个val+两个children指针，大概16(8+4*2)字节，而InnoDB一次IO默认会读取一页的数据量(16K)，这样每次IO操作数据空间利用率极低，为了最大化利用一次IO空间，就是在每个节点中存放多个元素，即每个节点存储更多的数据，这样就能将树的高度降的很低，这种结构就称为B树。</p>
+</blockquote>
+<ul>
+<li><strong>B树是一种多叉平衡查找树，特点有：</strong><ul>
+<li>B树的节点中存储着多个元素，每个内节点有多个分叉</li>
+<li>节点中的元素包含键值和数据(data)，按照键值从小到大排列，即所有的节点中都存储了数据</li>
+<li>父节点中的元素不会出现在子节点中</li>
+<li>所有的叶子节点都位于同一层，即叶子有着相同的深度，叶子节点之间没有指针连接</li>
+</ul>
+</li>
+<li>B树结构图</li>
+<li>使用B树进行查找的过程：<ul>
+<li>B树每个节点中的数据是一次IO操作读取出来的</li>
+<li>B树种每个节点种存放许多个键值，IO操作读取到内存种后，会进行遍历比较，再查找指定的节点或根据键值返回数据</li>
+<li>多叉树、每个节点存放多个键值，大大减少了树的高度，减少了磁盘IO的次数</li>
+</ul>
+</li>
+<li>B树的不足点：<ul>
+<li>B树不支持范围查询的快速查找，如果要进行范围查询，仍然是要从根节点多次遍历查询</li>
+<li>因为B树节点中存放多个键以及对应的data，data对应数据库表的一行数据，随着表中的列增加，data占用空间变大，则一个节点中可以存放的数据个数就会减少，树会变高，查询时磁盘IO次数也会增加。</li>
+</ul>
+</li>
+</ul>
+<p><strong>B+树：</strong> </p>
+<blockquote>
+<p>B+树是在B树的基础上进行了改造，B+树相对B树的改变主要有：</p>
+<ul>
+<li>B+树<strong>只有叶子节点才会存储数据</strong>，非叶子节点只存放键(进行比较，可以覆盖索引)</li>
+<li>B+树<strong>叶子节点之间使用双向指针连接</strong>，最底层叶子节点形成了双向有序链表</li>
+<li>B+树由于只在叶子节点中存放数据，因此<strong>叶子节点中包含了所有的索引项</strong>(查找并返回数据)</li>
+</ul>
+<p>由于数据都放在了叶子节点中，非叶子节点只存放键值，<strong>每个节点中可以存放更多的索引键值</strong>，因此从理论上讲B+树高度是要比B树低的。</p>
+<p>虽然非叶子节点中不存放数据，但是也存在<strong>覆盖索引</strong>的情况，如果索引中数据(key/id)满足要求，也可能直接返回，无需检索到最底层的叶子节点。</p>
+</blockquote>
+<ul>
+<li><p><strong>等值查询：</strong></p>
+<blockquote>
+<p>B+树进行等值查询时，在叶子节点找到节点时，取出对应的data，如果data是实际的数据(<strong>InnoDB中叶子节点存放数据</strong>)则直接返回；如果是对应的地址(<strong>MyIsam中存放的是磁盘地址</strong>)，则根据磁盘地址到磁盘中取出数据，完成查询。</p>
+</blockquote>
+</li>
+<li><p><strong>范围查询：</strong></p>
+<blockquote>
+<p>B+树进行范围查询时，首先进行范围左端点的查询，与等值查询一样完成当前值的查询，之后会直接使用叶子节点的链表进行后续的查询，读取其他磁盘页，最终完成整个范围查询（叶子节点中整体有序）。</p>
+</blockquote>
+</li>
+<li><p><strong>总结：</strong>B+树保证了等值查询是快速的，也保证了范围查询的快速查找。</p>
+</li>
+</ul>
+<h3 id="4-4-索引的使用"><a href="#4-4-索引的使用" class="headerlink" title="4.4 索引的使用"></a>4.4 索引的使用</h3><blockquote>
+<p>具体索引使用过程，以MyIsam存储引擎中的索引和InnoDB存储引擎中索引的使用不同来介绍</p>
+</blockquote>
+<p><strong>MyIsam存储引擎：</strong> </p>
+<blockquote>
+<p>MyIsam引擎中也是使用的B+树构建索引树，叶子节点存放的<strong>键是列的值</strong>，data是<strong>索引所在行的磁盘地址</strong>。</p>
+</blockquote>
+<p>MyIsam中的主键索引和辅助索引的结构是完全一样的，叶子节点存储的数据都是记录行所在的磁盘地址，查询数据时，最终要根据磁盘地址读取数据。</p>
+<p>**InnoDB存储引擎： ** </p>
+<blockquote>
+<p>InnoDB存储引擎相比于MyIsam可以定义自增主键，且主键索引更为特殊，也叫做聚簇索引，所有非主键索引都叫做辅助索引。</p>
+<p><strong>规则：</strong> InnoDB会将定义的主键列作聚簇索引；如果没有定义主键则会选择第一个不为null的唯一索引作聚簇索引；如果都没有，则会生成一个隐式字段构建聚簇索引。</p>
+</blockquote>
+<ul>
+<li><strong>聚簇索引：</strong> InnoDB的索引中，只有聚簇索引的叶子节点存放data数据，使用主键查询到叶子节点后返回数据</li>
+<li><strong>辅助索引：</strong> 辅助索引的叶子节点存放的都是<strong>主键值</strong>，使用辅助索引时会先查询到叶子节点中的主键，根据主键值去到聚簇索引中进行<strong>回表查询</strong>data</li>
+<li><strong>联合索引：</strong> 联合索引创建时，是以联合索引中列的数据进行排序，因此使用联合索引进行查询是，要符合最左匹配原则，即检索列的顺序要和创建索引时顺序一致，否则不会走索引。</li>
+<li><strong>覆盖索引：</strong> 覆盖索引是一种常见的优化手段，即在使用辅助索引时，要先拿到主键索引再回表查询数据，如果当前所有中包含了需要查询的所有内容（字段值+主键值），则不需要进行主键的回表查询，即覆盖索引。</li>
+</ul>
+<p><strong>数据库索引优化手段：</strong></p>
+<ol>
+<li><p>避免回表</p>
+<img src="assets/image-20201108193036198.png" alt="image-20201108193036198" style="zoom:80%;" />
+</li>
+<li><p>使用联合索引</p>
+<ul>
+<li>使用联合索引替代多个单列索引，不仅可以<strong>节省空间</strong>，还<strong>更容易使用到覆盖索引</strong></li>
+<li>联合索引创建时，将频繁使用、区分度高的列放在前边</li>
+<li>如果当前索引存在频繁查询的返回列，可考虑将此列加入联合索引，更容易使用覆盖索引减少回表查询</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-MySQL事务"><a href="#5-MySQL事务" class="headerlink" title="5. MySQL事务"></a>5. MySQL事务</h2><blockquote>
+<p>参考文章： <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247489683&idx=2&sn=0bfbe8def3331404ef13a0da7b10334e&chksm=fa0e7712cd79fe04c2bc72866ee72632984391ceab0f5379c3ea37819434434c8033fab26418&mpshare=1&scene=24&srcid=&sharer_sharetime=1591506346818&sharer_shareid=c90d89447bde2426811e6f3556bd276d&key=e06e340bd7692e7ca73a5ff5ea8e64087275cf8ba3ec53ab34a4b93cb277d0ac2306a1b75f8bf94a82adf2873dce1eca8ad689701d1ecb711be32b265065dc484b3a2006f8889fb116ea159f06797c1777a7619acaa8227ce2729f7b2e54b2585f66174f609777b05c7db36d3c1d777d64822850858c451258d6e23ea2a1a684&ascene=14&uin=MTU0NTA1NjAwMQ==&devicetype=Windows+10+x64&version=62090523&lang=zh_CN&exportkey=Ae/+QZtcKepQB9ivq5tYokc=&pass_ticket=WRKQP3G1bylvRFp+5dyKejmrjQcdw0gXiZjVA4XQVd8YXHZJBv66H4lgfERtCxdO&wx_header=0">彻底搞懂MySQL事务日志</a>  <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI4Njg5MDA5NA==&mid=2247486783&idx=1&sn=5d794bbb97b09a9b097200ac4790d058&chksm=ebd74c3edca0c5288742261c856c907022e4524d70ef535986da3492ce4af8e84936a2555d8c&scene=0&xtrack=1&key=5d2345c4aa1f52aaae2921615d93e13c63f7da0fa610e14c7abecf071021117a61c0426a8e521469016ad9f73e4b34cd7dfd9703e1a28af7384a71f14bf659c7cabff0d45b67838b639a11fb3c8255dce17a992c7e46c6f38661edf8f92b2d20441f7b03b6de2435d67259eceaffb05c55d9407309a5f66abf5a7bb4ff5131a4&ascene=14&uin=MTU0NTA1NjAwMQ==&devicetype=Windows+10+x64&version=62090523&lang=zh_CN&exportkey=AcBeXoujtIA7DwjZRNfjukg=&pass_ticket=WRKQP3G1bylvRFp+5dyKejmrjQcdw0gXiZjVA4XQVd8YXHZJBv66H4lgfERtCxdO&wx_header=0">MySQL事务日志-原来MySQL面试还会问这些</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg2MjEwMjI1Mg==&mid=2247501550&idx=3&sn=1a212bfc737981df2c942860e8e7dbe1&chksm=ce0e716df979f87b83ca1719f330c4fa1b4b9f1823ceb1483ae0539fc2105c3029efc06133e3&mpshare=1&scene=24&srcid=0916Evt5W1Nj6vj2ViKufZt1&sharer_sharetime=1600214786578&sharer_shareid=c90d89447bde2426811e6f3556bd276d&key=29a501fbe6d282a4522669cadcee88587f303ee12610b92fc896f03adf3e8de693cd5af938659a6d2a0069d00061b7e553b0ba825de6e09e76d79139cfedfb9f635df2c0358e16dd23b3240c0acab041d3726f874952464c115baa9e213dcc13ac315625996a283ba874a13e83f268400934e60dc6fbaa3ab3bd7e6203de4e7a&ascene=14&uin=MTU0NTA1NjAwMQ==&devicetype=Windows+10+x64&version=62090523&lang=zh_CN&exportkey=AbuaVTwtvxiuIecRXmQVX00=&pass_ticket=WRKQP3G1bylvRFp+5dyKejmrjQcdw0gXiZjVA4XQVd8YXHZJBv66H4lgfERtCxdO&wx_header=0">必须了解的 MySQL 三大日志</a>  <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAwNDA2OTM1Ng==&mid=2453147047&idx=1&sn=2ba0aa166bb7686ec90af4cded01f254&chksm=8cfd2f24bb8aa63207d72df02c01b1ad1dce63a39302ec1b73b868c44ea807c78081f6d5a9ee&mpshare=1&scene=24&srcid=1013o3NNMQV20q0AWX2pBnEF&sharer_sharetime=1602557171611&sharer_shareid=c90d89447bde2426811e6f3556bd276d&key=741c320a8f8c2b40fac60692bb38d91f787934c7273c5a8789cf488987017702b07a200c737e8cebb48686606a6c3e7f32fce0c0df727e62080e414d4e8b1479e906f70d0a0591e408a7e8947680191d40b21b8b4b0fb31fca02a0617852830dcf27171671d4c919dd5c2db96d7cf37e5a4944f6f3ed93d79c09992dc68181f7&ascene=14&uin=MTU0NTA1NjAwMQ==&devicetype=Windows+10+x64&version=62090523&lang=zh_CN&exportkey=ASqhmE3uXyU2dBJ5UDHImwk=&pass_ticket=WRKQP3G1bylvRFp+5dyKejmrjQcdw0gXiZjVA4XQVd8YXHZJBv66H4lgfERtCxdO&wx_header=0">MySQL事务与MVCC机制</a>  <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=2247486625&idx=2&sn=e235dab2757739438b8f33d205a9327f&chksm=cea2436af9d5ca7c9a1a8db9d020f71205687beca23ac958f9c9a711ee0185cab30173ad2b1a&scene=0&xtrack=1&key=e034db9a26a6579d2c69e36e4cd625c1143bd4da8bb58de5524ce23bb7dc3755152656ca4a68cb81e8e2ea01e4a06ebb75f8cd44083ffb34f8336fa0cbad5c65213aae273391f480dd43c45b2f08413f720205d6bb5115969ab564dfc831867c54f6486f55c892465769bb998e1a1f2f76533c60bd79fc218c65e3a512953e70&ascene=14&uin=MTU0NTA1NjAwMQ==&devicetype=Windows+10+x64&version=62090523&lang=zh_CN&exportkey=ASpvLKcaNTSftOGcA7F/YJs=&pass_ticket=WRKQP3G1bylvRFp+5dyKejmrjQcdw0gXiZjVA4XQVd8YXHZJBv66H4lgfERtCxdO&wx_header=0">MySQL事务的10个问题</a> </p>
+</blockquote>
+<h3 id="5-1-事务特性"><a href="#5-1-事务特性" class="headerlink" title="5.1 事务特性"></a>5.1 事务特性</h3><ul>
+<li>原子性</li>
+<li>一致性</li>
+<li>隔离性</li>
+<li>持久性</li>
+</ul>
+<h3 id="5-2-事务隔离级别"><a href="#5-2-事务隔离级别" class="headerlink" title="5.2 事务隔离级别"></a>5.2 事务隔离级别</h3><h3 id="5-3-事务日志"><a href="#5-3-事务日志" class="headerlink" title="5.3 事务日志"></a>5.3 事务日志</h3><h2 id="6-MySQL锁机制"><a href="#6-MySQL锁机制" class="headerlink" title="6. MySQL锁机制"></a>6. MySQL锁机制</h2><h2 id="7-MySQL优化"><a href="#7-MySQL优化" class="headerlink" title="7. MySQL优化"></a>7. MySQL优化</h2><h2 id="7-MySQL主从复制"><a href="#7-MySQL主从复制" class="headerlink" title="7. MySQL主从复制"></a>7. MySQL主从复制</h2>
             </div>
             <hr/>
 
@@ -448,7 +629,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://shonee.github.io/2020/11/06/hello-world/">http://shonee.github.io/2020/11/06/hello-world/</a>
+                    <a href="http://shonee.github.io/2020/11/07/mysql-xue-xi-bi-ji/">http://shonee.github.io/2020/11/07/mysql-xue-xi-bi-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -485,7 +666,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">MySQL</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                    <span class="chip bg-color">面试</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -655,30 +844,41 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/06/my-first-blog/">
+                <a href="/2020/11/08/daily-hard-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="my first blog">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Daily Hard (1)">
                         
-                        <span class="card-title">my first blog</span>
+                        <span class="card-title">Daily Hard (1)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一篇博客，部署到远程仓库中。。。
+                             leetcode 57.插入区间 
+题目描述：
 
+给出一个无重叠的，按照区间起始端点排序的区间列表。
+在列表中插入一个新的区间，你需要确保列表中的区间仍然有序且不重叠（如果有必要，可以合并区间）。
+
+**示例1： ** 
+
+输入： int
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Shone
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -686,8 +886,24 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/test/">
-                        <span class="chip bg-color">test</span>
+                    <a href="/tags/Hard/">
+                        <span class="chip bg-color">Hard</span>
+                    </a>
+                    
+                    <a href="/tags/Algorithm/">
+                        <span class="chip bg-color">Algorithm</span>
+                    </a>
+                    
+                    <a href="/tags/Daily/">
+                        <span class="chip bg-color">Daily</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="chip bg-color">数组</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                        <span class="chip bg-color">排序</span>
                     </a>
                     
                 </div>
@@ -698,27 +914,31 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/06/hello-world/">
+                <a href="/2020/11/07/hexo-githubpages-shi-xian-ge-ren-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            [TOC]
+使用Hexo搭建静态博客
+是配合GitHubPages静态页面，简单静态，挂载在GitHub上即可
+
+安装Node.jsHexo是基于node.js使用的，所有在使用之前要先安装node环境，安装成功后，在控制台使用命令查看no
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
                             </span>
                         <span class="publish-author">
                             
@@ -728,7 +948,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

@@ -436,7 +436,7 @@
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//①自报家门，本地Git关联名称、邮箱信息</span><br><span class="line">git config --global user.name <span class="string">&quot;yourname&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;111100@qq.com&quot;</span></span><br><span class="line">//②本地生成密钥 SSH Key</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;111100@qq.com&quot;</span></span><br><span class="line">//③GitHub中的设置页面中，找到SSH and GPG keys，新增一个SSH</span><br><span class="line">//④查看本地生成的密钥对应的公钥</span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line">//⑤将本地公钥内容复制到GitHub的SSH框中，点击确定保存</span><br><span class="line">//⑥本地Git使用命令查看是否与远程连接成功</span><br><span class="line">ssh -T git@github.com</span><br><span class="line">如果出现了 Hi...  你的GitHub账户名称的内容，说明链接成功</span><br></pre></td></tr></table></figure>
 
-<img src="assets/image-20201107104256334.png" alt="image-20201107104256334" style="zoom:80%;" />
+<img src="/imgs/assets/image-20201107104256334.png" alt="image-20201107104256334" style="zoom:80%;" />
 
 <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>本地node环境准备好后，进行Hexo的安装，安装过程中使用Git命令工具。</p>
 <ol>
@@ -749,34 +749,38 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/07/hexo-githubpages-shi-xian-ge-ren-bo-ke/">
+                <a href="/2020/11/07/mysql-xue-xi-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="MySQL学习笔记">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">MySQL学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             [TOC]
-使用Hexo搭建静态博客
-是配合GitHubPages静态页面，简单静态，挂载在GitHub上即可
+MySQL学习笔记1. MySQL基础知识
+参考文章： mysql零散的基础知识 
 
-安装Node.jsHexo是基于node.js使用的，所有在使用之前要先安装node环境，安装成功后，在控制台使用命令查看no
+1.1 SQL命令
+数据库SQL命令可以分为四组：DDL、DML、DCL和TCL
+
+
+
+DDL(Data Definition Languag
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -785,7 +789,18 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1035,7 +1050,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.6k</span>&nbsp;字
+                class="white-color">4.9k</span>&nbsp;字
             
             
             
