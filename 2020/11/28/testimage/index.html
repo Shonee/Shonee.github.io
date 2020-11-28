@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="单词拆分 Daily Hard(2), Dusx">
+    <meta name="keywords" content="Hexo+Typora写文章时图片显示问题, Dusx">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>单词拆分 Daily Hard(2) | Dusx</title>
+    <title>Hexo+Typora写文章时图片显示问题 | Dusx</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -258,12 +258,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">单词拆分 Daily Hard(2)</h1>
+                    <h1 class="description center-align post-title">Hexo+Typora写文章时图片显示问题</h1>
                 </div>
             </div>
         </div>
@@ -378,12 +378,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Hexo/" class="post-category">
+                                Hexo
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -392,7 +405,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-09
+                    2020-11-28
                 </div>
                 
 
@@ -401,14 +414,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    893
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -423,7 +436,87 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>[TOC]</p>
+<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><blockquote>
+<ul>
+<li>Typora是一款支持实时预览的MarkDown文本编辑器。</li>
+<li>有OS X、windows、Linux三个平台版本，是完全免费的。</li>
+<li>个人平时学习的记录都是使用Typora完成的。</li>
+</ul>
+</blockquote>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
+<p>Hexo是一个快速、简洁且高效的博客框架。</p>
+<p>Hexo使用MarkDown解析文章，可利用靓丽的主题生成<strong>静态网页</strong>。</p>
+</blockquote>
+<h2 id="Typora-Hexo"><a href="#Typora-Hexo" class="headerlink" title="Typora+Hexo"></a>Typora+Hexo</h2><blockquote>
+<p>实际使用过程中，为了让自己本地的记录能够随时可以查看，参考网上教程，使用了Hexo+GitHub Pages实现静态博客功能，本地使用Typora进行编辑记录，完成后发布到GitHub。</p>
+</blockquote>
+<h2 id="文章中图片的一致性处理"><a href="#文章中图片的一致性处理" class="headerlink" title="文章中图片的一致性处理"></a>文章中图片的一致性处理</h2><blockquote>
+<p>如果正常在本地使用typora，并使用了一些图片后，将文章上传只GitHub中，会发现在远程中图片无法显示，这是因为Hexo中的图片路径访问不到，需要对Typora进行一定处理。</p>
+</blockquote>
+<h3 id="Typora中图片路径"><a href="#Typora中图片路径" class="headerlink" title="Typora中图片路径"></a>Typora中图片路径</h3><img src="/imgs/testImage/image-20201128154335673.png" alt="" style="zoom:80%;" /> 
+
+<p>本地使用Typora编辑内容时，可以设置插入图片时是否复制图片</p>
+<img src="/imgs/testImage/image-20201128154530131.png" alt="" style="zoom:80%;" /> 
+
+<ul>
+<li><p>如果<strong>不复制图片</strong>，则路径为复制图片的源路径（Typora缓存路径）</p>
+<img src="/imgs/testImage/image-20201128154805241.png" alt="" style="zoom:67%;" /> 
+</li>
+<li><p>如果设置了<strong>复制图片</strong>，则会根据设置的路径将图片复制进去，并进行引用（默认为当前文章所在位置的相对路径）</p>
+<p><img src="/imgs/testImage/image-20201128155025584.png"> </p>
+</li>
+<li><p>如果要使用<strong>绝对路径</strong>，则会使用计算机本地的绝对路径</p>
+</li>
+<li><p>Typora中可以针对文章设置根目录，设置后当前文章会以根目录为准，所有资源的<strong>绝对路径</strong>可<strong>使用根目录的相对路径来表示</strong></p>
+<ul>
+<li><p>设置文章根目录的方式：</p>
+<img src="/imgs/testImage/image-20201128155509532.png" alt="" style="zoom:50%;" />     
+</li>
+<li><p>使用表头格式内容进行设置（最终都是使用该方式实现的）</p>
+<img src="/imgs/testImage/image-20201128155638464.png" alt="" style="zoom:80%;" /> 
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Hexo框架中图片引用路径"><a href="#Hexo框架中图片引用路径" class="headerlink" title="Hexo框架中图片引用路径"></a>Hexo框架中图片引用路径</h3><blockquote>
+<p>使用Hexo博客框架时，文章中的图片路径有两种情况</p>
+</blockquote>
+<ul>
+<li><p>Hexo中<strong>新增文章</strong>存放路径均是在<code>hexoBlog/source/_post</code> 文件夹下</p>
+<p><img src="/imgs/testImage/image-20201128160004391.png"> </p>
+</li>
+<li><p><strong>默认配置：</strong>Hexo默认情况下，使用的图片路径为 <code>hexoBlog/sopurce/imgs</code> ，放在imgs文件夹下的图片都可以使用 <code>/imgs/.../photo.png</code> 来进行引用</p>
+<p><img src="/imgs/testImage/image-20201128160117267.png"> </p>
+</li>
+<li><p><strong>更改默认配置：</strong>Hexo的全局配置文件 <code>_config.yml</code> 中修改设置为：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#默认是false，</span></span><br><span class="line"><span class="comment">#修改为true代表每次创建文件会同时在相同位置创建一个同名文件夹</span></span><br><span class="line"><span class="comment">#同名文件夹中资源可以直接使用路径进行访问，如： photo.png</span></span><br><span class="line"><span class="attr">post_asset_floder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Typora和Hexo一致处理"><a href="#Typora和Hexo一致处理" class="headerlink" title="Typora和Hexo一致处理"></a>Typora和Hexo一致处理</h3><blockquote>
+<p>为了让文章中的图片在本地编辑时可用，发布到远程依然可用，我们进行一些一致的设置。</p>
+</blockquote>
+<p>我们在Typora中设置复制图片时保存的路径，为了便于管理图片，我们使用了在 <code>HexoBlog/source/imgs</code> 下的同名文件夹来保存当前文章对应的图片信息。</p>
+<ul>
+<li><p>设置图片复制路径为：</p>
+<img src="/imgs/testImage/image-20201128161058627.png" alt="" style="zoom:80%;" /> 
+
+<p>这是一个绝对路径，表示本地Hexo的项目Blog项目中的source文件夹下面找到文章的同名文件夹（${filename}），所有图片放入同名文件夹中，然后在Typora中进行资源的引用。</p>
+</li>
+<li><p>为了引用时与Hexo引用一致，我们设置当前文章的根目录为source文件夹</p>
+<img src="/imgs/testImage/image-20201128161406324.png" alt="" style="zoom:50%;" /> 
+
+<p>设置后文章表头会出现如下信息：此处时Typora使用的相对路径进行的设置</p>
+<img src="/imgs/testImage/image-20201128155638464.png" alt="" style="zoom:100%;" /> 
+</li>
+<li><p>这样之后，我们在文章中复制插入图片时，图片的引用路径为：</p>
+<p><img src="/imgs/testImage/image-20201128161748049.png"> </p>
+<p>这个路径正是Hexo框架的默认图片引用路径，这样我们就完成了一致处理。</p>
+</li>
+</ul>
+
             </div>
             <hr/>
 
@@ -448,7 +541,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://shonee.github.io/2020/11/09/dan-ci-chai-fen-daily-hard-2/">http://shonee.github.io/2020/11/09/dan-ci-chai-fen-daily-hard-2/</a>
+                    <a href="http://shonee.github.io/2020/11/28/testimage/">http://shonee.github.io/2020/11/28/testimage/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -485,7 +578,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -651,39 +748,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/09/dan-ci-chai-fen-daily-hard-2/">
+                <a href="/2020/11/28/rotated-array/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="单词拆分 Daily Hard(2)">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="旋转数组（字符串）">
                         
-                        <span class="card-title">单词拆分 Daily Hard(2)</span>
+                        <span class="card-title">旋转数组（字符串）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            [TOC]
+旋转数组（字符串）
+算法中有关旋转数组或旋转字符串类算法汇总，思想汇总
+
+旋转数组
+题目：给定一个数组，将数组中的元素向右移动k个位置，其中k是非负数。 力扣题目189：旋转数组 
+示例1：
+ 
+
+示例2：
+ 
+Tips：算法至
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-28
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Shone
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Algorithm/" class="post-category">
+                                    Algorithm
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Algorithm/">
+                        <span class="chip bg-color">Algorithm</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -960,7 +1078,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.4k</span>&nbsp;字
+                class="white-color">15.7k</span>&nbsp;字
             
             
             
