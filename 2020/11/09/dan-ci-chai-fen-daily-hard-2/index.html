@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Dusx">
+    <meta name="keywords" content="单词拆分 Daily Hard(2), Dusx">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Dusx</title>
+    <title>单词拆分 Daily Hard(2) | Dusx</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -258,12 +258,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">单词拆分 Daily Hard(2)</h1>
                 </div>
             </div>
         </div>
@@ -392,7 +392,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-07
+                    2020-11-09
                 </div>
                 
 
@@ -401,14 +401,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    0
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    1 分
                 </div>
                 
 
@@ -423,118 +423,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>[TOC]</p>
-<h1 id="使用Hexo搭建静态博客"><a href="#使用Hexo搭建静态博客" class="headerlink" title="使用Hexo搭建静态博客"></a>使用Hexo搭建静态博客</h1><blockquote>
-<p>是配合GitHubPages静态页面，简单静态，挂载在GitHub上即可</p>
-</blockquote>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>Hexo是基于node.js使用的，所有在使用之前要先安装node环境，安装成功后，在控制台使用命令查看node是否安装成功，使用<code>node -v</code>和 <code>npm -v</code> 查看node版本和npm版本。 </p>
-<h2 id="添加国内镜像"><a href="#添加国内镜像" class="headerlink" title="添加国内镜像"></a>添加国内镜像</h2><p>node.js源都在国外，使用过程中可能速度很慢，会安装失败，可以挂载vpn进行使用，或者使用国内镜像来安装。 <code>npm config set registry https://registry.npm.taobao.org</code> 可添加阿里云镜像。</p>
-<h2 id="注册GitHub账号"><a href="#注册GitHub账号" class="headerlink" title="注册GitHub账号"></a>注册GitHub账号</h2><p>因为是要借用GitHub的仓库功能来实现静态页面的显示，首先要有一个GitHub账号，没有的话就去 <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a> 注册一个账号。</p>
-<h2 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a>创建GitHub仓库</h2><p>登录自己的GitHub账号后，如果使用Hexo，则要创建一个名称有格式要求的仓库进行使用</p>
-<ul>
-<li><p>点击新建一个仓库，名称使用 <code>[yournamer].github.io</code> ，初始化一个readme完成仓库的创建</p>
-<img src="/imgs/assets/image-20201107102323520.png" alt="image-20201107102323520" style="zoom:80%;" />
-</li>
-<li><p>之后进入当前仓库的 <code>Setting</code> 页面，找到 <code>GitHub Pages</code> 切换一个主题，完成后点击链接查看</p>
-<img src="/imgs/assets/image-20201107102217586.png" alt="image-20201107102217586" style="zoom:80%;" />
-</li>
-<li><p>出现自己仓库的readme页面信息后表示创建成功】</p>
-<img src="/imgs/assets/image-20201107102345187.png" alt="image-20201107102345187" style="zoom:80%;" />
-
-</li>
-</ul>
-<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>为了能够在本地与GitHub更好的进行文件资源的上传和下载，使用Git软件进行操作，下载安装Git后，在控制台使用命令查看是否安装成功， <code>git --version</code> 查看git安装版本号。</p>
-<blockquote>
-<p>git安装完成后，要自报家门，并且要与自己的github仓库进行关联，使用密钥进行认证</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//①自报家门，本地Git关联名称、邮箱信息</span><br><span class="line">git config --global user.name <span class="string">&quot;yourname&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;111100@qq.com&quot;</span></span><br><span class="line">//②本地生成密钥 SSH Key</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;111100@qq.com&quot;</span></span><br><span class="line">//③GitHub中的设置页面中，找到SSH and GPG keys，新增一个SSH</span><br><span class="line">//④查看本地生成的密钥对应的公钥</span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line">//⑤将本地公钥内容复制到GitHub的SSH框中，点击确定保存</span><br><span class="line">//⑥本地Git使用命令查看是否与远程连接成功</span><br><span class="line">ssh -T git@github.com</span><br><span class="line">如果出现了 Hi...  你的GitHub账户名称的内容，说明链接成功</span><br></pre></td></tr></table></figure>
-
-<img src="/imgs/assets/image-20201107104256334.png" alt="image-20201107104256334" style="zoom:80%;" />
-
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>本地node环境准备好后，进行Hexo的安装，安装过程中使用Git命令工具。</p>
-<ol>
-<li>首先，找一个本地存放Hexo博客文件的位置，如 <code>D:\Blog</code> </li>
-<li>进入到目录中，右键选择 <code>Git Bash Here</code> 打开Git命令窗口 </li>
-<li>使用命令 <code>npm i hexo-cli -g</code> 安装Heox，安装完成后使用 <code>hexo -v</code> 查看是否成功</li>
-</ol>
-<h2 id="初始化本地blog"><a href="#初始化本地blog" class="headerlink" title="初始化本地blog"></a>初始化本地blog</h2><p>安装Hexo后，在同目录下初始化博客网站文件，并进行本地运行效果预览。</p>
-<ol>
-<li><p>使用命令 <code>hexo init</code> 初始化hexo文件夹</p>
-<blockquote>
-<p>初始化完成后，本地有了hexo的目录，之后的操作都在根目录下的Git命令窗口中</p>
-<p>初始化时可能会报错，要注意是否使用了管理员权限进行操作</p>
-</blockquote>
-</li>
-<li><p>使用命令 <code>npm install</code> 安装必备的组件</p>
-</li>
-<li><p>使用命令 <code>hexo g</code> 生成静态网页</p>
-</li>
-<li><p>使用 <code>hexo s</code> 打开本地服务器，开启后可在浏览器 <code>localhost:4000/</code> 查看本地博客效果</p>
-</li>
-<li><p>查看完后，使用 <code>ctrl + c</code> 退出服务</p>
-</li>
-</ol>
-<h2 id="连接本地和远程GitHub"><a href="#连接本地和远程GitHub" class="headerlink" title="连接本地和远程GitHub"></a>连接本地和远程GitHub</h2><p>确保本地Git已经和远程GitHub仓库链接成功，打开Hexo根目录下的 <code>_config.yml</code> 文件，修改内容，绑定GitHub指定仓库</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//修改最后一行的配置为：表示和[gitHubName].github.io</span> <span class="string">这个新增仓库进行了绑定；[gitHubName]是GitHub名称；master代表主分支，这里也要对应</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/[gitHubName]/[gitHubName].github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="开放的博客页面"><a href="#开放的博客页面" class="headerlink" title="开放的博客页面"></a>开放的博客页面</h2><p>本地和远程指定仓库绑定后，可以将本地文件内容部署到远程，并通过Pages进行网络访问</p>
-<ul>
-<li><p>安装Git部署插件 <code>npm install hexo-deployer-git --save</code> </p>
-</li>
-<li><p>使用命令 <code>hexo clean</code>  <code>hexo g</code>  <code>hexo d</code> </p>
-<blockquote>
-<p> 其中<code>hexo d</code>就是进行网站的部署</p>
-</blockquote>
-</li>
-<li><p>访问 <code>[githubname.github.io]</code> 查看部署的网站内容</p>
-</li>
-</ul>
-<h2 id="开始写一篇博客吧"><a href="#开始写一篇博客吧" class="headerlink" title="开始写一篇博客吧"></a>开始写一篇博客吧</h2><p>写一篇新的博客时，在Hexo博客根目录下，使用 <code>git bash</code> 打开Git命令界面，在界面操作</p>
-<ul>
-<li><p><code>hexo new post &quot;title&quot;</code> 新增一篇名为title的博客，文件格式为 <code>title.md</code> </p>
-<blockquote>
-<p>本地文章生成在 <code>D:\Blog\source\_posts</code> 目录下，资源文件都会在source文件夹下</p>
-</blockquote>
-</li>
-<li><p>可以使用本地markdown编辑器进行博客内容的书写</p>
-</li>
-</ul>
-<h2 id="博客发布"><a href="#博客发布" class="headerlink" title="博客发布"></a>博客发布</h2><ul>
-<li> 使用markdown操作完文件后，使用 <code>hexo g</code> 生成静态网页</li>
-<li>使用 <code>hexo s</code> 可以开启本地服务器，在 <code>localhost:4000/</code> 预览效果</li>
-<li>使用 <code>hexo d</code> 上传到GitHub上，并部署博客网站，此时可以使用 <code>..github.io</code> 网络地址进行访问</li>
-</ul>
-<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>如果觉得GitHub给的域名不够个性，可以自己购买一个域名，然后绑定到GitHubPages中来，之后可以直接使用自己的域名进行博客页面的访问。</p>
-<ol>
-<li><p>购买域名并进行域名相关的设置</p>
-</li>
-<li><p>在GitHub对应仓库中，添加域名，保存</p>
-<img src="/imgs/assets/image-20201107111256123.png" alt="image-20201107111256123" style="zoom:80%;" />
-</li>
-<li><p>设置完成后，本地根目录中出现 CNAME 的文件，内容为域名地址，再使用 <code>hexo g</code> <code>hexo d</code> 部署。</p>
-</li>
-</ol>
-<h2 id="博客个性化设置"><a href="#博客个性化设置" class="headerlink" title="博客个性化设置"></a>博客个性化设置</h2><p><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">一个开源的Hexo响应式主题-内容很丰富</a>  </p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">知乎-韦阳，教你个性化使用Hexo搭建博客</a> </p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">知乎专栏-个性化操作Hexo博客</a> </p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1520557">使用Hexo搭建博客并进行 SEO</a> </p>
-<h2 id="使用过程常见问题"><a href="#使用过程常见问题" class="headerlink" title="使用过程常见问题"></a>使用过程常见问题</h2><p>① <code>hexo init blog</code> 时报错</p>
-<p><img src="/imgs/assets/image-20201106211559408.png" alt="image-20201106211559408"></p>
-<p><strong>解决办法：</strong>将当前文件夹下已经下载的文件删除掉，使用管理员权限重新执行命令即可</p>
-<p>② <code>hexo d</code> 时报错</p>
-<blockquote>
-<p>使用 <code>ssh -T git@github.com</code> 是没问题的</p>
-</blockquote>
-<img src="/imgs/assets/image-20201107163545472.png" alt="image-20201107163545472" style="zoom:80%;" />
-
-<p><strong>解决办法：</strong> 一般就是git协议的问题，可以将deploy的地址的http协议换成 ssh协议的</p>
-<img src="/imgs/assets/image-20201107163821751.png" alt="image-20201107163821751" style="zoom:80%;" />
-
-<p>③ 使用不蒜子 进行网络访问计数时，本地服务器运行预览时，访问次数数量巨大</p>
-<blockquote>
-<p>是不蒜子计数的问题，实际部署上去就可以了  <a target="_blank" rel="noopener" href="http://busuanzi.ibruce.info/">不蒜子使用教程</a> </p>
-</blockquote>
-
+                
             </div>
             <hr/>
 
@@ -559,7 +448,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://shonee.github.io/2020/11/07/hexo-githubpages-shi-xian-ge-ren-bo-ke/">http://shonee.github.io/2020/11/07/hexo-githubpages-shi-xian-ge-ren-bo-ke/</a>
+                    <a href="http://shonee.github.io/2020/11/09/dan-ci-chai-fen-daily-hard-2/">http://shonee.github.io/2020/11/09/dan-ci-chai-fen-daily-hard-2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -762,38 +651,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/11/07/mysql-xue-xi-bi-ji/">
+                <a href="/2020/11/09/dan-ci-chai-fen-daily-hard-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="MySQL学习笔记">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="单词拆分 Daily Hard(2)">
                         
-                        <span class="card-title">MySQL学习笔记</span>
+                        <span class="card-title">单词拆分 Daily Hard(2)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            [TOC]
-MySQL学习笔记1. MySQL基础知识
-参考文章： mysql零散的基础知识 
-
-1.1 SQL命令
-数据库SQL命令可以分为四组：DDL、DML、DCL和TCL
-
-
-
-DDL(Data Definition Languag
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -802,18 +683,7 @@ DDL(Data Definition Languag
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                        <span class="chip bg-color">面试</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -824,30 +694,41 @@ DDL(Data Definition Languag
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/06/my-first-blog/">
+                <a href="/2020/11/08/daily-hard-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="my first blog">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Daily Hard (1)">
                         
-                        <span class="card-title">my first blog</span>
+                        <span class="card-title">Daily Hard (1)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一篇博客，部署到远程仓库中。。。
+                             leetcode 57.插入区间 
+题目描述：
 
+给出一个无重叠的，按照区间起始端点排序的区间列表。
+在列表中插入一个新的区间，你需要确保列表中的区间仍然有序且不重叠（如果有必要，可以合并区间）。
+
+**示例1： ** 
+
+输入： int
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Shone
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -855,8 +736,24 @@ DDL(Data Definition Languag
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/test/">
-                        <span class="chip bg-color">test</span>
+                    <a href="/tags/Hard/">
+                        <span class="chip bg-color">Hard</span>
+                    </a>
+                    
+                    <a href="/tags/Algorithm/">
+                        <span class="chip bg-color">Algorithm</span>
+                    </a>
+                    
+                    <a href="/tags/Daily/">
+                        <span class="chip bg-color">Daily</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="chip bg-color">数组</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                        <span class="chip bg-color">排序</span>
                     </a>
                     
                 </div>
