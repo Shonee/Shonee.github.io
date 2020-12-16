@@ -14,17 +14,19 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"shonee.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"shonee.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="[TOC] 排序算法排序数组 给你一个整数数组nums，请你将该数组升序排列。 力扣912：排序数组  示例1：   示例2：  Tips：常见的排序算法都可以，但是尽量使用性能更好的快排、堆排序、归并排序。  快速排序（重要） 思想：递归思想，  递归结束条件：左端点大于等于右端点，说明只有一个元素，结束 对0至n-1的元素进行排序，选择第一个数作为基准值pivot 使用左右双指针，只要满足左边">
 <meta property="og:type" content="article">
 <meta property="og:title" content="经典排序算法">
 <meta property="og:url" content="http://shonee.github.io/2020/11/28/classical-sorting-algorithm/index.html">
-<meta property="og:site_name" content="Dusx">
+<meta property="og:site_name" content="Shone&#39;s Bolg">
 <meta property="og:description" content="[TOC] 排序算法排序数组 给你一个整数数组nums，请你将该数组升序排列。 力扣912：排序数组  示例1：   示例2：  Tips：常见的排序算法都可以，但是尽量使用性能更好的快排、堆排序、归并排序。  快速排序（重要） 思想：递归思想，  递归结束条件：左端点大于等于右端点，说明只有一个元素，结束 对0至n-1的元素进行排序，选择第一个数作为基准值pivot 使用左右双指针，只要满足左边">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://shonee.github.io/imgs/classical-sorting-algorithm/image-20201128201336489.png">
@@ -40,7 +42,7 @@
 <meta property="og:image" content="http://shonee.github.io/imgs/classical-sorting-algorithm/image-20201129162456331.png">
 <meta property="article:published_time" content="2020-11-28T08:47:15.000Z">
 <meta property="article:modified_time" content="2020-12-04T03:33:50.548Z">
-<meta property="article:author" content="Shone">
+<meta property="article:author" content="shone">
 <meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://shonee.github.io/imgs/classical-sorting-algorithm/image-20201128201336489.png">
@@ -58,7 +60,7 @@
   };
 </script>
 
-  <title>经典排序算法 | Dusx</title>
+  <title>经典排序算法 | Shone's Bolg</title>
   
 
 
@@ -109,10 +111,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Dusx</h1>
+      <h1 class="site-title">Shone's Bolg</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">Dusx的个人博客</p>
+      <p class="site-subtitle" itemprop="description">road to learning</p>
   </div>
 
   <div class="site-nav-right">
@@ -129,6 +131,21 @@
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -167,13 +184,13 @@
     <link itemprop="mainEntityOfPage" href="http://shonee.github.io/2020/11/28/classical-sorting-algorithm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shone">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/ultraman.png">
+      <meta itemprop="name" content="shone">
+      <meta itemprop="description" content="harry up!">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dusx">
+      <meta itemprop="name" content="Shone's Bolg">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -505,31 +522,35 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">排序数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">快速排序（重要）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="nav-number">1.1.2.</span> <span class="nav-text">堆排序（重要）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">归并排序（重要）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8E%92%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">快排的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3TopK%E9%97%AE%E9%A2%98%EF%BC%88%E8%AF%B7%E7%9C%8BTopK%E9%97%AE%E9%A2%98%E4%B8%93%E6%A0%8F%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">求解TopK问题（请看TopK问题专栏）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0"><span class="nav-number">1.2.2.</span> <span class="nav-text">把数组排成最小的数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">堆排序的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3TopK%E9%97%AE%E9%A2%98%EF%BC%88%E8%AF%B7%E7%9C%8BTopK%E9%97%AE%E9%A2%98%E4%B8%93%E6%A0%8F%EF%BC%89-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">求解TopK问题（请看TopK问题专栏）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%8E%92%E5%BA%8F"><span class="nav-number">1.3.2.</span> <span class="nav-text">根据字符出现频率排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">归并排序的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E6%95%B0%E7%BB%84%E4%B8%AD%E7%BF%BB%E8%BD%AC%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F"><span class="nav-number">1.4.1.</span> <span class="nav-text">求数组中翻转对的数量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3TopK%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">1.5.</span> <span class="nav-text">求解TopK的算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0"><span class="nav-number">1.5.1.</span> <span class="nav-text">数组中的第K个最大元素</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="nav-text">排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="nav-text">排序数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="nav-text">快速排序（重要）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="nav-text">堆排序（重要）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="nav-text">归并排序（重要）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8E%92%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">快排的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3TopK%E9%97%AE%E9%A2%98%EF%BC%88%E8%AF%B7%E7%9C%8BTopK%E9%97%AE%E9%A2%98%E4%B8%93%E6%A0%8F%EF%BC%89"><span class="nav-text">求解TopK问题（请看TopK问题专栏）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0"><span class="nav-text">把数组排成最小的数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">堆排序的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3TopK%E9%97%AE%E9%A2%98%EF%BC%88%E8%AF%B7%E7%9C%8BTopK%E9%97%AE%E9%A2%98%E4%B8%93%E6%A0%8F%EF%BC%89-1"><span class="nav-text">求解TopK问题（请看TopK问题专栏）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%8E%92%E5%BA%8F"><span class="nav-text">根据字符出现频率排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">归并排序的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E6%95%B0%E7%BB%84%E4%B8%AD%E7%BF%BB%E8%BD%AC%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F"><span class="nav-text">求数组中翻转对的数量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3TopK%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-text">求解TopK的算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0"><span class="nav-text">数组中的第K个最大元素</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Shone</p>
-  <div class="site-description" itemprop="description"></div>
+    <img class="site-author-image" itemprop="image" alt="shone"
+      src="/images/ultraman.png">
+  <p class="site-author-name" itemprop="name">shone</p>
+  <div class="site-description" itemprop="description">harry up!</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
@@ -561,7 +582,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Shone</span>
+  <span class="author" itemprop="copyrightHolder">shone</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
@@ -619,3 +640,6 @@
 
 </body>
 </html>
+
+<!-- 页面调用小虹心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
