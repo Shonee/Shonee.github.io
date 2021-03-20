@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+  <script>
+    (function(){
+      if(''){
+        if(prompt('请输入文章密码查看') !== ''){
+          alert('密码错误');
+          history.back();
+        }
+      }
+    })
+  </script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"shonee.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false,"dimmer":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="[TOC] 旋转数组（字符串） 算法中有关旋转数组或旋转字符串类算法汇总，思想汇总  旋转数组 题目：给定一个数组，将数组中的元素向右移动k个位置，其中k是非负数。 力扣题目189：旋转数组  示例1：    示例2：   Tips：算法至少有三种不同的方法求解，尝试使用空间复杂度为O(1)的原地算法。  方法1：暴力法求解（大循环嵌套小循环）123456789101112131415161718">
+<meta property="og:type" content="article">
+<meta property="og:title" content="旋转数组（字符串）">
+<meta property="og:url" content="http://shonee.github.io/rotated-array/index.html">
+<meta property="og:site_name" content="Shone&#39;s Bolg">
+<meta property="og:description" content="[TOC] 旋转数组（字符串） 算法中有关旋转数组或旋转字符串类算法汇总，思想汇总  旋转数组 题目：给定一个数组，将数组中的元素向右移动k个位置，其中k是非负数。 力扣题目189：旋转数组  示例1：    示例2：   Tips：算法至少有三种不同的方法求解，尝试使用空间复杂度为O(1)的原地算法。  方法1：暴力法求解（大循环嵌套小循环）123456789101112131415161718">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201126153031806.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201126153047080.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127130007300.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127130017602.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127130030686.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127134950375.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127135000067.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201126165439704.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201126165450168.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201126165503080.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127094304993.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127094316243.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127155923980.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127155934300.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127162515364.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127162526236.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127170623444.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127174436929.png">
+<meta property="og:image" content="http://shonee.github.io/imgs/rotated-array/image-20201127174457402.png">
+<meta property="article:published_time" content="2020-11-28T06:57:43.000Z">
+<meta property="article:modified_time" content="2020-11-28T08:29:52.045Z">
+<meta property="article:author" content="shone">
+<meta property="article:tag" content="Algorithm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://shonee.github.io/imgs/rotated-array/image-20201126153031806.png">
+
+<link rel="canonical" href="http://shonee.github.io/rotated-array/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>旋转数组（字符串） | Shone's Bolg</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Shone's Bolg</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">road to learning</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://shonee.github.io/rotated-array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ultraman.png">
+      <meta itemprop="name" content="shone">
+      <meta itemprop="description" content="harry up!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shone's Bolg">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          旋转数组（字符串）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-28 14:57:43 / 修改时间：16:29:52" itemprop="dateCreated datePublished" datetime="2020-11-28T14:57:43+08:00">2020-11-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>11k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>10 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[TOC]</p>
+<h1 id="旋转数组（字符串）"><a href="#旋转数组（字符串）" class="headerlink" title="旋转数组（字符串）"></a>旋转数组（字符串）</h1><blockquote>
+<p>算法中有关旋转数组或旋转字符串类算法汇总，思想汇总</p>
+</blockquote>
+<h2 id="旋转数组"><a href="#旋转数组" class="headerlink" title="旋转数组"></a><strong>旋转数组</strong></h2><blockquote>
+<p>题目：给定一个数组，将数组中的元素向右移动k个位置，其中k是非负数。 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotate-array/">力扣题目189：旋转数组</a> </p>
+<p>示例1：</p>
+<img src="/imgs/rotated-array/image-20201126153031806.png" alt="示例1" style="zoom:80%;" /> 
+
+<p>示例2：</p>
+<p><img src="/imgs/rotated-array/image-20201126153047080.png"> </p>
+<p>Tips：算法至少有三种不同的方法求解，尝试使用空间复杂度为O(1)的原地算法。</p>
+</blockquote>
+<h3 id="方法1：暴力法求解（大循环嵌套小循环）"><a href="#方法1：暴力法求解（大循环嵌套小循环）" class="headerlink" title="方法1：暴力法求解（大循环嵌套小循环）"></a>方法1：暴力法求解（大循环嵌套小循环）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//暴力法旋转</span></span><br><span class="line"><span class="comment">//执行用时：233 ms, 在所有 Java 提交中击败了29.45%的用户</span></span><br><span class="line"><span class="comment">//内存消耗：39.1 MB, 在所有 Java 提交中击败了72.73%的用户</span></span><br><span class="line"><span class="comment">//取模优化后：</span></span><br><span class="line"><span class="comment">//执行用时：234 ms, 在所有 Java 提交中击败了28.15%的用户</span></span><br><span class="line"><span class="comment">//内存消耗：38.9 MB, 在所有 Java 提交中击败了89.28%的用户</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] moveRightK(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)&#123;</span><br><span class="line">    <span class="comment">//循环嵌套时，内部循环将数组右移一位，</span></span><br><span class="line">    <span class="comment">//外层循环k次，就完成了数组移动k个位置</span></span><br><span class="line">    <span class="keyword">if</span>(nums.length == <span class="number">0</span> || k == <span class="number">0</span>) <span class="keyword">return</span> nums;</span><br><span class="line">    <span class="comment">//可以用k对数组长度取模，减少不必要的循环次数</span></span><br><span class="line">    <span class="keyword">int</span> count = k % nums.length;	<span class="comment">//真正的移动次数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++)&#123;</span><br><span class="line">        <span class="comment">//记录最后一个位置的数值，</span></span><br><span class="line">        <span class="comment">//最后一个数字，放置在起点，完成一次移动</span></span><br><span class="line">        <span class="keyword">int</span> temp = nums[nums.length-<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = nums.length-<span class="number">1</span>; j &gt; <span class="number">0</span>; j--)&#123;</span><br><span class="line">            nums[j] = nums[j-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        nums[<span class="number">0</span>] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="方法2：波浪式旋转-法（记录总移动次数）"><a href="#方法2：波浪式旋转-法（记录总移动次数）" class="headerlink" title="方法2：波浪式旋转 法（记录总移动次数）"></a>方法2：波浪式旋转 法（记录总移动次数）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//波浪式旋转（固定总移动次数，多次连续旋转）</span></span><br><span class="line"><span class="comment">//执行用时：1 ms, 在所有 Java 提交中击败了56.10%的用户</span></span><br><span class="line"><span class="comment">//内存消耗：39.1 MB, 在所有 Java 提交中击败了74.65%的用户</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] moveRightK(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length == <span class="number">0</span> || k == <span class="number">0</span>) <span class="keyword">return</span> nums;</span><br><span class="line">    <span class="comment">//循环进行连续旋转，每次连续旋转（移动）至回到原点为止，</span></span><br><span class="line">    <span class="comment">//总旋转次数等于数组长度</span></span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;  <span class="comment">//记录总的移动次数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> cur = i;    <span class="comment">//连续旋转过程中不断变化的位置</span></span><br><span class="line">        <span class="keyword">int</span> pre = nums[i];  <span class="comment">//记录上一位置的数值</span></span><br><span class="line">        <span class="comment">//先进行旋转再判断，因此使用do while</span></span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">            cur = (cur+k) % nums.length;</span><br><span class="line">            <span class="keyword">int</span> temp = nums[cur];</span><br><span class="line">            nums[cur] = pre;</span><br><span class="line">            pre = temp;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;<span class="keyword">while</span>(cur != i);</span><br><span class="line">        <span class="keyword">if</span>(count &gt;= nums.length) <span class="keyword">break</span>;	<span class="comment">//移动次数到了就退出</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="方法3：额外数组法"><a href="#方法3：额外数组法" class="headerlink" title="方法3：额外数组法"></a>方法3：额外数组法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//额外数组使用</span></span><br><span class="line"><span class="comment">//执行用时：1 ms, 在所有 Java 提交中击败了56.10%的用户</span></span><br><span class="line"><span class="comment">//内存消耗：39.1 MB, 在所有 Java 提交中击败了71.96%的用户</span></span><br><span class="line"><span class="comment">//优化后提交：模计算很耗性能，两次取模运算进行合并</span></span><br><span class="line"><span class="comment">//执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line"><span class="comment">//内存消耗：38.9 MB, 在所有 Java 提交中击败了85.94%的用户</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] moveRightK(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)&#123;</span><br><span class="line">    <span class="comment">//因为要对数组本身进行修改，直接复制出一个相同数组作为参照</span></span><br><span class="line">    <span class="keyword">if</span>(nums.length == <span class="number">0</span> || k == <span class="number">0</span>) <span class="keyword">return</span> nums;</span><br><span class="line">    <span class="keyword">int</span>[] newArr = nums.clone();</span><br><span class="line">    <span class="comment">//根据复制出来的数组的值，直接在原数组中进行相应位置的覆盖即可</span></span><br><span class="line">    <span class="comment">//int count = k % nums.length;//真实移动的长度（可优化）</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> newIndex = (i+k) % nums.length;<span class="comment">//总和一次取模</span></span><br><span class="line">        nums[newIndex] = newArr[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="方法4：耍杂技法（三次反转，原地算法，空间O-1-）"><a href="#方法4：耍杂技法（三次反转，原地算法，空间O-1-）" class="headerlink" title="方法4：耍杂技法（三次反转，原地算法，空间O(1)）"></a>方法4：耍杂技法（三次反转，原地算法，空间O(1)）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//耍杂技（最帅、最高端、最效率的方法）</span></span><br><span class="line"><span class="comment">//执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line"><span class="comment">//内存消耗：39.3 MB, 在所有 Java 提交中击败了47.26%的用户</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] moveRightK(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length == <span class="number">0</span> || k == <span class="number">0</span>) <span class="keyword">return</span> nums;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//数组向右移动k次，因为是循环移动的，等价于：</span></span><br><span class="line">    <span class="comment">//先总体反转，再前k个数字反转，后n-k个数字反转</span></span><br><span class="line">    <span class="comment">//具体为什么，有时间再聊了</span></span><br><span class="line">    k = k % nums.length;    <span class="comment">//保证k是一个小于数组长度的值</span></span><br><span class="line">    reverseArr(nums,<span class="number">0</span>,nums.length-<span class="number">1</span>);</span><br><span class="line">    reverseArr(nums,<span class="number">0</span>,k-<span class="number">1</span>);</span><br><span class="line">    reverseArr(nums,k,nums.length-<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> nums;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//进行数组的反转（制定起始位置的）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] reverseArr(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start, <span class="keyword">int</span> end)&#123;</span><br><span class="line">    <span class="comment">//数组反转，使用双指针进行交换</span></span><br><span class="line">    <span class="keyword">while</span>(start &lt; end)&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = nums[start];</span><br><span class="line">        nums[start] = nums[end];</span><br><span class="line">        nums[end] = temp;</span><br><span class="line">        start++;</span><br><span class="line">        end--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="寻找旋转排序数组中的最小值"><a href="#寻找旋转排序数组中的最小值" class="headerlink" title="寻找旋转排序数组中的最小值"></a>寻找旋转排序数组中的最小值</h2><blockquote>
+<p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。例如，数组[0,1,2,4,5,6,7]可能变成[4,5,6,7,0,1,2]，请找出数组中的最小元素。</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/">力扣153：寻找旋转排序数组中的最小值</a> </p>
+<p>示例1：</p>
+<img src="/imgs/rotated-array/image-20201127130007300.png" alt="image-20201127130007300" style="zoom:80%;" /> 
+
+<p>示例2：</p>
+<img src="/imgs/rotated-array/image-20201127130017602.png" alt="image-20201127130017602" style="zoom:80%;" /> 
+
+<p>示例3：</p>
+<img src="/imgs/rotated-array/image-20201127130030686.png" alt="image-20201127130030686" style="zoom:80%;" /> 
+
+<p>Tips：寻找数组内部最小值，内部元素进行比较判断，使用二分法。</p>
+<ul>
+<li><p>（元素不重复判断比较容易）</p>
+</li>
+<li><p>先判断整体l-r是否有序，有序说明左侧端点为最小，返回</p>
+</li>
+<li><p><strong>以左侧端点为准方法：</strong>满足l &lt; r 时，取中间位置mid的值，与左侧端点值进行比较</p>
+<ul>
+<li>如果大于<strong>等于</strong>左侧端点，表示左侧部分有序，右侧部分无序，只考虑左侧部分<ul>
+<li>因为mid=(l+r)/2，即mid有可能和左侧位置重合，此时要去右侧寻找（左侧已经判断mid）</li>
+</ul>
+</li>
+<li>如果小于左侧端点，表示左侧无序，则最小值一定在左侧，只考虑左侧即可</li>
+<li>最后当l=r时，如果到了这一步，说明当前值为最小值了</li>
+</ul>
+</li>
+<li><p><strong>以右侧端点为准方法：</strong>同样在满足l&lt;r时，取中间位置mid的值，与右侧端点值进行比较</p>
+<ul>
+<li>如果小于右侧端点，说明右侧为有序，<strong>此时只能说明 l-mid 是无序的，因此要带着（mid值）</strong><ul>
+<li>有可能mid点正好落在最小值上，如果r=mid-1，则失去了最小值，</li>
+<li>这种情况可以在优化时提前判断mid是否为最小值来避免</li>
+</ul>
+</li>
+<li>如果大于右端点，说明右侧无序，且mid肯定不是最小，因此l=mid+1</li>
+<li>最后当l=r时，到了这一步，说明当前就是最小值</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//寻找旋转数组中的最小值（数组元素于不重复）</span></span><br><span class="line"><span class="comment">//以左端点为标准</span></span><br><span class="line"><span class="comment">//如果整体有序，则左端点为最小值，返回</span></span><br><span class="line"><span class="comment">//如果左边部分有序，说明最小值在右边</span></span><br><span class="line"><span class="comment">//如果左边部分无序，说明在左边</span></span><br><span class="line"><span class="comment">//执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line"><span class="comment">//内存消耗：37.7 MB, 在所有 Java 提交中击败了90.18%的用户</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.length-<span class="number">1</span>;</span><br><span class="line">    <span class="comment">//不加l=r的情况，作为最后一种，直接输出l的值</span></span><br><span class="line">    <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[l] &lt; nums[r]) <span class="keyword">return</span> nums[l];   <span class="comment">//整体有序，返回左端点值</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> mid = (l+r) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//当前值下降，返回当前值</span></span><br><span class="line">        <span class="keyword">if</span>(mid &gt; <span class="number">0</span> &amp;&amp; nums[mid] &lt; nums[mid-<span class="number">1</span>]) <span class="keyword">return</span> nums[mid];    </span><br><span class="line">        <span class="keyword">if</span>(mid &lt; nums.length-<span class="number">1</span> &amp;&amp; nums[mid] &gt; nums[mid+<span class="number">1</span>]) <span class="keyword">return</span> nums[mid+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(nums[mid] &gt;= nums[l]) l = mid+<span class="number">1</span>;  <span class="comment">//左侧有序，在右边 ,有可能mid=l，但是不会有mid=r </span></span><br><span class="line">        <span class="keyword">else</span> r = mid-<span class="number">1</span>;                     <span class="comment">//右侧无序，在左边</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[l];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//从右侧开始判断</span></span><br><span class="line"><span class="comment">//如果中值小于右端点，右侧有序，则最小值在左侧，此时包括中值（即中值也可能是最小值）r=mid，</span></span><br><span class="line"><span class="comment">//（可添加判断mid是否最小值消去）</span></span><br><span class="line"><span class="comment">//如果中值大于右端点，则最小值在右侧，且中值不可能是最小l=mid+1</span></span><br><span class="line"><span class="comment">//执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line"><span class="comment">//内存消耗：37.9 MB, 在所有 Java 提交中击败了76.68%的用户</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin2</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[l] &lt; nums[r]) <span class="keyword">return</span> nums[l];   <span class="comment">//整体有序，左端点即为最小</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mid = (l+r) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//提前判断，减少搜索次数</span></span><br><span class="line">        <span class="keyword">if</span>(mid &gt; <span class="number">0</span> &amp;&amp; nums[mid-<span class="number">1</span>] &gt; nums[mid]) <span class="keyword">return</span> nums[mid];</span><br><span class="line">        <span class="keyword">if</span>(mid &lt; nums.length-<span class="number">1</span> &amp;&amp; nums[mid] &gt; nums[mid+<span class="number">1</span>]) <span class="keyword">return</span> nums[mid+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(nums[mid] &gt; nums[r]) l = mid+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> r = mid-<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[l];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="寻找旋转排序数组中的最小值Ⅱ（数组中数可重复）"><a href="#寻找旋转排序数组中的最小值Ⅱ（数组中数可重复）" class="headerlink" title="寻找旋转排序数组中的最小值Ⅱ（数组中数可重复）"></a>寻找旋转排序数组中的最小值Ⅱ（数组中数可重复）</h2><blockquote>
+<p>题目：假设按照升序排序的数组在预先未知的某个点上进行了旋转。如数组[0,1,2,4,5,6,7]可能变成[4,5,6,7,0,1,2]，请找出其中最小的元素。<strong>（注意：数组中可能存在重复的元素）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/">力扣154：寻找旋转排序数组中的最小值Ⅱ（困难？？）</a> </p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/">剑指Offer11：旋转数组的最小数字（简单√）</a> </p>
+<p>示例1：</p>
+<img src="/imgs/rotated-array/image-20201127134950375.png" alt="image-20201127134950375" style="zoom:80%;" /> 
+
+<p>示例2：</p>
+<img src="/imgs/rotated-array/image-20201127135000067.png" alt="image-20201127135000067" style="zoom:80%;" /> 
+
+<p>Tips：数组中元素可以重复，则当mid与端点值相等时，不能判断当前段内元素是否有序，可能<strong>先降后增</strong></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//寻找数组中的最小值（元素可重复）</span></span><br><span class="line">    <span class="comment">//执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line">    <span class="comment">//内存消耗：38.3 MB, 在所有 Java 提交中击败了78.46%的用户</span></span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[l] &lt; nums[r]) <span class="keyword">return</span> nums[l];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> m = (l+r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(m &gt; <span class="number">0</span> &amp;&amp; nums[m-<span class="number">1</span>] &gt; nums[m]) <span class="keyword">return</span> nums[m];</span><br><span class="line">        <span class="keyword">if</span>(m &lt; nums.length-<span class="number">1</span> &amp;&amp; nums[m] &gt; nums[m+<span class="number">1</span>]) <span class="keyword">return</span> nums[m+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(nums[m] &gt; nums[l]) l = m+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(nums[m] &lt; nums[l]) r = m-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> l++;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[l];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="搜索旋转数组（在数组中搜索目标数）"><a href="#搜索旋转数组（在数组中搜索目标数）" class="headerlink" title="搜索旋转数组（在数组中搜索目标数）"></a>搜索旋转数组（在数组中搜索目标数）</h2><blockquote>
+<p>题目：给你一个整数数组<code>nums</code>，和一个整数target，该整数数组原本是按照升序排列，但输入时在某一个点上进行了数组的旋转。如数组[0,1,2,3,4,5,6,7]可能变成了[4,5,6,7,0,1,2,3]。</p>
+<p><strong>问题</strong>：<strong>请你在数组中搜索target，蜀国数组中存在这个目标值，则返回它的索引，否则返回-1</strong>。</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">力扣33：搜索旋转排序数组</a> </p>
+<p>示例1：</p>
+<img src="/imgs/rotated-array/image-20201126165439704.png" alt="image-20201126165439704" style="zoom:80%;" /> 
+
+<p>示例2：</p>
+<img src="/imgs/rotated-array/image-20201126165450168.png" alt="image-20201126165450168" style="zoom:80%;" /> 
+
+<p>示例3：</p>
+<img src="/imgs/rotated-array/image-20201126165503080.png" alt="image-20201126165503080" style="zoom:80%;" /> 
+
+<p>Tips：使用二分法思想查找数</p>
+<ul>
+<li>因为是有序数组旋转而来，那么使用二分时，一定有一部分有序<ul>
+<li>如果左边有序，且目标值在左边范围内，则考虑左边部分，<ul>
+<li>否则考虑右边部分</li>
+</ul>
+</li>
+<li>如果左边无序（右边有序），且目标值在右边范围内，则考虑右边部分，<ul>
+<li>否则考虑左边部分</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>（根据两边有序的那一部分进行判断，因为有序的部分只需要比较就可以判断出目标值是否在其中，若不在则去另外的部分查找）</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span> <span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = A.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (l+r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(A[mid] == target) <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">if</span>(A[l] &lt;= A[mid])&#123;</span><br><span class="line">            <span class="comment">//左边有序</span></span><br><span class="line">            <span class="keyword">if</span>(target &gt;= A[l] &amp;&amp; target &lt; A[mid])&#123;</span><br><span class="line">                r = mid-<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> l = mid+<span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//右边有序</span></span><br><span class="line">            <span class="keyword">if</span>(target &gt; A[mid] &amp;&amp; target &lt;= A[r])&#123;</span><br><span class="line">                l = mid+<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> r = mid-<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="搜索旋转数组2（在旋转后的数组中搜索可重复的目标）"><a href="#搜索旋转数组2（在旋转后的数组中搜索可重复的目标）" class="headerlink" title="搜索旋转数组2（在旋转后的数组中搜索可重复的目标）"></a>搜索旋转数组2（在旋转后的数组中搜索可重复的目标）</h2><blockquote>
+<p>题目：给定一个排序后的数组，包含n个整数，但这个数组已经被旋转过很多次了，次数不详。请编写代码找出数组中的某个元素，假设数组元素是按照升序排列的。若有多个相同元素，返回索引值最小的。</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/">力扣81：搜索旋转排序数组Ⅱ</a>  <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-rotate-array-lcci/">力扣1825：面试题10.03.搜索旋转数组</a>   </p>
+<p>示例1：</p>
+<img src="/imgs/rotated-array/image-20201127094304993.png" alt="image-20201127094304993" style="zoom:80%;" /> 
+
+<p>示例2：</p>
+<img src="/imgs/rotated-array/image-20201127094316243.png" alt="image-20201127094316243" style="zoom:80%;" /> 
+
+<p>Tips：和搜索旋转数组1不同的地方是当前问题中数字可重复，在判断左右是否有序时充分考虑中值与端点值<strong>相等时的情况</strong>。</p>
+</blockquote>
+<p>解题思路：</p>
+<ul>
+<li>此题目添加了数组中数字可以重复，且目标值重复是取下标最小的（这个怎么找呢？）</li>
+<li>数组中允许重复数字时，判断部分是否有序的标准就发生了变化，好像就不能那么用了，即中值与端点值相等时，不能判断是否为有序的，要单独考虑</li>
+<li>思路步骤：只考虑左侧部分的所有情况，<ul>
+<li>如果中值等于目标值，则判断前一位是否相等，不相等时说明当前索引为最小，否则，</li>
+<li>中值明确大于左端点值时，左侧明确有序，可判断目标值是否在该有序段内，<ul>
+<li>在左侧则只考虑左侧</li>
+<li>否则一定在右侧</li>
+</ul>
+</li>
+<li>中值明确小于左端点值时，左侧明确无序，则右侧一定有序，判断目标值是否在右侧段<ul>
+<li>在右侧则只考虑右侧</li>
+<li>否则一定在左侧</li>
+</ul>
+</li>
+<li>相等，不知道是否有序，移动端点后判断，即左端点+1，重新获取中值进行判断</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//二分法在旋转的有序数组中搜索目标数</span></span><br><span class="line">    <span class="comment">//执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line">    <span class="comment">//内存消耗：39.6 MB, 在所有 Java 提交中击败了65.54%的用户</span></span><br><span class="line">    <span class="keyword">if</span>(arr.length == <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>] == target) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = arr.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//中值就是目标值是，查看前一位是否相等，不相等时返回当前索引为最小</span></span><br><span class="line">        <span class="keyword">if</span>(arr[mid] == target)&#123;</span><br><span class="line">            <span class="keyword">while</span>(mid &gt; <span class="number">0</span> &amp;&amp; arr[mid-<span class="number">1</span>] == target) mid--;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(arr[l] &lt; arr[mid])&#123;</span><br><span class="line">            <span class="comment">//中值明确大于左端点时，左边是有序的</span></span><br><span class="line">            <span class="keyword">if</span>(target &gt;= arr[l] &amp;&amp; target &lt; arr[mid]) r = mid-<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> l = mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(arr[l] &gt; arr[mid])&#123;</span><br><span class="line">            <span class="comment">//中值明确小于左端点时，左边是无序的，则右侧一定有序了</span></span><br><span class="line">            <span class="keyword">if</span>(target &gt; arr[mid] &amp;&amp; target &lt;= arr[r]) l = mid+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> r = mid-<span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//中值和左端点相等时，移动左端点，继续判断</span></span><br><span class="line">            l++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="旋转链表"><a href="#旋转链表" class="headerlink" title="旋转链表"></a><strong>旋转链表</strong></h2><blockquote>
+<p>题目：给定一个链表，旋转链表，将链表每个结点向右移动k个位置，其中k是非负数。</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotate-list/">力扣61：旋转链表</a> </p>
+<p>示例1：</p>
+<img src="/imgs/rotated-array/image-20201127155923980.png" alt="image-20201127155923980" style="zoom:80%;" /> 
+
+<p>示例2：</p>
+<img src="/imgs/rotated-array/image-20201127155934300.png" alt="image-20201127155934300" style="zoom:80%;" /> 
+
+<p>Tips：旋转链表分三步</p>
+<ul>
+<li>遍历一次，获取链表长度（同时获取到链表的最后结点，指向原头结点，形成环）</li>
+<li>根据移动长度k计算断开链表的位置 n - k % n</li>
+<li>遍历到断开链表的前置结点，赋值头结点并将前置结点指向null</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">rotateRight</span><span class="params">(ListNode head, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//先获取链表长度，用移动长度k对链表长度取模，得到真实移动长度</span></span><br><span class="line">    <span class="comment">//使用指针移动到真实长度处，将链表解开，作为新链表头部，并把原链表头部接到尾部</span></span><br><span class="line">    <span class="comment">//记录头结点，记录尾结点</span></span><br><span class="line">    <span class="comment">//执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line">    <span class="comment">//内存消耗：37.9 MB, 在所有 Java 提交中击败了74.89%的用户</span></span><br><span class="line">    <span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> head;</span><br><span class="line">    <span class="comment">//获取链表长度，及尾结点</span></span><br><span class="line">    ListNode p = head;</span><br><span class="line">    ListNode end = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">        p = p.next;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    end = p;    <span class="comment">//获取尾结点(此处也可以将链表成环)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(k % count == <span class="number">0</span>) <span class="keyword">return</span> head;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//找到需要解链的位置,移动一位，则解开n-1处的链，解开n-1的链，则要找到n-2处结点（前置节点）</span></span><br><span class="line">    <span class="keyword">int</span> num = count - (k % count);</span><br><span class="line">    p = head;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num-<span class="number">1</span>; i++)&#123;</span><br><span class="line">        p = p.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//尾结点 -&gt; 头结点</span></span><br><span class="line">    <span class="comment">//头结点 -&gt; 前置节点的下一节点</span></span><br><span class="line">    <span class="comment">//前置结点置空，作为新链的尾结点</span></span><br><span class="line">    end.next = head;</span><br><span class="line">    head = p.next;</span><br><span class="line">    p.next = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="旋转字符串（左旋）"><a href="#旋转字符串（左旋）" class="headerlink" title="旋转字符串（左旋）"></a><strong>旋转字符串（左旋）</strong></h2><blockquote>
+<p>字符串的左旋操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋操作的功能。比如，输入字符串<code>“abcdefg”</code>和数字2，该函数将返回左旋两位得到的结果<code>&quot;cdefgab&quot;</code>。</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/">剑指Offer58-Ⅱ：左旋转字符串</a> </p>
+<p>示例1：</p>
+<img src="/imgs/rotated-array/image-20201127162515364.png" alt="image-20201127162515364" style="zoom:80%;" /> 
+
+<p>示例2：</p>
+<img src="/imgs/rotated-array/image-20201127162526236.png" alt="image-20201127162526236" style="zoom:80%;" /> 
+
+<p>Tips： Java 中字符串是不可变的，不能像数组那样使用原地多次反转来实现旋转，字符串要使用空间</p>
+<ul>
+<li>根据字符串长度获取实际需要移动长度，字符串相应位置即变成第一个字符</li>
+<li>使用新的字符串从新字符串头部加到字符串结束，然后再从头开始添加，循环一周即可<ul>
+<li>可以使用取余方法将两个循环合并成一个</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">reverseLeftWords</span><span class="params">(String s, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//字符串左旋操作</span></span><br><span class="line">    <span class="comment">//查找位置，进行两部分的遍历拼接，返回新字符串</span></span><br><span class="line">    <span class="comment">//执行用时：5 ms, 在所有 Java 提交中击败了21.60%的用户</span></span><br><span class="line">    <span class="comment">//内存消耗：38.3 MB, 在所有 Java 提交中击败了74.95%的用户</span></span><br><span class="line">    <span class="keyword">int</span> index = n % s.length();</span><br><span class="line">    <span class="keyword">if</span>(index == <span class="number">0</span>) <span class="keyword">return</span> s;</span><br><span class="line"></span><br><span class="line">    StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    <span class="comment">// for(int i = index; i &lt; s.length(); i++)&#123;</span></span><br><span class="line">    <span class="comment">//     //char c = s.charAt(i);</span></span><br><span class="line">    <span class="comment">//     sb.append(s.charAt(i));</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">// for(int i = 0; i &lt; index; i++)&#123;</span></span><br><span class="line">    <span class="comment">//     //char c = s.charAt(i);</span></span><br><span class="line">    <span class="comment">//     sb.append(s.charAt(i));</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//可以用取余操作将两个循环合并</span></span><br><span class="line">    <span class="comment">//执行用时：7 ms, 在所有 Java 提交中击败了13.38%的用户</span></span><br><span class="line">    <span class="comment">//内存消耗：38.1 MB, 在所有 Java 提交中击败了88.72%的用户</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = index; i &lt; s.length() + index; i++)&#123;</span><br><span class="line">        sb.append(s.charAt(i%s.length()));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="旋转字符串（旋转匹配）"><a href="#旋转字符串（旋转匹配）" class="headerlink" title="旋转字符串（旋转匹配）"></a><strong>旋转字符串（旋转匹配）</strong></h2><blockquote>
+<p>题目：给定两个字符串A和B，A的旋转操作就是将A最左边的字符移动到最右边，例如，若A=<code>abcd</code>，在移动一次后结果就是<code>bcda</code>。如果在若干次旋转操作之后，A能变成B，就说明A可以旋转成B，返回True。</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotate-string/">力扣796：旋转字符串</a> </p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/string-rotation-lcci/">力扣 面试题01.09：字符串轮转</a> </p>
+<img src="/imgs/rotated-array/image-20201127170623444.png" alt="image-20201127170623444" style="zoom:80%;" /> 
+
+<p>Tips：这个题可以转换成字符串匹配的题目</p>
+<ul>
+<li>遍历方法<ul>
+<li>遍历A字符串所有可能的旋转字符串，与B进行比较</li>
+<li>在B中找到A字符串所有首字母，根据位置旋转B字符串，结果与A比较（旋转字符串思想）</li>
+</ul>
+</li>
+<li>A+A这个长字符串包括所有A旋转后的结果，判断B是否在A+A中<ul>
+<li>可以使用<code>str.contains(str)</code>判断</li>
+<li>高端进阶：可以使用<code>!!KMP!!</code></li>
+<li><code>KMP</code>一定要学习！，算法不学<code>KMP</code>，…..</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">rotateString</span><span class="params">(String A, String B)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//旋转字符串</span></span><br><span class="line">    <span class="comment">//如果字符串相同，则true</span></span><br><span class="line">    <span class="comment">//在B字符串中寻找A字符串的首字符位置</span></span><br><span class="line">    <span class="comment">//从所有首字符位置遍历整个字符串，判断是否和A相等，相等为true</span></span><br><span class="line">    <span class="comment">//执行用时：1 ms, 在所有 Java 提交中击败了32.14%的用户</span></span><br><span class="line">    <span class="comment">//内存消耗：36.4 MB, 在所有 Java 提交中击败了78.81%的用户</span></span><br><span class="line">    <span class="keyword">if</span>(A.length() != B.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(A.equals(B)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> headC = A.charAt(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; B.length(); i++)&#123;</span><br><span class="line">        <span class="keyword">char</span> cur = B.charAt(i);</span><br><span class="line">        <span class="keyword">if</span>(cur == headC &amp;&amp; getString(B,i).equals(A))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//旋转B字符串，看看是否能够旋转回到A</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getString</span><span class="params">(String s, <span class="keyword">int</span> startIndex)</span></span>&#123;</span><br><span class="line">    StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = startIndex; i &lt; s.length() + startIndex; i++)&#123;</span><br><span class="line">        sb.append(s.charAt(i%s.length()));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="旋转图像（矩阵）"><a href="#旋转图像（矩阵）" class="headerlink" title="旋转图像（矩阵）"></a><strong>旋转图像（矩阵）</strong></h2><blockquote>
+<p>题目：给定一个n X n的二维矩阵表示一个图像，将图像顺时针旋转90度。说明：你必须原地旋转图像，即需要直接修改输入的二维矩阵，不要使用另外一个矩阵来旋转图像。</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotate-image/">力扣48：旋转图像</a> </p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotate-matrix-lcci/">力扣 面试题01.07：旋转矩阵</a> </p>
+<p>示例1：</p>
+<img src="/imgs/rotated-array/image-20201127174436929.png" alt="image-20201127174436929" style="zoom:80%;" /> 
+
+<p>示例2：</p>
+<img src="/imgs/rotated-array/image-20201127174457402.png" alt="image-20201127174457402" style="zoom:80%;" /> 
+
+<p>Tips：观察发现，矩阵经过顺时针旋转90度后</p>
+<ul>
+<li>方法一：先转置，再水平反转，就是顺时针旋转90度</li>
+<li>方法二：原地旋转（！很漂亮！）</li>
+<li>方法三：使用辅助数组进行旋转<ul>
+<li>列变成了行 即<code>newRow = col;</code></li>
+<li>行变成了倒数列，即<code>newCol = (len-1) - row</code></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法一：</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//旋转矩阵。</span></span><br><span class="line">    <span class="comment">//顺时针旋转90度，相当于转置矩阵（横纵坐标互换），</span></span><br><span class="line">    	<span class="comment">//再水平反转（列反转）</span></span><br><span class="line">    <span class="comment">//执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line">    <span class="comment">//内存消耗：38.8 MB, 在所有 Java 提交中击败了41.91%的用户</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//求转置，只循环上三角</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; matrix[<span class="number">0</span>].length; j++)&#123;</span><br><span class="line">            <span class="comment">//转置是有对称轴的，即两个点元素互换</span></span><br><span class="line">            <span class="keyword">int</span> temp = matrix[i][j];</span><br><span class="line">            matrix[i][j] = matrix[j][i];</span><br><span class="line">            matrix[j][i] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//水平反转,列循环一半</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length/<span class="number">2</span>; j++)&#123;</span><br><span class="line">            <span class="comment">//转置是有对称轴的，即两个点元素互换</span></span><br><span class="line">            <span class="keyword">int</span> temp = matrix[i][j];</span><br><span class="line">            matrix[i][j] = matrix[i][matrix[<span class="number">0</span>].length-<span class="number">1</span>-j];</span><br><span class="line">            matrix[i][matrix[<span class="number">0</span>].length-<span class="number">1</span>-j] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法二：一个循环中，四个值进行交换</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//数组旋转，</span></span><br><span class="line">    <span class="comment">//根据规律可以看出:</span></span><br><span class="line">    <span class="comment">//(i,j) -&gt; (j,n-1-i)</span></span><br><span class="line">    <span class="comment">//(j,n-1-i) -&gt; (n-1-i,n-1-j)</span></span><br><span class="line">    <span class="comment">//(n-1-i,n-1-j) -&gt; (n-1-j,i)</span></span><br><span class="line">    <span class="comment">//(n-1-j,i) -&gt; (i,j)</span></span><br><span class="line">    <span class="comment">//即，这四个点进行了循环交换，</span></span><br><span class="line">    <span class="comment">//找出当前矩阵中供有多少次交换 </span></span><br><span class="line">    <span class="comment">//n^2 / 4 （n是偶数时） n/2 * n/2；</span></span><br><span class="line">    <span class="comment">// (n^2-1) / 4（n是奇数时） n/2 * (n+1)/2</span></span><br><span class="line">    <span class="comment">//双层循环，行是n/2，列是(n+1)/2</span></span><br><span class="line">    <span class="comment">//执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line">    <span class="comment">//内存消耗：38.5 MB, 在所有 Java 提交中击败了82.59%的用户</span></span><br><span class="line">    <span class="keyword">int</span> n = matrix.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n/<span class="number">2</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (n+<span class="number">1</span>)/<span class="number">2</span>; j++)&#123;</span><br><span class="line">            <span class="comment">//逆向替换</span></span><br><span class="line">            <span class="keyword">int</span> temp = matrix[i][j];</span><br><span class="line">            matrix[i][j] = matrix[n-<span class="number">1</span>-j][i];</span><br><span class="line">            matrix[n-<span class="number">1</span>-j][i] = matrix[n-<span class="number">1</span>-i][n-<span class="number">1</span>-j];</span><br><span class="line">            matrix[n-<span class="number">1</span>-i][n-<span class="number">1</span>-j] = matrix[j][n-<span class="number">1</span>-i];</span><br><span class="line">            matrix[j][n-<span class="number">1</span>-i] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>shone
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://shonee.github.io/rotated-array/" title="旋转数组（字符串）">http://shonee.github.io/rotated-array/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/testimage/" rel="prev" title="Hexo+Typora写文章时图片显示问题">
+      <i class="fa fa-chevron-left"></i> Hexo+Typora写文章时图片显示问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/classical-sorting-algorithm/" rel="next" title="经典排序算法">
+      经典排序算法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+<div>
+  
+  <div>
+  
+    <div style="text-align: center;color: #ccc;front-size: 14px;">------ 本文结束 <i class="fa fa-heart"></i> 感谢阅读 ------</div>
+  
+</div>
+
+  
+</div>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89"><span class="nav-text">旋转数组（字符串）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84"><span class="nav-text">旋转数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%951%EF%BC%9A%E6%9A%B4%E5%8A%9B%E6%B3%95%E6%B1%82%E8%A7%A3%EF%BC%88%E5%A4%A7%E5%BE%AA%E7%8E%AF%E5%B5%8C%E5%A5%97%E5%B0%8F%E5%BE%AA%E7%8E%AF%EF%BC%89"><span class="nav-text">方法1：暴力法求解（大循环嵌套小循环）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%952%EF%BC%9A%E6%B3%A2%E6%B5%AA%E5%BC%8F%E6%97%8B%E8%BD%AC-%E6%B3%95%EF%BC%88%E8%AE%B0%E5%BD%95%E6%80%BB%E7%A7%BB%E5%8A%A8%E6%AC%A1%E6%95%B0%EF%BC%89"><span class="nav-text">方法2：波浪式旋转 法（记录总移动次数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%953%EF%BC%9A%E9%A2%9D%E5%A4%96%E6%95%B0%E7%BB%84%E6%B3%95"><span class="nav-text">方法3：额外数组法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%954%EF%BC%9A%E8%80%8D%E6%9D%82%E6%8A%80%E6%B3%95%EF%BC%88%E4%B8%89%E6%AC%A1%E5%8F%8D%E8%BD%AC%EF%BC%8C%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95%EF%BC%8C%E7%A9%BA%E9%97%B4O-1-%EF%BC%89"><span class="nav-text">方法4：耍杂技法（三次反转，原地算法，空间O(1)）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC"><span class="nav-text">寻找旋转排序数组中的最小值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC%E2%85%A1%EF%BC%88%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%8F%AF%E9%87%8D%E5%A4%8D%EF%BC%89"><span class="nav-text">寻找旋转排序数组中的最小值Ⅱ（数组中数可重复）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%EF%BC%88%E5%9C%A8%E6%95%B0%E7%BB%84%E4%B8%AD%E6%90%9C%E7%B4%A2%E7%9B%AE%E6%A0%87%E6%95%B0%EF%BC%89"><span class="nav-text">搜索旋转数组（在数组中搜索目标数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%842%EF%BC%88%E5%9C%A8%E6%97%8B%E8%BD%AC%E5%90%8E%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%AD%E6%90%9C%E7%B4%A2%E5%8F%AF%E9%87%8D%E5%A4%8D%E7%9A%84%E7%9B%AE%E6%A0%87%EF%BC%89"><span class="nav-text">搜索旋转数组2（在旋转后的数组中搜索可重复的目标）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="nav-text">旋转链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%88%E5%B7%A6%E6%97%8B%EF%BC%89"><span class="nav-text">旋转字符串（左旋）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%88%E6%97%8B%E8%BD%AC%E5%8C%B9%E9%85%8D%EF%BC%89"><span class="nav-text">旋转字符串（旋转匹配）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%EF%BC%88%E7%9F%A9%E9%98%B5%EF%BC%89"><span class="nav-text">旋转图像（矩阵）</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="shone"
+      src="/images/ultraman.png">
+  <p class="site-author-name" itemprop="name">shone</p>
+  <div class="site-description" itemprop="description">harry up!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Shonee" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Shonee" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shone</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">59k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">53 分钟</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+<!-- 页面调用小虹心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
