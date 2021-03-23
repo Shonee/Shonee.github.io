@@ -60,6 +60,194 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo+Typora写文章时图片显示问题</title>
+    <url>/testimage/</url>
+    <content><![CDATA[<p>Hexo</p>
+<a id="more"></a>
+
+<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><blockquote>
+<ul>
+<li>Typora是一款支持实时预览的MarkDown文本编辑器。</li>
+<li>有OS X、windows、Linux三个平台版本，是完全免费的。</li>
+<li>个人平时学习的记录都是使用Typora完成的。</li>
+</ul>
+</blockquote>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
+<p>Hexo是一个快速、简洁且高效的博客框架。</p>
+<p>Hexo使用MarkDown解析文章，可利用靓丽的主题生成<strong>静态网页</strong>。</p>
+</blockquote>
+<h2 id="Typora-Hexo"><a href="#Typora-Hexo" class="headerlink" title="Typora+Hexo"></a>Typora+Hexo</h2><blockquote>
+<p>实际使用过程中，为了让自己本地的记录能够随时可以查看，参考网上教程，使用了Hexo+GitHub Pages实现静态博客功能，本地使用Typora进行编辑记录，完成后发布到GitHub。</p>
+</blockquote>
+<h2 id="文章中图片的一致性处理"><a href="#文章中图片的一致性处理" class="headerlink" title="文章中图片的一致性处理"></a>文章中图片的一致性处理</h2><blockquote>
+<p>如果正常在本地使用typora，并使用了一些图片后，将文章上传至GitHub中，会发现在远程中图片无法显示，这是因为Hexo中的图片路径访问不到，需要对Typora进行一定处理。</p>
+</blockquote>
+<h3 id="Typora中图片路径"><a href="#Typora中图片路径" class="headerlink" title="Typora中图片路径"></a>Typora中图片路径</h3><img src="/imgs/testImage/image-20201128154335673.png" alt="" style="zoom:80%;" /> 
+
+<p>本地使用Typora编辑内容时，可以设置插入图片时是否复制图片</p>
+<img src="/imgs/testImage/image-20201128154530131.png" alt="" style="zoom:80%;" /> 
+
+<ul>
+<li><p>如果<strong>不复制图片</strong>，则路径为复制图片的源路径（Typora缓存路径）</p>
+<img src="/imgs/testImage/image-20201128154805241.png" alt="" style="zoom:67%;" /> 
+</li>
+<li><p>如果设置了<strong>复制图片</strong>，则会根据设置的路径将图片复制进去，并进行引用（默认为当前文章所在位置的相对路径）</p>
+<p><img src="/imgs/testImage/image-20201128155025584.png"> </p>
+</li>
+<li><p>如果要使用<strong>绝对路径</strong>，则会使用计算机本地的绝对路径</p>
+</li>
+<li><p>Typora中可以针对文章设置根目录，设置后当前文章会以根目录为准，所有资源的<strong>绝对路径</strong>可<strong>使用根目录的相对路径来表示</strong></p>
+<ul>
+<li><p>工具栏设置文章根目录：</p>
+<img src="/imgs/testImage/image-20201128155509532.png" alt="" style="zoom:50%;" />     
+</li>
+<li><p>使用表头格式内容进行设置（最终都是使用该方式实现的）</p>
+<img src="/imgs/testImage/image-20201128155638464.png" alt="" style="zoom:80%;" /> 
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Hexo框架中图片引用路径"><a href="#Hexo框架中图片引用路径" class="headerlink" title="Hexo框架中图片引用路径"></a>Hexo框架中图片引用路径</h3><blockquote>
+<p>使用Hexo博客框架时，文章中的图片路径有两种情况</p>
+</blockquote>
+<ul>
+<li><p>Hexo中<strong>新增文章</strong>存放路径均是在<code>hexoBlog/source/_post</code> 文件夹下</p>
+<p><img src="/imgs/testImage/image-20201128160004391.png"> </p>
+</li>
+<li><p><strong>默认配置：</strong>Hexo默认情况下，使用的图片路径为 <code>hexoBlog/sopurce/imgs</code> ，放在imgs文件夹下的图片都可以使用 <code>/imgs/.../photo.png</code> 来进行引用</p>
+<p><img src="/imgs/testImage/image-20201128160117267.png"> </p>
+</li>
+<li><p><strong>更改默认配置：</strong>Hexo的全局配置文件 <code>_config.yml</code> 中修改设置为：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#默认是false，</span></span><br><span class="line"><span class="comment">#修改为true代表每次创建文件会同时在相同位置创建一个同名文件夹</span></span><br><span class="line"><span class="comment">#同名文件夹中资源可以直接使用路径进行访问，如： photo.png</span></span><br><span class="line"><span class="attr">post_asset_floder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Typora和Hexo一致处理"><a href="#Typora和Hexo一致处理" class="headerlink" title="Typora和Hexo一致处理"></a>Typora和Hexo一致处理</h3><blockquote>
+<p>为了让文章中的图片在本地编辑时可用，发布到远程依然可用，我们进行一些一致的设置。</p>
+</blockquote>
+<p>我们在Typora中设置复制图片时保存的路径，为了便于管理图片，我们使用了在 <code>HexoBlog/source/imgs</code> 下的同名文件夹来保存当前文章对应的图片信息。</p>
+<ul>
+<li><p>设置图片复制路径为：</p>
+<img src="/imgs/testImage/image-20201128161058627.png" alt="" style="zoom:80%;" /> 
+
+<p>这是一个绝对路径，表示本地Hexo的项目Blog项目中的source文件夹下面找到文章的同名文件夹（${filename}），所有图片放入同名文件夹中，然后在Typora中进行资源的引用。</p>
+</li>
+<li><p>为了引用时与Hexo引用一致，我们设置当前文章的根目录为source文件夹</p>
+<img src="/imgs/testImage/image-20201128161406324.png" alt="" style="zoom:50%;" /> 
+
+<p>设置后文章表头会出现如下信息：此处是使用的相对路径进行的设置</p>
+<img src="/imgs/testImage/image-20201128155638464.png" alt="" style="zoom:100%;" /> 
+</li>
+<li><p>这样之后，我们在文章中复制插入图片时，图片的引用路径为：</p>
+<p><img src="/imgs/testImage/image-20201128161748049.png"> </p>
+<p>这个路径正是Hexo框架的默认图片引用路径，这样我们就完成了一致处理。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo使用Next主题</title>
+    <url>/hexo-change-theme/</url>
+    <content><![CDATA[<p>Next是一款符合程序员审美的主题，<code>Hexo</code>中切换Next主题的方式非常简单，只需要将主题文件拷贝至根目录下的<code>themes</code>文件夹中，然后修改<code>_config.yml</code>文件中的<code>theme</code>字段即可。 <a id="more"></a> </p>
+<h1 id="Next主题"><a href="#Next主题" class="headerlink" title="Next主题"></a>Next主题</h1><h2 id="主题下载"><a href="#主题下载" class="headerlink" title="主题下载"></a>主题下载</h2><h3 id="Git命令行下载"><a href="#Git命令行下载" class="headerlink" title="Git命令行下载"></a>Git命令行下载</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Hexo根目录下执行命令</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next.git themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+<h3 id="发布网站下载"><a href="#发布网站下载" class="headerlink" title="发布网站下载"></a>发布网站下载</h3><p>在<a href="https://github.com/theme-next/hexo-theme-next/releases">Next发布网站</a>中手动下载源文件，并解压到根目录下的theme文件夹下，源文件名修改为next。</p>
+<h2 id="配置新主题"><a href="#配置新主题" class="headerlink" title="配置新主题"></a>配置新主题</h2><blockquote>
+<p>打开Hexo的配置文件<code>_config.yml</code>，将theme字段的值修改为next，即使用<code>theme/next</code>主题，重启后生效。</p>
+</blockquote>
+<p>Next主题默认风格为Muse，可以在主题配置文件中修改<code>scheme</code>字段来选择喜欢的主题风格</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">themes\next\_config.yml</span></span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist  #Muse的紧凑版本，整洁有序的单栏外观</span></span><br><span class="line"><span class="comment">#scheme: Pisces	#双栏Scheme，小家碧玉似的清新</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="站点优化"><a href="#站点优化" class="headerlink" title="站点优化"></a>站点优化</h2><blockquote>
+<p>根目录下的<code>_config.yml</code>文件用来配置站点相关属性，可以通过修改此文件来自定义站点的内容或功能，修改后重启服务器才能看到效果。</p>
+</blockquote>
+<h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#_config.yml中配置相关信息</span></span><br><span class="line"><span class="comment"># 注意字段属性和值之间要有 一个空格 间隔</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Shone&#x27;s</span> <span class="string">Blog</span>	<span class="comment">#站点名称</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">harry</span> <span class="string">up!</span> <span class="comment">#站点描述</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>	<span class="comment">#站点使用语言为简体中文</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">shone</span>	<span class="comment">#设置站点作者</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="网站Favicon"><a href="#网站Favicon" class="headerlink" title="网站Favicon"></a>网站<code>Favicon</code></h3><blockquote>
+<p><code>Favicon</code>是浏览器标签左侧的图标，可以在配置文件中自定义设置图标。</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># themes\next\_config.yml</span></span><br><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16-next.png</span>  <span class="comment"># 小图标</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32-next.png</span>  <span class="comment"># 大图标</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/apple-touch-icon-next.png</span>  <span class="comment"># 苹果图标</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/logo.svg</span>  <span class="comment"># safari浏览器标签页图标</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="侧栏信息"><a href="#侧栏信息" class="headerlink" title="侧栏信息"></a>侧栏信息</h3><blockquote>
+<p>侧栏信息默认停靠在左侧，且默认不开启，需要手动点击。</p>
+</blockquote>
+<ul>
+<li><p>停靠位置：设置侧栏的位置，修改主题配置文件中 <code>sidebar.position</code> 的值</p>
+<ul>
+<li>left：停靠左边</li>
+<li>right：停靠右边</li>
+</ul>
+</li>
+<li><p>显示时机：修改侧栏的显示时机，修改主题配置文件中 <code>sidbar.display</code> 的值</p>
+<ul>
+<li>post：默认，在文件页面（拥有目录时）显示</li>
+<li>always：在所有页面都显示</li>
+<li>hide：所有页面都隐藏，可以手动点击展开</li>
+<li>remove：完全移除</li>
+</ul>
+</li>
+<li><p>文章目录：默认目录不全部展开，只显示第一级，可以在主题配置文件中修改设置</p>
+<img src="/imgs/hexo-change-theme/image-20201216195130377.png" alt="image-20201216195130377" style="zoom:50%;" />
+
+</li>
+</ul>
+<h3 id="展示头像"><a href="#展示头像" class="headerlink" title="展示头像"></a>展示头像</h3><p>修改展示头像时，需要主题配置文件中设定 <code>avatr</code> 字段的值，设置成头像的链接地址。可以是：</p>
+<ol>
+<li>完整的网络URI：<code>http://example.com/avatar.png</code></li>
+<li>站内地址：头像放在<code>themes/next/source/images</code>目录下，使用路径<code>/images/avatar.png</code>引用 </li>
+</ol>
+<img src="/imgs/hexo-change-theme/image-20201216154025479.png" alt="image-20201216154025479" style="zoom:50%;" /> 
+
+<h3 id="首页显示"><a href="#首页显示" class="headerlink" title="首页显示"></a>首页显示</h3><blockquote>
+<p>next主题默认首先显示每一篇文章的全文，如果只需要显示文章摘要，可以在主题配置文件中设置</p>
+</blockquote>
+<p>设置**[阅读全文]**可以通过以下三种方法：</p>
+<ol>
+<li><p>用户可以使用<code>&lt;!-- more --&gt;</code> 标记来精确划分摘要信息，标记之前的段落将作为摘要显示在首页。</p>
+<blockquote>
+<p>建议使用此种方式，可以精确控制摘要内容，且Hexo中插件更好识别。</p>
+</blockquote>
+</li>
+<li><p>如果文章的<code>Front-Matter</code>中有非空的description字段，该字段内容会作为摘要显示在首页。</p>
+</li>
+<li><p>自动形成摘要，在主题配置文件中添加：</p>
+</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># themes\next\_config.yml</span></span><br><span class="line"><span class="attr">auto_excerpt:</span></span><br><span class="line">	<span class="string">enable:true</span>	<span class="comment">#开启自动摘要提取</span></span><br><span class="line">	<span class="string">length:150</span>	<span class="comment">#设置摘要内容为150个字符</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文章meta信息"><a href="#文章meta信息" class="headerlink" title="文章meta信息"></a>文章meta信息</h3><blockquote>
+<p>默认主题配置中，打开文章时标题下方显示文章的创建时间和分类信息等，用户可以在主题配置文件中自定义设置需要显示的meta元信息</p>
+</blockquote>
+<p><img src="/imgs/hexo-change-theme/image-20201216154347258.png" alt="默认显示内容"></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># themes\next\_config.yml</span></span><br><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">true</span>  <span class="comment"># 显示文字说明</span></span><br><span class="line">  <span class="attr">created_at:</span> <span class="literal">true</span>  <span class="comment"># 显示文章创建时间</span></span><br><span class="line">  <span class="attr">updated_at:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">false</span>  <span class="comment"># 隐藏文章修改时间</span></span><br><span class="line">    <span class="attr">another_day:</span> <span class="literal">true</span>  <span class="comment"># 只有当修改时间和创建时间不是同一天的时候才显示</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">false</span>  <span class="comment"># 隐藏分类信息</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文章内容"><a href="#文章内容" class="headerlink" title="文章内容"></a>文章内容</h3><ul>
+<li>代码高亮设置：Next使用Tomorrow Theme作为代码高亮，有5中主题可以选择。在配置文件中的<code>hightlight_theme</code>字段设置具体值。<ul>
+<li>normal：白色，默认</li>
+<li>night</li>
+<li>night blue</li>
+<li>night bright</li>
+<li>night eighties</li>
+</ul>
+</li>
+</ul>
+<h3 id="页脚信息"><a href="#页脚信息" class="headerlink" title="页脚信息"></a>页脚信息</h3><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><code>https://theme-next.iissnan.com/</code><br><code>http://yearito.cn/</code>   </p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo搭建静态博客</title>
     <url>/hexo-githubpages-blog/</url>
     <content><![CDATA[<p>[TOC]</p>
@@ -182,304 +370,49 @@
       </tags>
   </entry>
   <entry>
-    <title>牛客网02月刷题记录</title>
-    <url>/nowcoder-202102/</url>
-    <content><![CDATA[<p>牛客网2月练习 <a id="more"></a> </p>
-<h1 id="牛客网02月刷题"><a href="#牛客网02月刷题" class="headerlink" title="牛客网02月刷题"></a>牛客网02月刷题</h1><h2 id="0201"><a href="#0201" class="headerlink" title="0201"></a>0201</h2><h3 id="1-计算哈夫曼树的带权路径长度"><a href="#1-计算哈夫曼树的带权路径长度" class="headerlink" title="1. 计算哈夫曼树的带权路径长度"></a>1. 计算哈夫曼树的带权路径长度</h3><blockquote>
-<p>哈夫曼树的带权路径长度即树中<strong>叶子结点</strong>的带权路径长度和</p>
-</blockquote>
+    <title>多线程实现内容交替输出</title>
+    <url>/multithreading/</url>
+    <content><![CDATA[<h1 id="Java多线程并发"><a href="#Java多线程并发" class="headerlink" title="Java多线程并发"></a>Java多线程并发</h1><img src="/imgs/multithreading/image-20201204193843419.png" alt="image-20201204193843419" style="zoom:67%;" /> 
+
+<a id="more"></a>
+
+<h2 id="多线程基础"><a href="#多线程基础" class="headerlink" title="多线程基础"></a>多线程基础</h2><h3 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h3><p><strong>进程：</strong></p>
+<p><strong>线程：</strong></p>
 <ul>
-<li>结点带权路径长度：该结点到根的路径长度*结点权值</li>
-<li>哈夫曼树：给定叶子权值和叶子树，可以构造出不同结构的二叉树，其中带权路径长度最小的二叉树称为最优二叉树，哈夫曼树是一种最优二叉树。</li>
-<li>哈夫曼树算法：选取最小结点与已有数形成新树，最终得二叉树。</li>
+<li>线程是操作系统能够进行运算调度的最小单位，包含在进程之中，是进程中的实际运作单位。</li>
+<li>一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。</li>
 </ul>
-<h3 id="2-顺序查找、折半-二分查找、索引-分块查找"><a href="#2-顺序查找、折半-二分查找、索引-分块查找" class="headerlink" title="2. 顺序查找、折半/二分查找、索引/分块查找"></a>2. 顺序查找、折半/二分查找、索引/分块查找</h3><blockquote>
-<p>三种静态查找算法</p>
+<h3 id="创建线程的方式"><a href="#创建线程的方式" class="headerlink" title="创建线程的方式"></a>创建线程的方式</h3><p><strong>继承Thread类：</strong></p>
+<p><strong>实现Runnable接口：</strong></p>
+<p><strong>基于Callable和Future接口：</strong></p>
+<p><strong>使用线程池：</strong></p>
+<h3 id="线程的几种状态"><a href="#线程的几种状态" class="headerlink" title="线程的几种状态"></a>线程的几种状态</h3><blockquote>
+<p>新增、就绪、运行、阻塞、终止</p>
 </blockquote>
+<img src="/imgs/multithreading/image-20201204194410261.png" alt="image-20201204194410261" style="zoom:67%;" /> 
+
+<h3 id="线程执行机制"><a href="#线程执行机制" class="headerlink" title="线程执行机制"></a>线程执行机制</h3><blockquote>
+<p>JVM中一个应用可以有多个线程并行执行，线程被一对一映射为服务所在操作系统线程，调度在可用的CPU上执行，启动时会创建一个操作系统线程；当线程终止时，这个操作系统线程也会被回收。</p>
+</blockquote>
+<img src="/imgs/multithreading/image-20201204194643541.png" alt="image-20201204194643541" style="zoom:67%;" /> 
+
+<h3 id="线程运行内存模型"><a href="#线程运行内存模型" class="headerlink" title="线程运行内存模型"></a>线程运行内存模型</h3><blockquote>
+<p>Java虚拟机启动运行时，会创建多个线程，数据区中有的模块是线程共享的，有的是线程私有的</p>
 <ul>
-<li>顺序查找：查找关键与序列中数逐个比价，直到找到或遍历完成。<ul>
-<li>顺序遍历整个序列</li>
+<li>线程共享的有：堆（Heap）、方法区（元空间）</li>
+<li>线程私有的是：程序计数器、虚拟机栈、本地方法栈</li>
 </ul>
-</li>
-<li>折半/二分查找：折半/二分查找要求序列在<strong>有序</strong>的前提下，每次通过与中间位置数值比较舍弃一半数据，比较次数少，查找速度快。<ul>
-<li>每次舍弃一半的数据</li>
-</ul>
-</li>
-<li>分块/索引查找：分块查找是顺序查找和折半查找结合的一种改进的查找方法，分块查找要求<strong>块间有序</strong>，<strong>块内无序</strong>，比较<strong>适合结点动态变化</strong>的情况。<ul>
-<li>分块查找需要建立一个索引表，表中存放每个块的起始地址和块中最大元素，以满足块间是有序的。</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-队列"><a href="#3-队列" class="headerlink" title="3. 队列"></a>3. 队列</h3><blockquote>
-<p>队列作为一种逻辑结构，他的实现方式有顺序表存储和链表存储两种。</p>
+<p>单个CPU在特定时刻只能执行一个线程，所以多线程通过几块空间的使用，然后不断的争抢CPU的执行时间段。</p>
 </blockquote>
-<p>顺序表存储：为解决存储空间浪费的问题，因此顺序表设计为循环队列</p>
-<p>链表存储：为带有尾指针的单链表，即可高效入队出队，不需要循环链表。</p>
-<h3 id="4-循环队列（头指针-尾指针）"><a href="#4-循环队列（头指针-尾指针）" class="headerlink" title="4. 循环队列（头指针/尾指针）"></a>4. 循环队列（头指针/尾指针）</h3><blockquote>
-<p>队头指针front，队尾指针rear</p>
-</blockquote>
-<ul>
-<li>队列的长度计算公式为：((rear-front)+MAXSIZE)%MAXSIZE</li>
-</ul>
-<h3 id="5-普通树转化成二叉树"><a href="#5-普通树转化成二叉树" class="headerlink" title="5. 普通树转化成二叉树"></a>5. 普通树转化成二叉树</h3><blockquote>
-<p>普通树得到的二叉树的右子树一定为空；森林转换成二叉树有右子树</p>
-</blockquote>
-<p>普通树转成二叉树的步骤是：</p>
-<ol>
-<li>加线：在所有兄弟结点之间添加一条线</li>
-<li>抹线：对树的每个结点，只保留其与第一个子结点之间的连线，删除其他子结点的连线</li>
-<li>旋转：以树的根结点为轴心，整棵树顺时针旋转一定角度，得到二叉树</li>
+<img src="/imgs/multithreading/image-20201204194932940.png" alt="image-20201204194932940" style="zoom:67%;" /> 
+
+<h3 id="其他线程概念"><a href="#其他线程概念" class="headerlink" title="其他线程概念"></a>其他线程概念</h3><ol>
+<li><strong>线程优先级:</strong> 线程调度器倾向执行线程优先级高的线程，线程优先级高说明获取CPU资源的概率高，或者获取的执行时间分片多，即被执行的概率高，但优先级低的不代表一定最后执行。</li>
+<li><strong>守护线程：</strong> 守护线程是支持辅助型线程，主要在程序中起到调度和支持性作用，当JVM中非守护线程全部结束，守护线程也就会结束。如JVM中的<code>GC</code>线程就是一个守护线程。</li>
+<li><strong>线程加入：</strong> 线程A中，执行线程B的加入方法，那么A线程就会等待线程B执行完毕再返回继续执行。可使用<code>Thread.join()</code>加入一个线程。</li>
+<li><strong>本地线程：</strong> <code>ThreadLocal</code>也叫做线程本地变量，是变量在每个线程中创建的副本变量，每个线程可以访问自己内部的副本变量，线程之间不相互影响。 </li>
 </ol>
-<h3 id="6-数据结构的特点"><a href="#6-数据结构的特点" class="headerlink" title="6. 数据结构的特点"></a>6. 数据结构的特点</h3><blockquote>
-<p>数据结构应有的特点是：插入和删除；</p>
-<p>搜索操作不一定有，如栈就没有搜索</p>
-</blockquote>
-<h3 id="7-堆排序"><a href="#7-堆排序" class="headerlink" title="7. 堆排序"></a>7. 堆排序</h3><blockquote>
-<p>堆排序的时间复杂度是O(NlogN)，初始建堆复杂度O(N)，调整堆复杂度O(logN)；空间复杂度是O(1)。</p>
-</blockquote>
-<h3 id="8-图的邻接表"><a href="#8-图的邻接表" class="headerlink" title="8. 图的邻接表"></a>8. 图的邻接表</h3><blockquote>
-<p>图的邻接表适合存放稀疏图；邻接矩阵适合存放稠密图。</p>
-</blockquote>
-<h3 id="9-JVM虚拟机参数"><a href="#9-JVM虚拟机参数" class="headerlink" title="9. JVM虚拟机参数"></a>9. JVM虚拟机参数</h3><ul>
-<li>Xmx 最大内存</li>
-<li>Xms 起始内存</li>
-<li>Xmn 新生代内存</li>
-<li>Xss 栈大小（即线程创建后分配给线程的内存大小）</li>
-<li>-XX:MaxPermSize=n 设置持久代大小</li>
-<li>-XX:NewRatio=n 设置老年代和年轻代的比值；</li>
-<li>-XX:ServivorRatio=n 年轻代中Eden区和serivor区（其中一份）的比值</li>
-</ul>
-<h3 id="10-算法的特性"><a href="#10-算法的特性" class="headerlink" title="10. 算法的特性"></a>10. 算法的特性</h3><ul>
-<li>有穷性</li>
-<li>确切性</li>
-<li>输入项：有0个或多个输入</li>
-<li>输出项：至少有一个输出</li>
-<li>可行性</li>
-</ul>
-<h3 id="11-计算比较次数"><a href="#11-计算比较次数" class="headerlink" title="11. 计算比较次数"></a>11. 计算比较次数</h3><blockquote>
-<p>数组中有8个int类型的数据，随机给出数组的数据，找出最大和第二大元素一定需要进行几次比较？</p>
-</blockquote>
-<p>如图：将8个数据两两分组比较，需要7次找到最大值，然后找第二大值需要比较途中黄色部分，比较两次，共7+2=9次。</p>
-<p><img src="/imgs/NowCoder-202102/image-20210201213711724.png" alt="image-20210201213711724"></p>
-<h2 id="0202"><a href="#0202" class="headerlink" title="0202"></a>0202</h2><h3 id="1-强连通图"><a href="#1-强连通图" class="headerlink" title="1. 强连通图"></a>1. 强连通图</h3><blockquote>
-<p>强连通图必须从任何一点出发都可以回到原处，因此：</p>
-<p>有n个顶点的强连通图最多有n(n-1)条边，最少有n条边。</p>
-</blockquote>
-<h3 id="2-邻接表"><a href="#2-邻接表" class="headerlink" title="2. 邻接表"></a>2. 邻接表</h3><blockquote>
-<p>邻接表中存放的是有入度的结点。</p>
-</blockquote>
-<h3 id="3-B、B-、B-、B-树"><a href="#3-B、B-、B-、B-树" class="headerlink" title="3. B、B-、B+、B*树"></a>3. B、B-、B+、B*树</h3><ul>
-<li>B树：即二叉搜索树</li>
-<li>B-树：是一种多路搜索树，就是数据库的索引结构B树</li>
-<li>B+树：是B-树的变体，也是多路搜索树，非叶子节点作为叶子节点的索引，所有的关键字都在叶子节点上，要到叶子节点才会命中。</li>
-<li>B*树：B+树的变体，在其基础上，所有的非根非叶子结点也增加了链表指针指向兄弟。</li>
-</ul>
-<h3 id="4-Java类加载过程"><a href="#4-Java类加载过程" class="headerlink" title="4. Java类加载过程"></a>4. Java类加载过程</h3><blockquote>
-<p>类方法解析发生在类的加载过程中；成员变量的默认值发生在对象初始化时。</p>
-</blockquote>
-<h3 id="5-Java的开发工具（jar）"><a href="#5-Java的开发工具（jar）" class="headerlink" title="5. Java的开发工具（jar）"></a>5. Java的开发工具（jar）</h3><blockquote>
-<p>Jre中的 JVM不是使用Java实现的，Jdk的开发工具包都是Java写的。</p>
-</blockquote>
-<h2 id="0203"><a href="#0203" class="headerlink" title="0203"></a>0203</h2><h3 id="1-Java相关命令工具"><a href="#1-Java相关命令工具" class="headerlink" title="1. Java相关命令工具"></a>1. Java相关命令工具</h3><ul>
-<li>jsp：查看本机Java进程信息</li>
-<li>jstack：打印线程的栈信息，制作线程dump文件</li>
-<li>jmap：打印内存映射，制作堆dump文件</li>
-<li>jstat：性能监控工具</li>
-<li>jhat：内存分析工具</li>
-<li>jconsole：简易的可视化控制台</li>
-<li>jvisualvm：功能强大的控制台</li>
-</ul>
-<h3 id="2-Java匿名内部类"><a href="#2-Java匿名内部类" class="headerlink" title="2. Java匿名内部类"></a>2. Java匿名内部类</h3><blockquote>
-<p>匿名内部类必须继承一个集类，或实现一个接口；</p>
-<p>匿名内部类由于没有类名，因此不可以定义构造器；</p>
-<p>匿名内部类可以作为形参；</p>
-<p>匿名内部类中不能含有静态成员变量和静态方法</p>
-</blockquote>
-<h3 id="3-循环队列满的判断条件"><a href="#3-循环队列满的判断条件" class="headerlink" title="3. 循环队列满的判断条件"></a>3. 循环队列满的判断条件</h3><blockquote>
-<p>队头指针为front，队尾指针是rear；</p>
-<p>循环队列为<strong>空</strong>的条件：front=rear;</p>
-<p>循环队列为<strong>满</strong>的条件：(rear+1) % n = front;     </p>
-<p>因为是循环队列，满时队尾在队头的上一位置。</p>
-</blockquote>
-<h3 id="4-连通图"><a href="#4-连通图" class="headerlink" title="4. 连通图"></a>4. 连通图</h3><blockquote>
-<p>有n个点的连通图的边数大于等于n-1；树是一种无向连通图</p>
-</blockquote>
-<h3 id="5-基于比较的排序算法"><a href="#5-基于比较的排序算法" class="headerlink" title="5. 基于比较的排序算法"></a>5. 基于比较的排序算法</h3><ul>
-<li>基于比较排序的算法有：<ul>
-<li>直接插入排序</li>
-<li>冒泡排序</li>
-<li>简单选择排序</li>
-<li>希尔排序</li>
-<li>快速排序</li>
-<li>堆排序</li>
-<li>归并排序</li>
-</ul>
-</li>
-<li>基数排序、桶排序都是<strong>分配式排序</strong></li>
-</ul>
-<h2 id="0204"><a href="#0204" class="headerlink" title="0204"></a>0204</h2><h3 id="1-ThreadLocal"><a href="#1-ThreadLocal" class="headerlink" title="1. ThreadLocal"></a>1. ThreadLocal</h3><blockquote>
-<p>ThreadLocal设计的初衷：提供线程内部的局部变量，在本线程内随时随地可取，隔离其他线程。</p>
-</blockquote>
-<h3 id="2-进制转换"><a href="#2-进制转换" class="headerlink" title="2. 进制转换"></a>2. 进制转换</h3><blockquote>
-<p> 其他进制转换成十进制，和二进制类似，就是<code>a*x^2</code> + <code>b*x^1</code> + <code>c*x^0</code> </p>
-</blockquote>
-<h3 id="3-堆排序算法"><a href="#3-堆排序算法" class="headerlink" title="3. 堆排序算法"></a>3. 堆排序算法</h3><blockquote>
-<p>堆排序算法属于选择排序，每次都会将根堆（最大值）与尾部值交换，重新调整堆，因此每一轮会确定最大值的位置</p>
-</blockquote>
-<h3 id="4-希尔排序"><a href="#4-希尔排序" class="headerlink" title="4. 希尔排序"></a>4. 希尔排序</h3><blockquote>
-<p>希尔排序属于插入类排序，是将整个无序序列分割成若干个小的子序列分布进行<strong>插入排序</strong>。</p>
-</blockquote>
-<h3 id="5-图的拓扑序列"><a href="#5-图的拓扑序列" class="headerlink" title="5. 图的拓扑序列"></a>5. 图的拓扑序列</h3><blockquote>
-<p>有向无环图才有拓扑序列</p>
-</blockquote>
-<h2 id="0205"><a href="#0205" class="headerlink" title="0205"></a>0205</h2><h3 id="1-HTTP获取参数方法"><a href="#1-HTTP获取参数方法" class="headerlink" title="1. HTTP获取参数方法"></a>1. HTTP获取参数方法</h3><ul>
-<li><code>Cookie[] getCookies()</code>：返回数组，包含客户端发送请求的所有Cookie对象</li>
-<li><code>Object getAttribute(String name)</code>：以对象形式返回属性值，如果没有则返回null</li>
-<li><code>String getHeader(String name)</code>：以字符串形式返回指定请求头的值，Cookie也是一种请求头。</li>
-<li><code>String getParameter(String name)</code>：以字符串形式返回请求参数的值，如果参数不存在则返回null。</li>
-</ul>
-<h3 id="2-邻接表和邻接矩阵（表示图）"><a href="#2-邻接表和邻接矩阵（表示图）" class="headerlink" title="2. 邻接表和邻接矩阵（表示图）"></a>2. 邻接表和邻接矩阵（表示图）</h3><ul>
-<li>邻接表：使用数组+链表的方式存储图，顶点存储在数组中，链表中存放当前点的相邻节点。<strong>（邻接表中存放的是有入度的顶点）</strong></li>
-<li>邻接矩阵：使用二维数组（矩阵）链存储图，只与图中结点数量有关，值代表两点之间是否有边。</li>
-</ul>
-<h3 id="3-二叉查找树"><a href="#3-二叉查找树" class="headerlink" title="3. 二叉查找树"></a>3. 二叉查找树</h3><blockquote>
-<p>二叉查找树越复杂（结点稠密），查找效率越高。</p>
-</blockquote>
-<h3 id="4-关键字比较次数与初始序列无关的排序算法"><a href="#4-关键字比较次数与初始序列无关的排序算法" class="headerlink" title="4. 关键字比较次数与初始序列无关的排序算法"></a>4. 关键字比较次数与初始序列无关的排序算法</h3><p><img src="/imgs/NowCoder-202102/image-20210205214737349.png" alt="image-20210205214737349"> </p>
-<p>比较次数与初始序列的关系，即算法的最好和最坏时间复杂度是否一样。</p>
-<ul>
-<li>选择排序的最好和最坏时间复杂度都是n^2，即与初始序列无关；</li>
-<li>堆排序属于选择排序，也与初始序列无关；</li>
-<li>另外，选择排序是不稳定的排序，堆排序也一样。</li>
-</ul>
-<h2 id="0206"><a href="#0206" class="headerlink" title="0206"></a>0206</h2><h3 id="1-拓扑排序"><a href="#1-拓扑排序" class="headerlink" title="1. 拓扑排序"></a>1. 拓扑排序</h3><blockquote>
-<p>有向图才有拓扑排序，拓扑排序是每个结点的所有前驱节点都排在该结点的前边的序列。</p>
-</blockquote>
-<h3 id="2-关键路径-最短路径-最小生成树"><a href="#2-关键路径-最短路径-最小生成树" class="headerlink" title="2. 关键路径/最短路径/最小生成树"></a>2. 关键路径/最短路径/最小生成树</h3><ul>
-<li>生成树和最小生成树：总的费用最低</li>
-<li>拓扑排序：解决工程能否顺利进行（即一个结点要开工必须有前驱结点结束）</li>
-<li>关键路径：解决工程完成需要的最短时间问题</li>
-<li>最短路径：计算一个结点到其他结点的最短路径，Dijkstra算法</li>
-</ul>
-<h3 id="3-运算符优先级"><a href="#3-运算符优先级" class="headerlink" title="3. 运算符优先级"></a>3. 运算符优先级</h3><blockquote>
-<p>!、+、-、~、++、– ：运算顺序是从右向左依次运算，即++/–比+/-优先级高</p>
-</blockquote>
-<h3 id="4-循环队列"><a href="#4-循环队列" class="headerlink" title="4. 循环队列"></a>4. 循环队列</h3><blockquote>
-<p>循环队列的计算问题：队头指针front、队尾指针rear</p>
-<ul>
-<li>队空：front=rear</li>
-<li>队满： (rear+1) % maxSize = front</li>
-<li>进队：front = (front+1) % maxSize</li>
-<li>出队：rear = (rear+1) % maxSize</li>
-<li>队列中元素个数：m = (rear-front+maxSize) % maxSize</li>
-</ul>
-</blockquote>
-<h3 id="5-位示图法"><a href="#5-位示图法" class="headerlink" title="5. 位示图法"></a>5. 位示图法</h3><blockquote>
-<p>位示图法是利用二进制的一位来表示磁盘中的一个盘块的使用情况</p>
-<p>当其值为0时表示对应的盘空闲；</p>
-<p>值为1时表示对应盘的已经分配。</p>
-</blockquote>
-<h2 id="0207"><a href="#0207" class="headerlink" title="0207"></a>0207</h2><h3 id="1-字符串的朴素模式匹配算法"><a href="#1-字符串的朴素模式匹配算法" class="headerlink" title="1. 字符串的朴素模式匹配算法"></a>1. 字符串的朴素模式匹配算法</h3><blockquote>
-<p>串的朴素模式匹配算法也成为BF(Brute-Force)算法，基本思想是：</p>
-<ul>
-<li>从主串的第一个字符开始与子串的第一个字符进行比较，<ul>
-<li>如果相等，则继续比较后续字符；</li>
-<li>如不相等，则主串第二个字符与子串第一个字符重新比较；</li>
-<li>以此类推，直到子串匹配完<strong>成功</strong>或主串匹配完<strong>失败</strong></li>
-</ul>
-</li>
-<li>最好情况，一次匹配成功</li>
-<li>最坏情况：匹配失败，一共匹配 n-m+1 次；主串长n，子串长m</li>
-</ul>
-<p>为了解决这种匹配过程中的重复比较问题，引入了**<code>KMP算法</code>**</p>
-</blockquote>
-<h3 id="2-123"><a href="#2-123" class="headerlink" title="2. \123"></a>2. \123</h3><blockquote>
-<p>\123表示转义字符，表示八进制中的83，即字符S</p>
-</blockquote>
-<h3 id="3-数据库表删除语句"><a href="#3-数据库表删除语句" class="headerlink" title="3. 数据库表删除语句"></a>3. 数据库表删除语句</h3><ul>
-<li>drop table book：删除整个表</li>
-<li>truncate table book：删除表中的数据，删除速度比delete更快，无法撤回</li>
-<li>delete from book：删除表中的数据，可以回退</li>
-</ul>
-<h2 id="0208"><a href="#0208" class="headerlink" title="0208"></a>0208</h2><h3 id="1-线索二叉树"><a href="#1-线索二叉树" class="headerlink" title="1. 线索二叉树"></a>1. 线索二叉树</h3><blockquote>
-<p><strong>定义：</strong>一个二叉树通过如下的方法穿起来：</p>
-<p>所有原本为空的右孩子指针改为指向该节点在中序序列的后继节点；</p>
-<p>所有原本为空的左孩子指针改为指向该节点在中序序列的前驱节点。</p>
-<p>即按照中序序列，节点的左指针是前一个，右指针是后一个。</p>
-</blockquote>
-<h3 id="2-堆排序"><a href="#2-堆排序" class="headerlink" title="2. 堆排序"></a>2. 堆排序</h3><blockquote>
-<p>堆排序初始建堆的时间复杂度为O(N)，每调整一次复杂度为O(logN)</p>
-</blockquote>
-<h2 id="0209"><a href="#0209" class="headerlink" title="0209"></a>0209</h2><h3 id="1-图的邻接表遍历"><a href="#1-图的邻接表遍历" class="headerlink" title="1. 图的邻接表遍历"></a>1. 图的邻接表遍历</h3><blockquote>
-<p>图的邻接表存放的时顶点和订单的入度，遍历时是为广度优先遍历，需要借助队列实现。要将每个订单都放入到队列中，此时遍历了所有顶点，针对每个顶点的入度访问到所有的边，因此复杂度为O(n+e)</p>
-</blockquote>
-<h3 id="2-KMP算法"><a href="#2-KMP算法" class="headerlink" title="2. KMP算法"></a>2. KMP算法</h3><blockquote>
-<p>KMP是线性算法，处理主字符串和匹配字符串的复杂度都是O(n)，所有总的复杂度是O(m+n)</p>
-</blockquote>
-<h3 id="3-数据结构的逻辑结构"><a href="#3-数据结构的逻辑结构" class="headerlink" title="3. 数据结构的逻辑结构"></a>3. 数据结构的逻辑结构</h3><blockquote>
-<p>逻辑结构即数据元素间抽象化的相互关系，有：</p>
-</blockquote>
-<ul>
-<li>线性结构：线性表</li>
-<li>非线性结构：集合、树、图</li>
-</ul>
-<h3 id="4-哈希表的装载因子"><a href="#4-哈希表的装载因子" class="headerlink" title="4. 哈希表的装载因子"></a>4. 哈希表的装载因子</h3><blockquote>
-<p>装载因子 = 哈希表记录数 / 哈希表长度</p>
-</blockquote>
-<h2 id="0210"><a href="#0210" class="headerlink" title="0210"></a>0210</h2><h3 id="1-矩阵的压缩存储方式"><a href="#1-矩阵的压缩存储方式" class="headerlink" title="1. 矩阵的压缩存储方式"></a>1. 矩阵的压缩存储方式</h3><blockquote>
-<p>对称矩阵压缩存储时可以只存储上三角形或者下三角形。（一半多）</p>
-</blockquote>
-<h3 id="2-随机-顺序-索引-散列存取"><a href="#2-随机-顺序-索引-散列存取" class="headerlink" title="2. 随机/顺序/索引/散列存取"></a>2. 随机/顺序/索引/散列存取</h3><ul>
-<li>随机存取–数组</li>
-<li>顺序存取–链表</li>
-<li>索引/散列存取–哈希表</li>
-</ul>
-<h2 id="0211"><a href="#0211" class="headerlink" title="0211"></a>0211</h2><h3 id="1-堆排序的插入法（上浮）和下沉法"><a href="#1-堆排序的插入法（上浮）和下沉法" class="headerlink" title="1. 堆排序的插入法（上浮）和下沉法"></a>1. 堆排序的插入法（上浮）和下沉法</h3><ul>
-<li>HeapInsert，插入法，事先不知道有多少个元素，要不断的添加元素来不断调整堆，建堆的时间复杂度为O(NlogN)</li>
-<li>Heapify，下沉法，知道初始堆长度，从最后一个非叶子节点到根结点进行堆化的调整，不断交换，建堆时间复杂度为O(N)</li>
-</ul>
-<h3 id="2-折半查找判定树"><a href="#2-折半查找判定树" class="headerlink" title="2. 折半查找判定树"></a>2. 折半查找判定树</h3><blockquote>
-<p>折半查找判定树实际是一棵二叉排序树，其中序序列是一个有序序列</p>
-<p>查找时选取比较元素时取整方向要一致。</p>
-</blockquote>
-<h2 id="0212"><a href="#0212" class="headerlink" title="0212"></a>0212</h2><h3 id="1-Hanoi塔问题"><a href="#1-Hanoi塔问题" class="headerlink" title="1. Hanoi塔问题"></a>1. Hanoi塔问题</h3><blockquote>
-<p>递推方程：f(n) =f(n-1) + 1 + f(n-1) = 2*f(n-1) + 1</p>
-</blockquote>
-<h3 id="2-连通分量"><a href="#2-连通分量" class="headerlink" title="2. 连通分量"></a>2. 连通分量</h3><blockquote>
-<p>连通图就只有一个即本身这一个连通分量</p>
-</blockquote>
-<h2 id="0213"><a href="#0213" class="headerlink" title="0213"></a>0213</h2><h3 id="1-串的字串"><a href="#1-串的字串" class="headerlink" title="1. 串的字串"></a>1. 串的字串</h3><blockquote>
-<p>串中任意个<strong>连续的字符</strong>组成的子序列称为该串的子串。</p>
-</blockquote>
-<h3 id="2-学习英语单词"><a href="#2-学习英语单词" class="headerlink" title="2. 学习英语单词"></a>2. 学习英语单词</h3><ul>
-<li>logarithmic：对数的</li>
-<li>linear：线性的</li>
-<li>quadratic：二次方的</li>
-<li>exponential：指数的</li>
-</ul>
-<h2 id="0214"><a href="#0214" class="headerlink" title="0214"></a>0214</h2><blockquote>
-<p>无</p>
-</blockquote>
-<h2 id="0220"><a href="#0220" class="headerlink" title="0220"></a>0220</h2><h3 id="1-Java字符串"><a href="#1-Java字符串" class="headerlink" title="1. Java字符串"></a>1. Java字符串</h3><ul>
-<li>静态常量字符串也是放在字符串常量池中，可使用 “==” 判断</li>
-<li>Java编译器优化会将定义时的拼接字符串直接作为一个整体字符串</li>
-</ul>
-<h3 id="2-getClass"><a href="#2-getClass" class="headerlink" title="2. getClass()"></a>2. getClass()</h3><blockquote>
-<p> Object的getClass()如果没有重写，则返回运行时类的名称\</p>
-</blockquote>
-<p><img src="/imgs/NowCoder-202102/579609_1469158660593_072774B6B658B3603E1AA7198722775C.png" alt="img"></p>
-<h2 id="0221"><a href="#0221" class="headerlink" title="0221"></a>0221</h2><h3 id="1-AOE网"><a href="#1-AOE网" class="headerlink" title="1. AOE网"></a>1. AOE网</h3><blockquote>
-<p>在带权有向图中若以顶点表示时间，有向边表示活动，边上的权值表示该活动持续的时间，这样的图简称为AOE图。（有向无环图）</p>
-</blockquote>
-<ul>
-<li>强连通图：在有向图G中，任意两个顶点都存在路径。</li>
-<li>稠密图：指图G的边数接近定点数的平方。</li>
-<li>完全图：指一个图的每一对顶点都有边相连。</li>
-</ul>
-<h3 id="2-平衡二叉树"><a href="#2-平衡二叉树" class="headerlink" title="2. 平衡二叉树"></a>2. 平衡二叉树</h3><blockquote>
-<p>平衡二叉树即AVL树，是二叉搜索树（排序树）的一个升级版，堆不是二叉搜索树。</p>
-</blockquote>
-<h3 id="2-KMP算法-1"><a href="#2-KMP算法-1" class="headerlink" title="2. KMP算法"></a>2. KMP算法</h3>]]></content>
+<h2 id="多线程安全"><a href="#多线程安全" class="headerlink" title="多线程安全"></a>多线程安全</h2><h3 id="同步控制"><a href="#同步控制" class="headerlink" title="同步控制"></a>同步控制</h3><h3 id="加锁机制"><a href="#加锁机制" class="headerlink" title="加锁机制"></a>加锁机制</h3><h1 id="多线程交替打印ABCDEABCDEABCDE的实现方法"><a href="#多线程交替打印ABCDEABCDEABCDE的实现方法" class="headerlink" title="多线程交替打印ABCDEABCDEABCDE的实现方法"></a>多线程交替打印<code>ABCDEABCDEABCDE</code>的实现方法</h1><h2 id="Synchronized同步方法"><a href="#Synchronized同步方法" class="headerlink" title="Synchronized同步方法"></a>Synchronized同步方法</h2><h2 id="ReentrantLock同步方法"><a href="#ReentrantLock同步方法" class="headerlink" title="ReentrantLock同步方法"></a><code>ReentrantLock</code>同步方法</h2><h2 id="Lock-Condition方式"><a href="#Lock-Condition方式" class="headerlink" title="Lock+Condition方式"></a>Lock+Condition方式</h2><h2 id="Semaphore信号量方式"><a href="#Semaphore信号量方式" class="headerlink" title="Semaphore信号量方式"></a>Semaphore信号量方式</h2>]]></content>
   </entry>
   <entry>
     <title>Hexo使用Next主题的优化策略</title>
@@ -537,7 +470,8 @@
 <p>显示时间、隐藏Hexo</p>
 </blockquote>
 <p><img src="/imgs/Hexo-Next-Enhance/image-20210320105545766.png" alt="image-20210320105545766"></p>
-<h2 id="左侧标题栏设置-1"><a href="#左侧标题栏设置-1" class="headerlink" title="左侧标题栏设置"></a>左侧标题栏设置</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.jianshu.com/p/efbeddc5eb19">https://www.jianshu.com/p/efbeddc5eb19</a></p>
+<h2 id="首页隐藏指定文章"><a href="#首页隐藏指定文章" class="headerlink" title="首页隐藏指定文章"></a>首页隐藏指定文章</h2><p><a href="https://www.jianshu.com/p/79fe9fb9dfa0">https://www.jianshu.com/p/79fe9fb9dfa0</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.jianshu.com/p/efbeddc5eb19">https://www.jianshu.com/p/efbeddc5eb19</a></p>
 <p><a href="https://blog.csdn.net/zgcr654321/article/details/86751765">https://blog.csdn.net/zgcr654321/article/details/86751765</a></p>
 <p><a href="https://io-oi.me/tech/hexo-next-optimization/">https://io-oi.me/tech/hexo-next-optimization/</a></p>
 <p><a href="https://blog.csdn.net/qq_32767041/article/details/103284412">https://blog.csdn.net/qq_32767041/article/details/103284412</a></p>
@@ -545,287 +479,6 @@
       <categories>
         <category>Hexo</category>
       </categories>
-  </entry>
-  <entry>
-    <title>牛客网03月刷题记录</title>
-    <url>/nowcoder-202103/</url>
-    <content><![CDATA[<p>牛客网3月刷题 <a id="more"></a> </p>
-<h1 id="牛客网3月刷题记录"><a href="#牛客网3月刷题记录" class="headerlink" title="牛客网3月刷题记录"></a>牛客网3月刷题记录</h1><h2 id="0304"><a href="#0304" class="headerlink" title="0304"></a>0304</h2><blockquote>
-<p>读论文《》</p>
-</blockquote>
-<p>裁剪分床，必须满足的三个条件，制定生产计划时，要保证完全满足</p>
-<ul>
-<li>第一，裁床每层的最大模板数与最大切割台长度有关；</li>
-<li>第二，织物层最大高度与裁床的裁刀或激光的长度有关</li>
-<li>第三，每个SKU的最小预期需求</li>
-<li>需要注意的是：不同的织物有不同的厚度，因此可铺设的层数不同</li>
-</ul>
-<p>对于产品的模板，不同尺寸的产品，其模板尺寸也不同，因此可以将较小的产品的模板放到一个较小的空间种，以提升空间利用率。</p>
-<p>生产成本问题（许多类型成本）：</p>
-<ul>
-<li><p>裁剪方案表</p>
-</li>
-<li><p>不可行方案</p>
-</li>
-<li><p>可行方案&amp;多裁剩余产品数量</p>
-</li>
-</ul>
-<p>确定给定服装款式的最小成本裁剪和排列计划方案是一个NP完全组合问题，他的难度随着服装款式、尺寸和颜色的数量增加而增加。</p>
-<p>一般的大型企业中通常生产有着数百种不同类型的产品，每种类型有着7-10个尺码，且每种有着2-5个颜色。</p>
-<p>最近年来，时尚意识的兴盛，服装企业越来越多的提供针对特定需求的如私人个性定制产品，因此需要生产更多数量的产品，并且产品对需求和市场变得更加敏感。这种趋势对服装企业的生产，以及整个供应链的管理都产生了更高的要求。</p>
-<ul>
-<li>启发式算法：认为，一个确定的订单可以用一个裁床，使用不同长度的面料层来放置，包括面料成本、铺布和裁剪成本，以及马克制作成本。使用枚举方法的备选方案的数量是超大的，难以负担的。</li>
-<li>1998-考虑小批量生产的企业生产服装问题，将其转换乘一个混合整数规划的问题。该目标函数只考虑了切割成本和过剩产量，约束条件则是裁床裁刀等限制，以及预测的需求限制，将问题简化，使用固定数量的表格计算出生产最小剩余产品的方案，将问题线性处理，使用线性整数规划求解器OMP来解决。</li>
-<li>2002-用一个非线性整数规划求解器扩展了这项工作。尽管这两种模型都得到了扩展，允许使用不同的颜色，但它们包括了几个简化的假设，其中目标函数只包含两个成本组件和模板(他们称为模板)具有相同的长度，取决于服装尺寸。</li>
-<li>2007-通过最小化所使用的铺板或切板的数量来制定问题，因此大大简化了目标函数，因为没有提到成本。隐含的假设是，使用的表越少，成本就会越低，因为削减和扩大设置成本。这种配方不允许不同颜色或不同类型的织物在同一层上铺展。很显然，正如前一段的模型所检验的，所有尺寸的服装模板的长度都是一样的。这些简化的假设允许作者提出两阶段枚举方法生成层和模板集，然后测试其可行性。对可行解集进行二分搜索以寻找最优解。这种方法最重要的特点是没有过剩的生产，也就是说，预期需求是一致的。</li>
-<li>wong-2000-首先提出了一种应用遗传算法求解织物计算机切割系统排序问题的扩展和切割排序模型。Wong-2005-提出了一种基于遗传算法的服装生产调度算法。Mok-2007-结合遗传算法和模糊集理论，研究了织物的容错扩展和裁切调度问题。Guo-2008-描述了一种采用自适应进化技术的服装制造遗传算法方法。Wong-2008-提出了一种基于自适应进化技术的遗传优化决策模型和一种缩短二进制字符串的编码方法。展示了遗传算法在解决服装行业传播和切割调度问题上的潜力。</li>
-</ul>
-<p>有两类决策变量。整型决策变量是每个布料颜色层的层数(或层数)(即使用的每个裁台)和每个层的每个服装尺寸的模板数(模式或模板)</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hexo+Typora写文章时图片显示问题</title>
-    <url>/testimage/</url>
-    <content><![CDATA[<p>[TOC]</p>
-<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><blockquote>
-<ul>
-<li>Typora是一款支持实时预览的MarkDown文本编辑器。</li>
-<li>有OS X、windows、Linux三个平台版本，是完全免费的。</li>
-<li>个人平时学习的记录都是使用Typora完成的。</li>
-</ul>
-</blockquote>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
-<p>Hexo是一个快速、简洁且高效的博客框架。</p>
-<p>Hexo使用MarkDown解析文章，可利用靓丽的主题生成<strong>静态网页</strong>。</p>
-</blockquote>
-<h2 id="Typora-Hexo"><a href="#Typora-Hexo" class="headerlink" title="Typora+Hexo"></a>Typora+Hexo</h2><blockquote>
-<p>实际使用过程中，为了让自己本地的记录能够随时可以查看，参考网上教程，使用了Hexo+GitHub Pages实现静态博客功能，本地使用Typora进行编辑记录，完成后发布到GitHub。</p>
-</blockquote>
-<h2 id="文章中图片的一致性处理"><a href="#文章中图片的一致性处理" class="headerlink" title="文章中图片的一致性处理"></a>文章中图片的一致性处理</h2><blockquote>
-<p>如果正常在本地使用typora，并使用了一些图片后，将文章上传至GitHub中，会发现在远程中图片无法显示，这是因为Hexo中的图片路径访问不到，需要对Typora进行一定处理。</p>
-</blockquote>
-<h3 id="Typora中图片路径"><a href="#Typora中图片路径" class="headerlink" title="Typora中图片路径"></a>Typora中图片路径</h3><img src="/imgs/testImage/image-20201128154335673.png" alt="" style="zoom:80%;" /> 
-
-<p>本地使用Typora编辑内容时，可以设置插入图片时是否复制图片</p>
-<img src="/imgs/testImage/image-20201128154530131.png" alt="" style="zoom:80%;" /> 
-
-<ul>
-<li><p>如果<strong>不复制图片</strong>，则路径为复制图片的源路径（Typora缓存路径）</p>
-<img src="/imgs/testImage/image-20201128154805241.png" alt="" style="zoom:67%;" /> 
-</li>
-<li><p>如果设置了<strong>复制图片</strong>，则会根据设置的路径将图片复制进去，并进行引用（默认为当前文章所在位置的相对路径）</p>
-<p><img src="/imgs/testImage/image-20201128155025584.png"> </p>
-</li>
-<li><p>如果要使用<strong>绝对路径</strong>，则会使用计算机本地的绝对路径</p>
-</li>
-<li><p>Typora中可以针对文章设置根目录，设置后当前文章会以根目录为准，所有资源的<strong>绝对路径</strong>可<strong>使用根目录的相对路径来表示</strong></p>
-<ul>
-<li><p>工具栏设置文章根目录：</p>
-<img src="/imgs/testImage/image-20201128155509532.png" alt="" style="zoom:50%;" />     
-</li>
-<li><p>使用表头格式内容进行设置（最终都是使用该方式实现的）</p>
-<img src="/imgs/testImage/image-20201128155638464.png" alt="" style="zoom:80%;" /> 
-
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Hexo框架中图片引用路径"><a href="#Hexo框架中图片引用路径" class="headerlink" title="Hexo框架中图片引用路径"></a>Hexo框架中图片引用路径</h3><blockquote>
-<p>使用Hexo博客框架时，文章中的图片路径有两种情况</p>
-</blockquote>
-<ul>
-<li><p>Hexo中<strong>新增文章</strong>存放路径均是在<code>hexoBlog/source/_post</code> 文件夹下</p>
-<p><img src="/imgs/testImage/image-20201128160004391.png"> </p>
-</li>
-<li><p><strong>默认配置：</strong>Hexo默认情况下，使用的图片路径为 <code>hexoBlog/sopurce/imgs</code> ，放在imgs文件夹下的图片都可以使用 <code>/imgs/.../photo.png</code> 来进行引用</p>
-<p><img src="/imgs/testImage/image-20201128160117267.png"> </p>
-</li>
-<li><p><strong>更改默认配置：</strong>Hexo的全局配置文件 <code>_config.yml</code> 中修改设置为：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#默认是false，</span></span><br><span class="line"><span class="comment">#修改为true代表每次创建文件会同时在相同位置创建一个同名文件夹</span></span><br><span class="line"><span class="comment">#同名文件夹中资源可以直接使用路径进行访问，如： photo.png</span></span><br><span class="line"><span class="attr">post_asset_floder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="Typora和Hexo一致处理"><a href="#Typora和Hexo一致处理" class="headerlink" title="Typora和Hexo一致处理"></a>Typora和Hexo一致处理</h3><blockquote>
-<p>为了让文章中的图片在本地编辑时可用，发布到远程依然可用，我们进行一些一致的设置。</p>
-</blockquote>
-<p>我们在Typora中设置复制图片时保存的路径，为了便于管理图片，我们使用了在 <code>HexoBlog/source/imgs</code> 下的同名文件夹来保存当前文章对应的图片信息。</p>
-<ul>
-<li><p>设置图片复制路径为：</p>
-<img src="/imgs/testImage/image-20201128161058627.png" alt="" style="zoom:80%;" /> 
-
-<p>这是一个绝对路径，表示本地Hexo的项目Blog项目中的source文件夹下面找到文章的同名文件夹（${filename}），所有图片放入同名文件夹中，然后在Typora中进行资源的引用。</p>
-</li>
-<li><p>为了引用时与Hexo引用一致，我们设置当前文章的根目录为source文件夹</p>
-<img src="/imgs/testImage/image-20201128161406324.png" alt="" style="zoom:50%;" /> 
-
-<p>设置后文章表头会出现如下信息：此处是使用的相对路径进行的设置</p>
-<img src="/imgs/testImage/image-20201128155638464.png" alt="" style="zoom:100%;" /> 
-</li>
-<li><p>这样之后，我们在文章中复制插入图片时，图片的引用路径为：</p>
-<p><img src="/imgs/testImage/image-20201128161748049.png"> </p>
-<p>这个路径正是Hexo框架的默认图片引用路径，这样我们就完成了一致处理。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Zookeeper学习</title>
-    <url>/zookeeper/</url>
-    <content><![CDATA[<p>内容待补充</p>
-<a id="more"></a>
-
-<h1 id="Zookeeper"><a href="#Zookeeper" class="headerlink" title="Zookeeper"></a>Zookeeper</h1><p>功能（是什么）</p>
-<p>应用场景（能做什么）</p>
-<p>怎么用</p>
-]]></content>
-      <tags>
-        <tag>zookeeper</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo使用Next主题</title>
-    <url>/hexo-change-theme/</url>
-    <content><![CDATA[<p>Next是一款符合程序员审美的主题，<code>Hexo</code>中切换Next主题的方式非常简单，只需要将主题文件拷贝至根目录下的<code>themes</code>文件夹中，然后修改<code>_config.yml</code>文件中的<code>theme</code>字段即可。 <a id="more"></a> </p>
-<h1 id="Next主题"><a href="#Next主题" class="headerlink" title="Next主题"></a>Next主题</h1><h2 id="主题下载"><a href="#主题下载" class="headerlink" title="主题下载"></a>主题下载</h2><h3 id="Git命令行下载"><a href="#Git命令行下载" class="headerlink" title="Git命令行下载"></a>Git命令行下载</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Hexo根目录下执行命令</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next.git themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-<h3 id="发布网站下载"><a href="#发布网站下载" class="headerlink" title="发布网站下载"></a>发布网站下载</h3><p>在<a href="https://github.com/theme-next/hexo-theme-next/releases">Next发布网站</a>中手动下载源文件，并解压到根目录下的theme文件夹下，源文件名修改为next。</p>
-<h2 id="配置新主题"><a href="#配置新主题" class="headerlink" title="配置新主题"></a>配置新主题</h2><blockquote>
-<p>打开Hexo的配置文件<code>_config.yml</code>，将theme字段的值修改为next，即使用<code>theme/next</code>主题，重启后生效。</p>
-</blockquote>
-<p>Next主题默认风格为Muse，可以在主题配置文件中修改<code>scheme</code>字段来选择喜欢的主题风格</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">themes\next\_config.yml</span></span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist  #Muse的紧凑版本，整洁有序的单栏外观</span></span><br><span class="line"><span class="comment">#scheme: Pisces	#双栏Scheme，小家碧玉似的清新</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="站点优化"><a href="#站点优化" class="headerlink" title="站点优化"></a>站点优化</h2><blockquote>
-<p>根目录下的<code>_config.yml</code>文件用来配置站点相关属性，可以通过修改此文件来自定义站点的内容或功能，修改后重启服务器才能看到效果。</p>
-</blockquote>
-<h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#_config.yml中配置相关信息</span></span><br><span class="line"><span class="comment"># 注意字段属性和值之间要有 一个空格 间隔</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Shone&#x27;s</span> <span class="string">Blog</span>	<span class="comment">#站点名称</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">harry</span> <span class="string">up!</span> <span class="comment">#站点描述</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>	<span class="comment">#站点使用语言为简体中文</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">shone</span>	<span class="comment">#设置站点作者</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="网站Favicon"><a href="#网站Favicon" class="headerlink" title="网站Favicon"></a>网站<code>Favicon</code></h3><blockquote>
-<p><code>Favicon</code>是浏览器标签左侧的图标，可以在配置文件中自定义设置图标。</p>
-</blockquote>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># themes\next\_config.yml</span></span><br><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16-next.png</span>  <span class="comment"># 小图标</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32-next.png</span>  <span class="comment"># 大图标</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/apple-touch-icon-next.png</span>  <span class="comment"># 苹果图标</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/logo.svg</span>  <span class="comment"># safari浏览器标签页图标</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="侧栏信息"><a href="#侧栏信息" class="headerlink" title="侧栏信息"></a>侧栏信息</h3><blockquote>
-<p>侧栏信息默认停靠在左侧，且默认不开启，需要手动点击。</p>
-</blockquote>
-<ul>
-<li><p>停靠位置：设置侧栏的位置，修改主题配置文件中 <code>sidebar.position</code> 的值</p>
-<ul>
-<li>left：停靠左边</li>
-<li>right：停靠右边</li>
-</ul>
-</li>
-<li><p>显示时机：修改侧栏的显示时机，修改主题配置文件中 <code>sidbar.display</code> 的值</p>
-<ul>
-<li>post：默认，在文件页面（拥有目录时）显示</li>
-<li>always：在所有页面都显示</li>
-<li>hide：所有页面都隐藏，可以手动点击展开</li>
-<li>remove：完全移除</li>
-</ul>
-</li>
-<li><p>文章目录：默认目录不全部展开，只显示第一级，可以在主题配置文件中修改设置</p>
-<img src="/imgs/hexo-change-theme/image-20201216195130377.png" alt="image-20201216195130377" style="zoom:50%;" />
-
-</li>
-</ul>
-<h3 id="展示头像"><a href="#展示头像" class="headerlink" title="展示头像"></a>展示头像</h3><p>修改展示头像时，需要主题配置文件中设定 <code>avatr</code> 字段的值，设置成头像的链接地址。可以是：</p>
-<ol>
-<li>完整的网络URI：<code>http://example.com/avatar.png</code></li>
-<li>站内地址：头像放在<code>themes/next/source/images</code>目录下，使用路径<code>/images/avatar.png</code>引用 </li>
-</ol>
-<img src="/imgs/hexo-change-theme/image-20201216154025479.png" alt="image-20201216154025479" style="zoom:50%;" /> 
-
-<h3 id="首页显示"><a href="#首页显示" class="headerlink" title="首页显示"></a>首页显示</h3><blockquote>
-<p>next主题默认首先显示每一篇文章的全文，如果只需要显示文章摘要，可以在主题配置文件中设置</p>
-</blockquote>
-<p>设置**[阅读全文]**可以通过以下三种方法：</p>
-<ol>
-<li><p>用户可以使用<code>&lt;!-- more --&gt;</code> 标记来精确划分摘要信息，标记之前的段落将作为摘要显示在首页。</p>
-<blockquote>
-<p>建议使用此种方式，可以精确控制摘要内容，且Hexo中插件更好识别。</p>
-</blockquote>
-</li>
-<li><p>如果文章的<code>Front-Matter</code>中有非空的description字段，该字段内容会作为摘要显示在首页。</p>
-</li>
-<li><p>自动形成摘要，在主题配置文件中添加：</p>
-</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># themes\next\_config.yml</span></span><br><span class="line"><span class="attr">auto_excerpt:</span></span><br><span class="line">	<span class="string">enable:true</span>	<span class="comment">#开启自动摘要提取</span></span><br><span class="line">	<span class="string">length:150</span>	<span class="comment">#设置摘要内容为150个字符</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="文章meta信息"><a href="#文章meta信息" class="headerlink" title="文章meta信息"></a>文章meta信息</h3><blockquote>
-<p>默认主题配置中，打开文章时标题下方显示文章的创建时间和分类信息等，用户可以在主题配置文件中自定义设置需要显示的meta元信息</p>
-</blockquote>
-<p><img src="/imgs/hexo-change-theme/image-20201216154347258.png" alt="默认显示内容"></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># themes\next\_config.yml</span></span><br><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">true</span>  <span class="comment"># 显示文字说明</span></span><br><span class="line">  <span class="attr">created_at:</span> <span class="literal">true</span>  <span class="comment"># 显示文章创建时间</span></span><br><span class="line">  <span class="attr">updated_at:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">false</span>  <span class="comment"># 隐藏文章修改时间</span></span><br><span class="line">    <span class="attr">another_day:</span> <span class="literal">true</span>  <span class="comment"># 只有当修改时间和创建时间不是同一天的时候才显示</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">false</span>  <span class="comment"># 隐藏分类信息</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="文章内容"><a href="#文章内容" class="headerlink" title="文章内容"></a>文章内容</h3><ul>
-<li>代码高亮设置：Next使用Tomorrow Theme作为代码高亮，有5中主题可以选择。在配置文件中的<code>hightlight_theme</code>字段设置具体值。<ul>
-<li>normal：白色，默认</li>
-<li>night</li>
-<li>night blue</li>
-<li>night bright</li>
-<li>night eighties</li>
-</ul>
-</li>
-</ul>
-<h3 id="页脚信息"><a href="#页脚信息" class="headerlink" title="页脚信息"></a>页脚信息</h3><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><code>https://theme-next.iissnan.com/</code><br><code>http://yearito.cn/</code>   </p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多线程实现内容交替输出</title>
-    <url>/multithreading/</url>
-    <content><![CDATA[<p>[TOC]</p>
-<h1 id="Java多线程并发"><a href="#Java多线程并发" class="headerlink" title="Java多线程并发"></a>Java多线程并发</h1><img src="/imgs/multithreading/image-20201204193843419.png" alt="image-20201204193843419" style="zoom:67%;" /> 
-
-<h2 id="多线程基础"><a href="#多线程基础" class="headerlink" title="多线程基础"></a>多线程基础</h2><h3 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h3><p><strong>进程：</strong></p>
-<p><strong>线程：</strong></p>
-<ul>
-<li>线程是操作系统能够进行运算调度的最小单位，包含在进程之中，是进程中的实际运作单位。</li>
-<li>一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。</li>
-</ul>
-<h3 id="创建线程的方式"><a href="#创建线程的方式" class="headerlink" title="创建线程的方式"></a>创建线程的方式</h3><p><strong>继承Thread类：</strong></p>
-<p><strong>实现Runnable接口：</strong></p>
-<p><strong>基于Callable和Future接口：</strong></p>
-<p><strong>使用线程池：</strong></p>
-<h3 id="线程的几种状态"><a href="#线程的几种状态" class="headerlink" title="线程的几种状态"></a>线程的几种状态</h3><blockquote>
-<p>新增、就绪、运行、阻塞、终止</p>
-</blockquote>
-<img src="/imgs/multithreading/image-20201204194410261.png" alt="image-20201204194410261" style="zoom:67%;" /> 
-
-<h3 id="线程执行机制"><a href="#线程执行机制" class="headerlink" title="线程执行机制"></a>线程执行机制</h3><blockquote>
-<p>JVM中一个应用可以有多个线程并行执行，线程被一对一映射为服务所在操作系统线程，调度在可用的CPU上执行，启动时会创建一个操作系统线程；当线程终止时，这个操作系统线程也会被回收。</p>
-</blockquote>
-<img src="/imgs/multithreading/image-20201204194643541.png" alt="image-20201204194643541" style="zoom:67%;" /> 
-
-<h3 id="线程运行内存模型"><a href="#线程运行内存模型" class="headerlink" title="线程运行内存模型"></a>线程运行内存模型</h3><blockquote>
-<p>Java虚拟机启动运行时，会创建多个线程，数据区中有的模块是线程共享的，有的是线程私有的</p>
-<ul>
-<li>线程共享的有：堆（Heap）、方法区（元空间）</li>
-<li>线程私有的是：程序计数器、虚拟机栈、本地方法栈</li>
-</ul>
-<p>单个CPU在特定时刻只能执行一个线程，所以多线程通过几块空间的使用，然后不断的争抢CPU的执行时间段。</p>
-</blockquote>
-<img src="/imgs/multithreading/image-20201204194932940.png" alt="image-20201204194932940" style="zoom:67%;" /> 
-
-<h3 id="其他线程概念"><a href="#其他线程概念" class="headerlink" title="其他线程概念"></a>其他线程概念</h3><ol>
-<li><strong>线程优先级:</strong> 线程调度器倾向执行线程优先级高的线程，线程优先级高说明获取CPU资源的概率高，或者获取的执行时间分片多，即被执行的概率高，但优先级低的不代表一定最后执行。</li>
-<li><strong>守护线程：</strong> 守护线程是支持辅助型线程，主要在程序中起到调度和支持性作用，当JVM中非守护线程全部结束，守护线程也就会结束。如JVM中的<code>GC</code>线程就是一个守护线程。</li>
-<li><strong>线程加入：</strong> 线程A中，执行线程B的加入方法，那么A线程就会等待线程B执行完毕再返回继续执行。可使用<code>Thread.join()</code>加入一个线程。</li>
-<li><strong>本地线程：</strong> <code>ThreadLocal</code>也叫做线程本地变量，是变量在每个线程中创建的副本变量，每个线程可以访问自己内部的副本变量，线程之间不相互影响。 </li>
-</ol>
-<h2 id="多线程安全"><a href="#多线程安全" class="headerlink" title="多线程安全"></a>多线程安全</h2><h3 id="同步控制"><a href="#同步控制" class="headerlink" title="同步控制"></a>同步控制</h3><h3 id="加锁机制"><a href="#加锁机制" class="headerlink" title="加锁机制"></a>加锁机制</h3><h1 id="多线程交替打印ABCDEABCDEABCDE的实现方法"><a href="#多线程交替打印ABCDEABCDEABCDE的实现方法" class="headerlink" title="多线程交替打印ABCDEABCDEABCDE的实现方法"></a>多线程交替打印<code>ABCDEABCDEABCDE</code>的实现方法</h1><h2 id="Synchronized同步方法"><a href="#Synchronized同步方法" class="headerlink" title="Synchronized同步方法"></a>Synchronized同步方法</h2><h2 id="ReentrantLock同步方法"><a href="#ReentrantLock同步方法" class="headerlink" title="ReentrantLock同步方法"></a><code>ReentrantLock</code>同步方法</h2><h2 id="Lock-Condition方式"><a href="#Lock-Condition方式" class="headerlink" title="Lock+Condition方式"></a>Lock+Condition方式</h2><h2 id="Semaphore信号量方式"><a href="#Semaphore信号量方式" class="headerlink" title="Semaphore信号量方式"></a>Semaphore信号量方式</h2>]]></content>
   </entry>
   <entry>
     <title>MySQL学习笔记</title>
@@ -1200,7 +853,9 @@
   <entry>
     <title>经典排序算法</title>
     <url>/classical-sorting-algorithm/</url>
-    <content><![CDATA[<p>[TOC]</p>
+    <content><![CDATA[<p>快速排序、堆排序、归并排序</p>
+<a id="more"></a>
+
 <h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><h2 id="排序数组"><a href="#排序数组" class="headerlink" title="排序数组"></a>排序数组</h2><blockquote>
 <p>给你一个整数数组<code>nums</code>，请你将该数组升序排列。</p>
 <p><a href="https://leetcode-cn.com/problems/sort-an-array/">力扣912：排序数组</a> </p>
@@ -1416,7 +1071,9 @@
   <entry>
     <title>旋转数组（字符串）</title>
     <url>/rotated-array/</url>
-    <content><![CDATA[<p>[TOC]</p>
+    <content><![CDATA[<p>旋转数组相关</p>
+<a id="more"></a>
+
 <h1 id="旋转数组（字符串）"><a href="#旋转数组（字符串）" class="headerlink" title="旋转数组（字符串）"></a>旋转数组（字符串）</h1><blockquote>
 <p>算法中有关旋转数组或旋转字符串类算法汇总，思想汇总</p>
 </blockquote>
