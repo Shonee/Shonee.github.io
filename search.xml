@@ -62,99 +62,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo+Typora写文章时图片显示问题</title>
-    <url>/testimage/</url>
-    <content><![CDATA[<p>Hexo</p>
-<a id="more"></a>
-
-<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><blockquote>
-<ul>
-<li>Typora是一款支持实时预览的MarkDown文本编辑器。</li>
-<li>有OS X、windows、Linux三个平台版本，是完全免费的。</li>
-<li>个人平时学习的记录都是使用Typora完成的。</li>
-</ul>
-</blockquote>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
-<p>Hexo是一个快速、简洁且高效的博客框架。</p>
-<p>Hexo使用MarkDown解析文章，可利用靓丽的主题生成<strong>静态网页</strong>。</p>
-</blockquote>
-<h2 id="Typora-Hexo"><a href="#Typora-Hexo" class="headerlink" title="Typora+Hexo"></a>Typora+Hexo</h2><blockquote>
-<p>实际使用过程中，为了让自己本地的记录能够随时可以查看，参考网上教程，使用了Hexo+GitHub Pages实现静态博客功能，本地使用Typora进行编辑记录，完成后发布到GitHub。</p>
-</blockquote>
-<h2 id="文章中图片的一致性处理"><a href="#文章中图片的一致性处理" class="headerlink" title="文章中图片的一致性处理"></a>文章中图片的一致性处理</h2><blockquote>
-<p>如果正常在本地使用typora，并使用了一些图片后，将文章上传至GitHub中，会发现在远程中图片无法显示，这是因为Hexo中的图片路径访问不到，需要对Typora进行一定处理。</p>
-</blockquote>
-<h3 id="Typora中图片路径"><a href="#Typora中图片路径" class="headerlink" title="Typora中图片路径"></a>Typora中图片路径</h3><img src="/imgs/testImage/image-20201128154335673.png" alt="" style="zoom:80%;" /> 
-
-<p>本地使用Typora编辑内容时，可以设置插入图片时是否复制图片</p>
-<img src="/imgs/testImage/image-20201128154530131.png" alt="" style="zoom:80%;" /> 
-
-<ul>
-<li><p>如果<strong>不复制图片</strong>，则路径为复制图片的源路径（Typora缓存路径）</p>
-<img src="/imgs/testImage/image-20201128154805241.png" alt="" style="zoom:67%;" /> 
-</li>
-<li><p>如果设置了<strong>复制图片</strong>，则会根据设置的路径将图片复制进去，并进行引用（默认为当前文章所在位置的相对路径）</p>
-<p><img src="/imgs/testImage/image-20201128155025584.png"> </p>
-</li>
-<li><p>如果要使用<strong>绝对路径</strong>，则会使用计算机本地的绝对路径</p>
-</li>
-<li><p>Typora中可以针对文章设置根目录，设置后当前文章会以根目录为准，所有资源的<strong>绝对路径</strong>可<strong>使用根目录的相对路径来表示</strong></p>
-<ul>
-<li><p>工具栏设置文章根目录：</p>
-<img src="/imgs/testImage/image-20201128155509532.png" alt="" style="zoom:50%;" />     
-</li>
-<li><p>使用表头格式内容进行设置（最终都是使用该方式实现的）</p>
-<img src="/imgs/testImage/image-20201128155638464.png" alt="" style="zoom:80%;" /> 
-
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Hexo框架中图片引用路径"><a href="#Hexo框架中图片引用路径" class="headerlink" title="Hexo框架中图片引用路径"></a>Hexo框架中图片引用路径</h3><blockquote>
-<p>使用Hexo博客框架时，文章中的图片路径有两种情况</p>
-</blockquote>
-<ul>
-<li><p>Hexo中<strong>新增文章</strong>存放路径均是在<code>hexoBlog/source/_post</code> 文件夹下</p>
-<p><img src="/imgs/testImage/image-20201128160004391.png"> </p>
-</li>
-<li><p><strong>默认配置：</strong>Hexo默认情况下，使用的图片路径为 <code>hexoBlog/sopurce/imgs</code> ，放在imgs文件夹下的图片都可以使用 <code>/imgs/.../photo.png</code> 来进行引用</p>
-<p><img src="/imgs/testImage/image-20201128160117267.png"> </p>
-</li>
-<li><p><strong>更改默认配置：</strong>Hexo的全局配置文件 <code>_config.yml</code> 中修改设置为：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#默认是false，</span></span><br><span class="line"><span class="comment">#修改为true代表每次创建文件会同时在相同位置创建一个同名文件夹</span></span><br><span class="line"><span class="comment">#同名文件夹中资源可以直接使用路径进行访问，如： photo.png</span></span><br><span class="line"><span class="attr">post_asset_floder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="Typora和Hexo一致处理"><a href="#Typora和Hexo一致处理" class="headerlink" title="Typora和Hexo一致处理"></a>Typora和Hexo一致处理</h3><blockquote>
-<p>为了让文章中的图片在本地编辑时可用，发布到远程依然可用，我们进行一些一致的设置。</p>
-</blockquote>
-<p>我们在Typora中设置复制图片时保存的路径，为了便于管理图片，我们使用了在 <code>HexoBlog/source/imgs</code> 下的同名文件夹来保存当前文章对应的图片信息。</p>
-<ul>
-<li><p>设置图片复制路径为：</p>
-<img src="/imgs/testImage/image-20201128161058627.png" alt="" style="zoom:80%;" /> 
-
-<p>这是一个绝对路径，表示本地Hexo的项目Blog项目中的source文件夹下面找到文章的同名文件夹（${filename}），所有图片放入同名文件夹中，然后在Typora中进行资源的引用。</p>
-</li>
-<li><p>为了引用时与Hexo引用一致，我们设置当前文章的根目录为source文件夹</p>
-<img src="/imgs/testImage/image-20201128161406324.png" alt="" style="zoom:50%;" /> 
-
-<p>设置后文章表头会出现如下信息：此处是使用的相对路径进行的设置</p>
-<img src="/imgs/testImage/image-20201128155638464.png" alt="" style="zoom:100%;" /> 
-</li>
-<li><p>这样之后，我们在文章中复制插入图片时，图片的引用路径为：</p>
-<p><img src="/imgs/testImage/image-20201128161748049.png"> </p>
-<p>这个路径正是Hexo框架的默认图片引用路径，这样我们就完成了一致处理。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo搭建静态博客</title>
     <url>/hexo-githubpages-blog/</url>
     <content><![CDATA[<p>[TOC]</p>
@@ -279,6 +186,99 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo+Typora写文章时图片显示问题</title>
+    <url>/testimage/</url>
+    <content><![CDATA[<p>Hexo</p>
+<a id="more"></a>
+
+<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><blockquote>
+<ul>
+<li>Typora是一款支持实时预览的MarkDown文本编辑器。</li>
+<li>有OS X、windows、Linux三个平台版本，是完全免费的。</li>
+<li>个人平时学习的记录都是使用Typora完成的。</li>
+</ul>
+</blockquote>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
+<p>Hexo是一个快速、简洁且高效的博客框架。</p>
+<p>Hexo使用MarkDown解析文章，可利用靓丽的主题生成<strong>静态网页</strong>。</p>
+</blockquote>
+<h2 id="Typora-Hexo"><a href="#Typora-Hexo" class="headerlink" title="Typora+Hexo"></a>Typora+Hexo</h2><blockquote>
+<p>实际使用过程中，为了让自己本地的记录能够随时可以查看，参考网上教程，使用了Hexo+GitHub Pages实现静态博客功能，本地使用Typora进行编辑记录，完成后发布到GitHub。</p>
+</blockquote>
+<h2 id="文章中图片的一致性处理"><a href="#文章中图片的一致性处理" class="headerlink" title="文章中图片的一致性处理"></a>文章中图片的一致性处理</h2><blockquote>
+<p>如果正常在本地使用typora，并使用了一些图片后，将文章上传至GitHub中，会发现在远程中图片无法显示，这是因为Hexo中的图片路径访问不到，需要对Typora进行一定处理。</p>
+</blockquote>
+<h3 id="Typora中图片路径"><a href="#Typora中图片路径" class="headerlink" title="Typora中图片路径"></a>Typora中图片路径</h3><img src="/imgs/testImage/image-20201128154335673.png" alt="" style="zoom:80%;" /> 
+
+<p>本地使用Typora编辑内容时，可以设置插入图片时是否复制图片</p>
+<img src="/imgs/testImage/image-20201128154530131.png" alt="" style="zoom:80%;" /> 
+
+<ul>
+<li><p>如果<strong>不复制图片</strong>，则路径为复制图片的源路径（Typora缓存路径）</p>
+<img src="/imgs/testImage/image-20201128154805241.png" alt="" style="zoom:67%;" /> 
+</li>
+<li><p>如果设置了<strong>复制图片</strong>，则会根据设置的路径将图片复制进去，并进行引用（默认为当前文章所在位置的相对路径）</p>
+<p><img src="/imgs/testImage/image-20201128155025584.png"> </p>
+</li>
+<li><p>如果要使用<strong>绝对路径</strong>，则会使用计算机本地的绝对路径</p>
+</li>
+<li><p>Typora中可以针对文章设置根目录，设置后当前文章会以根目录为准，所有资源的<strong>绝对路径</strong>可<strong>使用根目录的相对路径来表示</strong></p>
+<ul>
+<li><p>工具栏设置文章根目录：</p>
+<img src="/imgs/testImage/image-20201128155509532.png" alt="" style="zoom:50%;" />     
+</li>
+<li><p>使用表头格式内容进行设置（最终都是使用该方式实现的）</p>
+<img src="/imgs/testImage/image-20201128155638464.png" alt="" style="zoom:80%;" /> 
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Hexo框架中图片引用路径"><a href="#Hexo框架中图片引用路径" class="headerlink" title="Hexo框架中图片引用路径"></a>Hexo框架中图片引用路径</h3><blockquote>
+<p>使用Hexo博客框架时，文章中的图片路径有两种情况</p>
+</blockquote>
+<ul>
+<li><p>Hexo中<strong>新增文章</strong>存放路径均是在<code>hexoBlog/source/_post</code> 文件夹下</p>
+<p><img src="/imgs/testImage/image-20201128160004391.png"> </p>
+</li>
+<li><p><strong>默认配置：</strong>Hexo默认情况下，使用的图片路径为 <code>hexoBlog/sopurce/imgs</code> ，放在imgs文件夹下的图片都可以使用 <code>/imgs/.../photo.png</code> 来进行引用</p>
+<p><img src="/imgs/testImage/image-20201128160117267.png"> </p>
+</li>
+<li><p><strong>更改默认配置：</strong>Hexo的全局配置文件 <code>_config.yml</code> 中修改设置为：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#默认是false，</span></span><br><span class="line"><span class="comment">#修改为true代表每次创建文件会同时在相同位置创建一个同名文件夹</span></span><br><span class="line"><span class="comment">#同名文件夹中资源可以直接使用路径进行访问，如： photo.png</span></span><br><span class="line"><span class="attr">post_asset_floder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Typora和Hexo一致处理"><a href="#Typora和Hexo一致处理" class="headerlink" title="Typora和Hexo一致处理"></a>Typora和Hexo一致处理</h3><blockquote>
+<p>为了让文章中的图片在本地编辑时可用，发布到远程依然可用，我们进行一些一致的设置。</p>
+</blockquote>
+<p>我们在Typora中设置复制图片时保存的路径，为了便于管理图片，我们使用了在 <code>HexoBlog/source/imgs</code> 下的同名文件夹来保存当前文章对应的图片信息。</p>
+<ul>
+<li><p>设置图片复制路径为：</p>
+<img src="/imgs/testImage/image-20201128161058627.png" alt="" style="zoom:80%;" /> 
+
+<p>这是一个绝对路径，表示本地Hexo的项目Blog项目中的source文件夹下面找到文章的同名文件夹（${filename}），所有图片放入同名文件夹中，然后在Typora中进行资源的引用。</p>
+</li>
+<li><p>为了引用时与Hexo引用一致，我们设置当前文章的根目录为source文件夹</p>
+<img src="/imgs/testImage/image-20201128161406324.png" alt="" style="zoom:50%;" /> 
+
+<p>设置后文章表头会出现如下信息：此处是使用的相对路径进行的设置</p>
+<img src="/imgs/testImage/image-20201128155638464.png" alt="" style="zoom:100%;" /> 
+</li>
+<li><p>这样之后，我们在文章中复制插入图片时，图片的引用路径为：</p>
+<p><img src="/imgs/testImage/image-20201128161748049.png"> </p>
+<p>这个路径正是Hexo框架的默认图片引用路径，这样我们就完成了一致处理。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo使用Next主题</title>
     <url>/hexo-change-theme/</url>
     <content><![CDATA[<p>Next是一款符合程序员审美的主题，<code>Hexo</code>中切换Next主题的方式非常简单，只需要将主题文件拷贝至根目录下的<code>themes</code>文件夹中，然后修改<code>_config.yml</code>文件中的<code>theme</code>字段即可。 <a id="more"></a> </p>
@@ -374,6 +374,51 @@
       </tags>
   </entry>
   <entry>
+    <title>多线程实现内容交替输出</title>
+    <url>/multithreading/</url>
+    <content><![CDATA[<h1 id="Java多线程并发"><a href="#Java多线程并发" class="headerlink" title="Java多线程并发"></a>Java多线程并发</h1><img src="/imgs/multithreading/image-20201204193843419.png" alt="image-20201204193843419" style="zoom:67%;" /> 
+
+<a id="more"></a>
+
+<h2 id="多线程基础"><a href="#多线程基础" class="headerlink" title="多线程基础"></a>多线程基础</h2><h3 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h3><p><strong>进程：</strong></p>
+<p><strong>线程：</strong></p>
+<ul>
+<li>线程是操作系统能够进行运算调度的最小单位，包含在进程之中，是进程中的实际运作单位。</li>
+<li>一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。</li>
+</ul>
+<h3 id="创建线程的方式"><a href="#创建线程的方式" class="headerlink" title="创建线程的方式"></a>创建线程的方式</h3><p><strong>继承Thread类：</strong></p>
+<p><strong>实现Runnable接口：</strong></p>
+<p><strong>基于Callable和Future接口：</strong></p>
+<p><strong>使用线程池：</strong></p>
+<h3 id="线程的几种状态"><a href="#线程的几种状态" class="headerlink" title="线程的几种状态"></a>线程的几种状态</h3><blockquote>
+<p>新增、就绪、运行、阻塞、终止</p>
+</blockquote>
+<img src="/imgs/multithreading/image-20201204194410261.png" alt="image-20201204194410261" style="zoom:67%;" /> 
+
+<h3 id="线程执行机制"><a href="#线程执行机制" class="headerlink" title="线程执行机制"></a>线程执行机制</h3><blockquote>
+<p>JVM中一个应用可以有多个线程并行执行，线程被一对一映射为服务所在操作系统线程，调度在可用的CPU上执行，启动时会创建一个操作系统线程；当线程终止时，这个操作系统线程也会被回收。</p>
+</blockquote>
+<img src="/imgs/multithreading/image-20201204194643541.png" alt="image-20201204194643541" style="zoom:67%;" /> 
+
+<h3 id="线程运行内存模型"><a href="#线程运行内存模型" class="headerlink" title="线程运行内存模型"></a>线程运行内存模型</h3><blockquote>
+<p>Java虚拟机启动运行时，会创建多个线程，数据区中有的模块是线程共享的，有的是线程私有的</p>
+<ul>
+<li>线程共享的有：堆（Heap）、方法区（元空间）</li>
+<li>线程私有的是：程序计数器、虚拟机栈、本地方法栈</li>
+</ul>
+<p>单个CPU在特定时刻只能执行一个线程，所以多线程通过几块空间的使用，然后不断的争抢CPU的执行时间段。</p>
+</blockquote>
+<img src="/imgs/multithreading/image-20201204194932940.png" alt="image-20201204194932940" style="zoom:67%;" /> 
+
+<h3 id="其他线程概念"><a href="#其他线程概念" class="headerlink" title="其他线程概念"></a>其他线程概念</h3><ol>
+<li><strong>线程优先级:</strong> 线程调度器倾向执行线程优先级高的线程，线程优先级高说明获取CPU资源的概率高，或者获取的执行时间分片多，即被执行的概率高，但优先级低的不代表一定最后执行。</li>
+<li><strong>守护线程：</strong> 守护线程是支持辅助型线程，主要在程序中起到调度和支持性作用，当JVM中非守护线程全部结束，守护线程也就会结束。如JVM中的<code>GC</code>线程就是一个守护线程。</li>
+<li><strong>线程加入：</strong> 线程A中，执行线程B的加入方法，那么A线程就会等待线程B执行完毕再返回继续执行。可使用<code>Thread.join()</code>加入一个线程。</li>
+<li><strong>本地线程：</strong> <code>ThreadLocal</code>也叫做线程本地变量，是变量在每个线程中创建的副本变量，每个线程可以访问自己内部的副本变量，线程之间不相互影响。 </li>
+</ol>
+<h2 id="多线程安全"><a href="#多线程安全" class="headerlink" title="多线程安全"></a>多线程安全</h2><h3 id="同步控制"><a href="#同步控制" class="headerlink" title="同步控制"></a>同步控制</h3><h3 id="加锁机制"><a href="#加锁机制" class="headerlink" title="加锁机制"></a>加锁机制</h3><h1 id="多线程交替打印ABCDEABCDEABCDE的实现方法"><a href="#多线程交替打印ABCDEABCDEABCDE的实现方法" class="headerlink" title="多线程交替打印ABCDEABCDEABCDE的实现方法"></a>多线程交替打印<code>ABCDEABCDEABCDE</code>的实现方法</h1><h2 id="Synchronized同步方法"><a href="#Synchronized同步方法" class="headerlink" title="Synchronized同步方法"></a>Synchronized同步方法</h2><h2 id="ReentrantLock同步方法"><a href="#ReentrantLock同步方法" class="headerlink" title="ReentrantLock同步方法"></a><code>ReentrantLock</code>同步方法</h2><h2 id="Lock-Condition方式"><a href="#Lock-Condition方式" class="headerlink" title="Lock+Condition方式"></a>Lock+Condition方式</h2><h2 id="Semaphore信号量方式"><a href="#Semaphore信号量方式" class="headerlink" title="Semaphore信号量方式"></a>Semaphore信号量方式</h2>]]></content>
+  </entry>
+  <entry>
     <title>Hexo使用Next主题的优化策略</title>
     <url>/hexo-next-enhance/</url>
     <content><![CDATA[<p>Next主题进阶使用学习。</p>
@@ -440,49 +485,268 @@
       </categories>
   </entry>
   <entry>
-    <title>多线程实现内容交替输出</title>
-    <url>/multithreading/</url>
-    <content><![CDATA[<h1 id="Java多线程并发"><a href="#Java多线程并发" class="headerlink" title="Java多线程并发"></a>Java多线程并发</h1><img src="/imgs/multithreading/image-20201204193843419.png" alt="image-20201204193843419" style="zoom:67%;" /> 
-
+    <title>docker</title>
+    <url>/docker/</url>
+    <content><![CDATA[<p>docker学习</p>
 <a id="more"></a>
 
-<h2 id="多线程基础"><a href="#多线程基础" class="headerlink" title="多线程基础"></a>多线程基础</h2><h3 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h3><p><strong>进程：</strong></p>
-<p><strong>线程：</strong></p>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p><a href="https://blog.csdn.net/chaitoudaren/article/details/105467335">参考文章</a> </p>
+<h2 id="1-Docker介绍"><a href="#1-Docker介绍" class="headerlink" title="1 Docker介绍"></a>1 Docker介绍</h2><p>Docker是当下使用最多的一种容器技术，docker对于专门的运维人员要求较高，开发人员也是要适当的学习下。</p>
+<p>Docker中最重要的三个概念：仓库、镜像、容器。</p>
 <ul>
-<li>线程是操作系统能够进行运算调度的最小单位，包含在进程之中，是进程中的实际运作单位。</li>
-<li>一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。</li>
+<li>镜像（Image），即将jdk+项目jar包等文件以Docker的形式打包在一起就是镜像。类似系统镜像</li>
+<li>容器（Container），将镜像实例化启动起来，就形成了容器。容器是一个轻量化的Linux系统，root用户权限、进程空间、用户空间和网络空间都有。<ul>
+<li>比如需要部署一个redis，在linux系统中需要下载、安装、配置环境变量，而在docker中只需要将做好的redis镜像下载运行起来称为一个轻量级的linux，就直接拥有了redis环境。（类似win系统镜像中的自带软件）</li>
 </ul>
-<h3 id="创建线程的方式"><a href="#创建线程的方式" class="headerlink" title="创建线程的方式"></a>创建线程的方式</h3><p><strong>继承Thread类：</strong></p>
-<p><strong>实现Runnable接口：</strong></p>
-<p><strong>基于Callable和Future接口：</strong></p>
-<p><strong>使用线程池：</strong></p>
-<h3 id="线程的几种状态"><a href="#线程的几种状态" class="headerlink" title="线程的几种状态"></a>线程的几种状态</h3><blockquote>
-<p>新增、就绪、运行、阻塞、终止</p>
-</blockquote>
-<img src="/imgs/multithreading/image-20201204194410261.png" alt="image-20201204194410261" style="zoom:67%;" /> 
-
-<h3 id="线程执行机制"><a href="#线程执行机制" class="headerlink" title="线程执行机制"></a>线程执行机制</h3><blockquote>
-<p>JVM中一个应用可以有多个线程并行执行，线程被一对一映射为服务所在操作系统线程，调度在可用的CPU上执行，启动时会创建一个操作系统线程；当线程终止时，这个操作系统线程也会被回收。</p>
-</blockquote>
-<img src="/imgs/multithreading/image-20201204194643541.png" alt="image-20201204194643541" style="zoom:67%;" /> 
-
-<h3 id="线程运行内存模型"><a href="#线程运行内存模型" class="headerlink" title="线程运行内存模型"></a>线程运行内存模型</h3><blockquote>
-<p>Java虚拟机启动运行时，会创建多个线程，数据区中有的模块是线程共享的，有的是线程私有的</p>
-<ul>
-<li>线程共享的有：堆（Heap）、方法区（元空间）</li>
-<li>线程私有的是：程序计数器、虚拟机栈、本地方法栈</li>
-</ul>
-<p>单个CPU在特定时刻只能执行一个线程，所以多线程通过几块空间的使用，然后不断的争抢CPU的执行时间段。</p>
-</blockquote>
-<img src="/imgs/multithreading/image-20201204194932940.png" alt="image-20201204194932940" style="zoom:67%;" /> 
-
-<h3 id="其他线程概念"><a href="#其他线程概念" class="headerlink" title="其他线程概念"></a>其他线程概念</h3><ol>
-<li><strong>线程优先级:</strong> 线程调度器倾向执行线程优先级高的线程，线程优先级高说明获取CPU资源的概率高，或者获取的执行时间分片多，即被执行的概率高，但优先级低的不代表一定最后执行。</li>
-<li><strong>守护线程：</strong> 守护线程是支持辅助型线程，主要在程序中起到调度和支持性作用，当JVM中非守护线程全部结束，守护线程也就会结束。如JVM中的<code>GC</code>线程就是一个守护线程。</li>
-<li><strong>线程加入：</strong> 线程A中，执行线程B的加入方法，那么A线程就会等待线程B执行完毕再返回继续执行。可使用<code>Thread.join()</code>加入一个线程。</li>
-<li><strong>本地线程：</strong> <code>ThreadLocal</code>也叫做线程本地变量，是变量在每个线程中创建的副本变量，每个线程可以访问自己内部的副本变量，线程之间不相互影响。 </li>
+</li>
+<li>仓库（Repository）：仓库用于存放Docker镜像，类似GitHub存放代码的仓库；仓库可以供用户pull<ol>
+<li>通过pull命令获取docker hub上的镜像，如mysql、redis等</li>
+<li>将拉取的镜像在本地run起来，称为容器</li>
+<li>如果需要自己构建一个镜像时，要在springboot项目中使用build命令构建</li>
 </ol>
-<h2 id="多线程安全"><a href="#多线程安全" class="headerlink" title="多线程安全"></a>多线程安全</h2><h3 id="同步控制"><a href="#同步控制" class="headerlink" title="同步控制"></a>同步控制</h3><h3 id="加锁机制"><a href="#加锁机制" class="headerlink" title="加锁机制"></a>加锁机制</h3><h1 id="多线程交替打印ABCDEABCDEABCDE的实现方法"><a href="#多线程交替打印ABCDEABCDEABCDE的实现方法" class="headerlink" title="多线程交替打印ABCDEABCDEABCDE的实现方法"></a>多线程交替打印<code>ABCDEABCDEABCDE</code>的实现方法</h1><h2 id="Synchronized同步方法"><a href="#Synchronized同步方法" class="headerlink" title="Synchronized同步方法"></a>Synchronized同步方法</h2><h2 id="ReentrantLock同步方法"><a href="#ReentrantLock同步方法" class="headerlink" title="ReentrantLock同步方法"></a><code>ReentrantLock</code>同步方法</h2><h2 id="Lock-Condition方式"><a href="#Lock-Condition方式" class="headerlink" title="Lock+Condition方式"></a>Lock+Condition方式</h2><h2 id="Semaphore信号量方式"><a href="#Semaphore信号量方式" class="headerlink" title="Semaphore信号量方式"></a>Semaphore信号量方式</h2>]]></content>
+</li>
+</ul>
+<p><img src="/imgs/docker/20200412212047658.png" alt="img"> </p>
+<h2 id="2-Docker安装"><a href="#2-Docker安装" class="headerlink" title="2 Docker安装"></a>2 Docker安装</h2><p>参考文章：<a href="https://www.cnblogs.com/kingsonfu/p/11576797.html">https://www.cnblogs.com/kingsonfu/p/11576797.html</a> </p>
+<p>拥有一台Linux系统，并连接到Linux系统。</p>
+<h3 id="2-1-Ubuntu中安装docker"><a href="#2-1-Ubuntu中安装docker" class="headerlink" title="2.1 Ubuntu中安装docker"></a>2.1 Ubuntu中安装docker</h3><ol>
+<li>切换至root用户下，否则权限不够： <code>sudo su</code> </li>
+<li>更新apt-get，保证apt-get最新版本： <code>apt-get update</code> </li>
+<li>安装docker： <code>apr-get install -y docker.io</code> </li>
+<li>安装完成后查看docker版本： <code>docker version</code> </li>
+<li>启动docker服务： <code>service docker start</code> （已经运行后再次执行也不会报错）</li>
+<li>再次执行 <code>docker version</code> 可以查看是否启动成功<ul>
+<li>如果有Clinet和Service说明启动成功了  </li>
+</ul>
+</li>
+</ol>
+<h3 id="2-2-CentOS中安装docker"><a href="#2-2-CentOS中安装docker" class="headerlink" title="2.2 CentOS中安装docker"></a>2.2 CentOS中安装docker</h3><p>参考文章：<a href="https://www.jianshu.com/p/2dae7b13ce2f">centos安装docker</a> </p>
+<ul>
+<li><p>CentOS7安装docker要求系统为64位，内核版本为3.10以上，查看内核版本： <code>uname -r</code> </p>
+</li>
+<li><p>如果存在旧版本docker，则先卸载后重新安装（使用卸载成功）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 1、查看安装过的docker：</span><br><span class="line">yum list installed | grep docker</span><br><span class="line">docker.x86_64                           2:1.13.1-74.git6e3bb8e.el7.centos</span><br><span class="line">docker-client.x86_64                    2:1.13.1-74.git6e3bb8e.el7.centos</span><br><span class="line">docker-common.x86_64                    2:1.13.1-74.git6e3bb8e.el7.centos</span><br><span class="line"># 2、卸载docker：（删除安装包命令：yum remove docker，功能类似） </span><br><span class="line">sudo yum remove -y docker-ce.x86_64 docker-client.x86_64 docker-common.x86_64</span><br><span class="line"># 3、删除容器镜像：</span><br><span class="line">sudo rm -rf &#x2F;var&#x2F;lib&#x2F;docker</span><br><span class="line"># 4、 再次查看安装过的docker，显示不存在</span><br><span class="line"># 5、 重新安装docker</span><br><span class="line">sudo yum install docker-ce</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用docker仓库进行安装（虚拟机安装成功）</p>
+<ol>
+<li>安装依赖包： <code>sudo yum install -y yum-utils device-mapper-persistent-data lvm2 </code> </li>
+<li>配置镜像源<ul>
+<li>官方地址（慢）：<code>sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</code> </li>
+<li>阿里云镜像：<code>sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo </code> </li>
+<li>清华大学源：<code>sudo yum-config-manager --add-repo https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/docker-ce.repo</code> </li>
+</ul>
+</li>
+<li>安装docker-ce： <code>sudo yum install docker-ce</code>  </li>
+<li>启动docker服务：<code>sudo systemctl start docker</code>  开机自启：<code>sudo systemctl enable docker</code>  <img src="/imgs/docker/image-20210605173038139.png" alt="image-20210605173038139"> </li>
+<li>查看docker服务运行状态：<code>sudo systemctl status docker</code>  </li>
+<li>使用hello-world镜像命令验证docker是否可用：<code>docker run hello-world</code> （如果不存在该镜像会自动从远程仓库拉取并运行） <img src="/imgs/docker/image-20210605172909117.png" alt="image-20210605172909117">  </li>
+</ol>
+</li>
+<li><p>用yum源安装docker（同上一种安装方式）</p>
+<ol>
+<li>查看是否存在已安装的docker列表： <code>yum list installed | grep docker</code> </li>
+<li>使用yum命令安装docker： <code>yum -y install docker</code> （-y表示不询问安装）</li>
+<li>安装完成后再次使用  <code>yum list installed | grep docker</code>  查看安装列表</li>
+<li>使用命令启动docker服务： <code>systemctl start docker</code> </li>
+<li>命令查看docker服务状态： <code>systemctl status docker</code> </li>
+<li>如图所示表示docker服务安装并启动成功：<img src="/imgs/docker/761230-20190924101735498-1013963263.png" alt="img"></li>
+</ol>
+</li>
+<li><p>使用官方安装脚本自动安装</p>
+<ul>
+<li>安装命令为：<code>curl -fsSL https://get.docker.com | bash -s docker --mirror aliyun</code> </li>
+<li>或国内daocloud安装命令：<code>curl -sSL https://get.daocloud.io/docker | sh</code> </li>
+</ul>
+</li>
+<li><p>离线安装docker</p>
+<ol>
+<li><p>通过 <code>wget https://download.docker.com/linux/static/stable/x86_64/docker-18.06.3-ce.tgz</code>  下载docker或 <a href="https://download.docker.com/linux/static/stable/x86_64/">点击下载</a> 至本地，再使用ftp工具上传服务器。</p>
+</li>
+<li><p>使用命令解压docker包：<code>tar -zxvf docker-18.06.3-ce.tgz</code> </p>
+</li>
+<li><p>将解压文件复制到 <code>/usr/bin/</code> 目录下： <code>cp docker/* /usr/bin/</code>  </p>
+</li>
+<li><p>在 <code>/etc/systemd/sysgtem/</code> 下新增docker.service文件，添加如下内容，将docker.service注册为服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;Docker Application Container Engine</span><br><span class="line">Documentation&#x3D;https:&#x2F;&#x2F;docs.docker.com</span><br><span class="line">After&#x3D;network-online.target firewalld.service</span><br><span class="line">Wants&#x3D;network-online.target</span><br><span class="line">  </span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;notify</span><br><span class="line"># the default is not to use systemd for cgroups because the delegate issues still</span><br><span class="line"># exists and systemd currently does not support the cgroup feature set required</span><br><span class="line"># for containers run by docker  #设置域名访问权限</span><br><span class="line">ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;dockerd --selinux-enabled&#x3D;false --insecure-registry&#x3D;127.0.0.1</span><br><span class="line">ExecReload&#x3D;&#x2F;bin&#x2F;kill -s HUP $MAINPID</span><br><span class="line"># Having non-zero Limit*s causes performance problems due to accounting overhead</span><br><span class="line"># in the kernel. We recommend using cgroups to do container-local accounting.</span><br><span class="line">LimitNOFILE&#x3D;infinity</span><br><span class="line">LimitNPROC&#x3D;infinity</span><br><span class="line">LimitCORE&#x3D;infinity</span><br><span class="line"># Uncomment TasksMax if your systemd version supports it.</span><br><span class="line"># Only systemd 226 and above support this version.</span><br><span class="line">#TasksMax&#x3D;infinity</span><br><span class="line">TimeoutStartSec&#x3D;0</span><br><span class="line"># set delegate yes so that systemd does not reset the cgroups of docker containers</span><br><span class="line">Delegate&#x3D;yes</span><br><span class="line"># kill only the docker process, not all processes in the cgroup</span><br><span class="line">KillMode&#x3D;process</span><br><span class="line"># restart the docker process if it exits prematurely</span><br><span class="line">Restart&#x3D;on-failure</span><br><span class="line">StartLimitBurst&#x3D;3</span><br><span class="line">StartLimitInterval&#x3D;60s</span><br><span class="line">  </span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改docker.service文件权限：<code>chmod +x /etc/system/docker.service</code> 并进行服务的重载<code>systemctl daemon-reload</code>  </p>
+</li>
+<li><p>命令启动docker服务： <code>systemctl start docker</code> </p>
+</li>
+<li><p>（可选）设置docker服务为开机自启：<code>systemctl enable docker.service</code> </p>
+</li>
+<li><p>查看docker启动状态： <code>systemctl status docker</code>  <img src="/imgs/docker/761230-20190924100503875-876834976.png" alt="img"> </p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="3-Docker使用"><a href="#3-Docker使用" class="headerlink" title="3 Docker使用"></a>3 Docker使用</h2><h3 id="3-1-第一个Docker镜像"><a href="#3-1-第一个Docker镜像" class="headerlink" title="3.1 第一个Docker镜像"></a>3.1 第一个Docker镜像</h3><ol>
+<li>使用命令查看docker本地镜像信息：<code>docker images</code> </li>
+<li>使用命令从远程仓库拉取指定镜像到本地： <code>docker pull hello-world</code> </li>
+<li>使用run命令执行一个镜像： <code>docker run hello-world</code> </li>
+<li>配置仓库拉取镜像时的加速器（docker hub是外网，拉取镜像时可能会网络超时，配置阿里云加速器）</li>
+<li><a href="https://cr.console.aliyun.com/">登录阿里云</a>  ，进行加速器的配置 <img src="/imgs/docker/20200412131208246.png" alt="配置加速器"></li>
+<li>使用命令配置镜像加速器  <img src="/imgs/docker/image-20210607123938501.png" alt="image-20210607123938501"> </li>
+<li>重新加载配置：<code>sudo systemctl daemon-reload</code> </li>
+<li>重新启动docker服务：<code>sudo systemctl restart docker</code> </li>
+<li>查看当前运行的容器信息：<code>docker ps</code> ，查看所有容器信息：<code>docker ps -a</code> </li>
+<li>docker中镜像运行方式<ol>
+<li>前台运行：<code>docker run nginx</code> ，显示当前运行状态，无法进行其他操作，使用ctrl+C停止</li>
+<li>后台运行：<code>docker run -d nginx</code> ，-d即 –detach ，执行后返回容器id，使用ps查看当前运行的容器</li>
+</ol>
+</li>
+<li>使用命令结束容器运行：<code>docker stop id</code>  （id一般使用前两位即可） </li>
+</ol>
+<h3 id="3-2-Nginx镜像"><a href="#3-2-Nginx镜像" class="headerlink" title="3.2 Nginx镜像"></a>3.2 Nginx镜像</h3><ol>
+<li>拉取nginx镜像</li>
+<li>后台运行nginx并映射主机端口： <code>docker run -d -p 8080:80 nginx</code> </li>
+<li>访问主机地址:端口，显示nginx主页：<img src="/imgs/docker/image-20210605203533170.png" alt="image-20210605203533170">  </li>
+</ol>
+<h3 id="3-3-容器化MySQL"><a href="#3-3-容器化MySQL" class="headerlink" title="3.3 容器化MySQL"></a>3.3 容器化MySQL</h3><p>可以在 <a href="https://cr.console.aliyun.com/cn-hangzhou/instances/images">阿里云镜像中心</a> 搜索相关的镜像，会跳转到docker官网镜像处。</p>
+<p>MySQL镜像使用步骤：</p>
+<ol>
+<li>使用命令查询mysql镜像信息：<code>docker search mysql</code> </li>
+<li>从远程仓库拉取mysql镜像，<code>docker pull mysql</code></li>
+<li>通过docker run 运行镜像<ul>
+<li>-d进行后台运行</li>
+<li>-p指定mysql镜像映射的主机端口</li>
+<li>-e后跟mysql的参数，来连接查询数据库的名称和连接密钥</li>
+</ul>
+</li>
+<li>如命令：<code>docker run -d -p 3306:3306 -e MYSQL—_ROOT_PASSWORD=root -e MYSQL_DATABASE=datebase mysql:latest</code>  <ul>
+<li>属性名称必须要大写，否则无效</li>
+<li><strong>-e MYSQL_ROOT_PASSWORD=root</strong>：设置 MySQL 服务 root 用户的密码为root</li>
+<li><code>-e MYSQL_DATABASE=datebase</code> ，创建一个名为databse的数据库</li>
+</ul>
+</li>
+<li>运行成功后，可以进入到mysql镜像中并查看mysql信息<ol>
+<li>使用<code>docker ps</code> 查看当前执行的镜像的ID，</li>
+<li>使用命令进入到docker镜像中：<code>docker exec -it 镜像ID bash</code> ，进入后命令行前缀用户就变成了容器ID。</li>
+<li>进入容器中，就相当于进入了一个轻量级Linux，命令是相同的</li>
+<li>进入mysql镜像后，使用命令连接mysql：<code>mysql --user=root --password</code> 或<code>mysql -h localhost -u root -p</code>  然后输入密码登录</li>
+</ol>
+</li>
+</ol>
+<p><strong>错误：</strong>服务器上通过docker命令运行和访问正常，但是使用navicate远程连接mysql时报错如下：<img src="/imgs/docker/image-20210605210755813.png" alt="image-20210605210755813"></p>
+<ul>
+<li><p> 首先通过mysql镜像的ID进入到镜像中，并连接mysql  <code>mysql -u root -p</code>  输入密码</p>
+</li>
+<li><p>开启远程访问权限</p>
+<ul>
+<li>查看数据库信息<code>show databases;</code> </li>
+<li>切换使用mysql数据库：<code>use mysql;</code></li>
+<li>查询user表权限信息：<code>select host,user from user</code> </li>
+<li> <code>ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;root&#39;;</code>  </li>
+<li> 刷新操作：<code>flush privileges;</code> </li>
+<li>然后可以远程使用navicate连接了。 </li>
+<li>原因：镜像中root用户已经有了远程连接的权限，但是模式不一样导致无法连接，因此要将root用户的密码改成 mysql_native_password 模式即可。</li>
+</ul>
+<p><img src="/imgs/docker/997646-20200117102022439-1012036839.png" alt="img"> </p>
+</li>
+</ul>
+<p><strong>问题：</strong> 每次运行mysql时使用命令创建数据库，当服务stop之后，数据库就没了，下次运行要重新创建？</p>
+<ul>
+<li>如果每次都重新run运行mysql镜像，那么每次启动后服务的ID是不同的，就是不同的服务，则数据库是一个原始的数据库</li>
+<li>而使用命令 <code>docker ps -a</code> 可以查看所有的服务，找到之前服务的ID，直接 <code>docker start ID</code> 可以运行已经存在的服务，且配置是一样的。<img src="/imgs/docker/image-20210606135102552.png" alt="image-20210606135102552"> </li>
+</ul>
+<h2 id="4-Docker中网络设置"><a href="#4-Docker中网络设置" class="headerlink" title="4 Docker中网络设置"></a>4 Docker中网络设置</h2><p>docker容器是一个小的linux，也就是一个虚拟机。容器想要跟外部进行交互，就只能先通过CentOS服务器主机的网卡，然后再与外界交互。docker容器与外部主机网络通讯的方式有三种：</p>
+<ul>
+<li>桥接（Bridge），最常用，将主机上的端口映射到docker容器的端口上，如8080:8081既是将主机上的8080端口映射到docker容器的8081端口<ul>
+<li>桥接模式使用 <code>-P</code>  或<code>-p</code> 参数指定端口映射方式，如：<code>-p 主机端口:容器端口</code>  <code>-P</code> 则是使用随机的主机端口来映射docker端口。</li>
+<li>如命令 <code>docker run -d -p 8080:80 nginx</code> ，即后台执行nginx，使用主机8080端口映射docker中80端口。</li>
+<li><code>docker run -d -P nginx</code> ，即后台执行nging，并使用主机随机端口来映射nginx对应的80端口</li>
+<li>映射并运行成功后，访问主机地址:主机端口就可以访问docker容器中运行的服务</li>
+</ul>
+</li>
+<li>共享（Host），主机与docker容器共享同一个端口</li>
+<li>无网络（None），docker容器中没有网络，外界无法访问</li>
+</ul>
+<h2 id="5-Docker常用命令操作"><a href="#5-Docker常用命令操作" class="headerlink" title="5 Docker常用命令操作"></a>5 Docker常用命令操作</h2><ul>
+<li>搜索查询镜像：<code>docker search mysql</code> </li>
+<li>下载拉取镜像（最近）：<code>docker pull mysql:latest</code> </li>
+<li>查看本地镜像：<code>docker images</code> </li>
+<li>查看进程（正在运行的容器）：<code>docker ps</code> <ul>
+<li>查看所有容器，包括已经停止的：<code>docker ps -a</code>  </li>
+</ul>
+</li>
+<li>docker运行容器服务：<code>docker run mysql</code> <ul>
+<li>docker后台运行容器服务：<code>docker run -d mysql</code></li>
+<li>后台运行并端口映射：<code>docker run -d -p 3306:3306 mysql</code> </li>
+<li>映射 <code>120.0.0.1:3306:3306</code> 不指定主机端口时映射到随机端口；主机地址默认为0.0.0.0</li>
+</ul>
+</li>
+<li>启动、重启、停止、杀死、删除指定容器<ul>
+<li>启动指定容器：<code>docker start &lt;容器名/ID&gt;</code> </li>
+<li>重启指定容器：<code>docker restart &lt;容器名/ID&gt;</code>  </li>
+<li>停止指定容器：<code>docker stop &lt;容器名/ID&gt;</code> </li>
+<li>杀死指定容器：<code>docker kill &lt;容器名/ID&gt;</code>   </li>
+<li>删除容器：<code>docker rm &lt;容器名/ID&gt;</code> <ul>
+<li>删除所有容器：<code>docker rm $(docker ps -a -q)</code> </li>
+</ul>
+</li>
+<li>关闭docker中的mysql容器服务：<code>docker stop mysqlserver/ID </code> </li>
+<li>重启docker中的mysql服务：<code>docker restart ID</code> </li>
+</ul>
+</li>
+<li>重启docker：<code>systemctl restart docker</code> </li>
+<li>关闭docker：<code>systemctl stop docker</code> </li>
+<li>查看容器日志：<code>docker logs -f &lt;容器名/ID&gt;</code> <ul>
+<li>查看docker中指定容器的前10条日志信息：<code>docker logs -f --tail 10 ID</code>  </li>
+</ul>
+</li>
+</ul>
+<h2 id="6-制作Docker镜像"><a href="#6-制作Docker镜像" class="headerlink" title="6 制作Docker镜像"></a>6 制作Docker镜像</h2><p>将自己的springboot项目制作成为镜像，需要：</p>
+<ol>
+<li><p>将项目打为jar包</p>
+</li>
+<li><p>服务器获取项目的jar包（可上传至git上，然后使用get clone来远程获取）</p>
+<ul>
+<li><code>git clone https://gitee.com/chaitou/hello-springboot</code> </li>
+<li>前提是服务器linux中已经安装了git</li>
+</ul>
+</li>
+<li><p>进入到项目jar包中，并在同级目录下编写dockerfile文件</p>
+<ul>
+<li><p><code>cd hello-springboot</code> </p>
+</li>
+<li><p><code>vim Dockerfile</code> </p>
+<ul>
+<li><pre><code class="dockerfile"># 依赖的基础镜像
+from java:8
+# 创建者
+MAINTAINER bugpool xxx@163.com
+# 将当前目录下的jar复制到容器/目录下
+COPY hello-springboot.jar /hello-springboot.jar
+# 指定启动时运行java -jar 命令
+ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;,&quot;/hello-springboot.jar&quot;]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>拉取java镜像以满足项目运行环境</p>
+<ul>
+<li><code>docker pull java:8</code> </li>
+</ul>
+</li>
+<li><p>使用 docker build来构建镜像，将springboot构建为本地镜像</p>
+<ul>
+<li><code>docker build -t hello-springboot:1.0 .</code> </li>
+<li>-t指明了镜像名和版本号；点号代表当前目录</li>
+</ul>
+</li>
+<li><p>启动构建的镜像，并使用-p来映射主机端口</p>
+<ul>
+<li><code>docker run -p 80:8080 hello-springboot:1.0</code> </li>
+</ul>
+</li>
+<li><p>可以通过主机地址:80端口+项目接口地址/hello来访问</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
   </entry>
   <entry>
     <title>MySQL学习笔记</title>
@@ -1654,6 +1918,8 @@
 </ul>
 </li>
 <li>普通用户：UID在500-60000</li>
+<li>普通用户切换至root用户：$ su -&gt; 输入密码就可切换为root用户</li>
+<li>root用户切换至普通用户：$ su &lt;用户名&gt; 即可切换为指定用户</li>
 </ul>
 <h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><ul>
 <li><p><strong><code>/etc/passwd</code>：保存用户信息的文件</strong></p>
@@ -2058,6 +2324,28 @@
 <p><strong>nginx配置文件路径：/etc/nginx/conf.d/default.conf</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;源文件内容</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    #charset koi8-r;</span><br><span class="line">    #access_log  &#x2F;var&#x2F;log&#x2F;nginx&#x2F;host.access.log  main;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root   &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html;</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #error_page  404              &#x2F;404.html;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;修改后内容</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;	&#x2F;&#x2F;要监听的端口，即访问时 url:port</span><br><span class="line">    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    #charset koi8-r;</span><br><span class="line">    #access_log  &#x2F;var&#x2F;log&#x2F;nginx&#x2F;host.access.log  main;</span><br><span class="line">    </span><br><span class="line">    #文件上传大小限制</span><br><span class="line">    client_max_body_size    1000m;</span><br><span class="line">    </span><br><span class="line">    #location &#x2F; &#123;</span><br><span class="line">    #    root   &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html;</span><br><span class="line">    #    index  index.html index.htm;</span><br><span class="line">    #&#125;</span><br><span class="line">    #此处修改针对不同请求url分发到不同服务地址</span><br><span class="line">	location ~ &#x2F;eduservice&#x2F;&#123;</span><br><span class="line">		proxy_pass http:&#x2F;&#x2F;localhost;</span><br><span class="line">	&#125;</span><br><span class="line">	#对象存储</span><br><span class="line">	location ~ &#x2F;eduoss&#x2F;&#123;</span><br><span class="line">		proxy_pass http:&#x2F;&#x2F;localhost;</span><br><span class="line">	&#125;</span><br><span class="line">	#视频点播资源</span><br><span class="line">	location ~ &#x2F;eduvod&#x2F;&#123;</span><br><span class="line">		proxy_pass http:&#x2F;&#x2F;localhost;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    #error_page  404              &#x2F;404.html;</span><br></pre></td></tr></table></figure>
 
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><h4 id="使用yum安装"><a href="#使用yum安装" class="headerlink" title="使用yum安装"></a>使用yum安装</h4><ol>
+<li>使用yum命令安装git：<code>yum -y install git</code> </li>
+<li>安装完成后，使用命令查看版本信息：<code>git --version</code> </li>
+<li>安装完成后的git路径在 <code>usr/libexec/git-core</code> 下</li>
+<li>此种方式安装的git版本比较早，不是最新版。</li>
+</ol>
+<h4 id="下载软件包本地安装"><a href="#下载软件包本地安装" class="headerlink" title="下载软件包本地安装"></a>下载软件包本地安装</h4><ol>
+<li>在github上找到git的最新版本，下载tar.gz包，地址：<a href="https://github.com/git/git/releases">https://github.com/git/git/releases</a></li>
+<li>下载最新版本的tar.gz包至本地，并使用工具上传到linux服务器中</li>
+<li>使用命令解压压缩包：<code>tar -zxvf git-2.22.0.tar.gz</code> </li>
+<li>进入解压后的文件夹：<code>cd git-2.22.0.tar.gz</code>  </li>
+<li>解压后拿到源码信息，就要对源码进行编译，首先安装编译需要的依赖：<code>yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker</code>  </li>
+<li>安装依赖时会自动使用yum安装git，可使用命令卸载旧版本：<code>yum -y remove git</code> </li>
+<li>编译git源码：<code>make prefix=/usr/local/git all</code> </li>
+<li>安装git至指定路径：<code>make prefix=/usr/local/git install</code>  </li>
+<li>配置环境变量：<code>vi /etc/profile</code> <ul>
+<li>在配置文件底部添加内容：<code>export PATH=$PATH:/usr/local/git/bin</code> </li>
+</ul>
+</li>
+<li>刷新环境变量：<code>source /etc/profile</code> </li>
+<li>查看git是否完成安装：<code>git --version</code> </li>
+</ol>
 <h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h3><h1 id="Linux（Ubuntu）（实验室服务器）"><a href="#Linux（Ubuntu）（实验室服务器）" class="headerlink" title="Linux（Ubuntu）（实验室服务器）"></a>Linux（Ubuntu）（实验室服务器）</h1><p><a href="https://jingyan.baidu.com/article/acf728fd440982f8e510a3a9.html">ubuntu修改登录密码</a> </p>
 <p>du:123456</p>
 <p>root:root</p>
