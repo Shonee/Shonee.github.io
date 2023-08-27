@@ -1,0 +1,1753 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="MySQL 安装十分详细版, 爪哇程序人生">
+    <meta name="description" content="你若花开，蝴蝶自来。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>MySQL 安装十分详细版 | 爪哇程序人生</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <!-- 添加动态诗词 链：https://www.jinrishici.com/ -->
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">爪哇程序人生</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/navigate" class="waves-effect waves-light">
+      
+      <i class="fas fa-location-arrow" style="zoom: 0.6;"></i>
+      
+      <span>导航</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">爪哇程序人生</div>
+        <div class="logo-desc">
+            
+            你若花开，蝴蝶自来。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/navigate" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-location-arrow"></i>
+			
+			导航
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">MySQL 安装十分详细版</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-07-02
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-08-27
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、Windows-下安装-MySQL"><a href="#一、Windows-下安装-MySQL" class="headerlink" title="一、Windows 下安装 MySQL"></a>一、Windows 下安装 MySQL</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-install.html">https://www.runoob.com/mysql/mysql-install.html</a></p>
+<h2 id="二、Linux-下安装-MySQL"><a href="#二、Linux-下安装-MySQL" class="headerlink" title="二、Linux 下安装 MySQL"></a>二、Linux 下安装 MySQL</h2><h3 id="1-yum-命令安装-MySQL"><a href="#1-yum-命令安装-MySQL" class="headerlink" title="1. yum 命令安装 MySQL"></a>1. yum 命令安装 MySQL</h3><p>使用 yum 方式安装 MySQL 是最简单的，在使用压缩包安装是遇到不少问题，换用 yum 方式后简单迅速。</p>
+<h4 id="1-1-查看并移除旧版本-MySQL"><a href="#1-1-查看并移除旧版本-MySQL" class="headerlink" title="1.1 查看并移除旧版本 MySQL"></a>1.1 查看并移除旧版本 MySQL</h4><p>使用命令：<strong>rpm -qa | grep -i mysql</strong> （-i，代表忽略大小写的差别）</p>
+<ul>
+<li>  如显示已经安装的相关模块，则要先卸载，再重新安装</li>
+</ul>
+<!---->
+
+<ul>
+<li><ul>
+<li><strong>yum -y remove &lt;全名称&gt;</strong> ：卸载相关模块：使用联合命令，将查询结果作为参数移除：<code>yum -y remove $(rpm -qa | grep -i mysql)</code><ul>
+<li>  如果上述命令卸载不掉，则使用命令： <strong>rpm -er &lt;全名称&gt;</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!---->
+
+<ul>
+<li>  如果执行后无任何变化，表示没有安装</li>
+</ul>
+<p>使用命令查看是否存在 mysql yum 安装包，<code>yum list mysql*</code>，如果有遗留，可以使用命令删除</p>
+<ul>
+<li>  <code>rpm -e mysql</code>，普通删除模式</li>
+<li>  <code>rpm -e --nodeps mysql</code>，强力删除模式</li>
+</ul>
+<p>使用命令：<strong>whereis mysql</strong> 查看系统中是否存在 mysql 相关文件</p>
+<ul>
+<li>  如果存在，则使用命令删除 <strong>rm -rf …</strong></li>
+</ul>
+<p>使用命令：<strong>find / -name mysql</strong> 查看 mysql 相关文件</p>
+<ul>
+<li>  删除无用文件</li>
+</ul>
+<h4 id="1-2-下载并安装-MySQL-服务"><a href="#1-2-下载并安装-MySQL-服务" class="headerlink" title="1.2 下载并安装 MySQL 服务"></a>1.2 下载并安装 MySQL 服务</h4><p>简单安装</p>
+<ul>
+<li>  安装 mysql 客户端，<code>yum install mysql</code></li>
+<li>  安装 mysql 服务端，<code>yum install mysql-community-server</code></li>
+</ul>
+<p>完整安装</p>
+<pre><code># ①进入/usr/local文件夹下
+cd /usr/local
+# ②下载.rpm文件
+wget http://repo.mysql.com/mysql57-community-release-el7-8.noarch.rpm 
+# ③执行 rpm文件
+rpm -ivh mysql57-community-release-el7-8.noarch.rpm 
+# ④安装mysql服务（-y代表安装过程中所有提示选择为y）
+yum -y install mysql-server
+# 或者指定安装目录（不必要）
+yum --installroot=/usr/local/mysql --releasever=/ -y install mysql-server
+
+## 另一种快速安装方式
+wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
+yum -y install mysql57-community-release-el7-10.noarch.rpm
+yum -y install mysql-community-server</code></pre>
+<ul>
+<li>  等待所有服务模块安装完成 即可</li>
+</ul>
+<h4 id="1-3-MySQL配置文件"><a href="#1-3-MySQL配置文件" class="headerlink" title="1.3 MySQL配置文件"></a>1.3 MySQL配置文件</h4><ul>
+<li>  配置文件： <strong>/etc/my.cnf</strong></li>
+<li>  日志文件： <strong>/var/log/mysqld.log</strong></li>
+<li>  服务启动脚本： <strong>/usr/lib/systemd/system/mysqld.service</strong></li>
+<li>  socket文件： <strong>/var/run/mysqld/mysqld.pid</strong></li>
+<li>  添加mysql配置内容：</li>
+</ul>
+<pre><code>[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+server_id = 1
+expire_logs_days = 3
+
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid</code></pre>
+<ul>
+<li>  查看 mysql 的编码信息，登录mysql后，使用命令<code>show variables like &#39;character_set%&#39;;</code></li>
+<li>  设置 mysql 的默认字符集，在/etc/my.cnf文件中，增加 <code>default-character-set=utf-8</code></li>
+</ul>
+<pre><code>[mysqld]
+character-set-server=utf8 
+[client]
+default-character-set=utf8 
+[mysql]
+default-character-set=utf8</code></pre>
+<h4 id="1-4-MySQL服务相关命令"><a href="#1-4-MySQL服务相关命令" class="headerlink" title="1.4 MySQL服务相关命令"></a>1.4 MySQL服务相关命令</h4><ul>
+<li>  <strong>systemctl start mysqld.service</strong>：开启 mysql 服务</li>
+<li>  <strong>systemctl status mysqld.service</strong>：查看 mysql 服务状态，</li>
+</ul>
+<!---->
+
+<ul>
+<li><ul>
+<li>  -l：查看详细状态信息</li>
+</ul>
+</li>
+</ul>
+<!---->
+
+<ul>
+<li>  <strong>systemctl stop mysqld.service</strong>：停止 mysql 服务</li>
+<li>  <strong>systemctl restart mysqld.service</strong>：重启mysql服务</li>
+<li>  <strong>systemctl enable mysqld</strong>：设置mysql开机自启动</li>
+<li>  <strong>systemctl daemon-reload</strong>：作为守护进程开启</li>
+</ul>
+<h4 id="1-5-MySQL-密码修改"><a href="#1-5-MySQL-密码修改" class="headerlink" title="1.5 MySQL 密码修改"></a>1.5 MySQL 密码修改</h4><h5 id="查看随机生成密码"><a href="#查看随机生成密码" class="headerlink" title="查看随机生成密码"></a>查看随机生成密码</h5><p>安装mysql后，会在相应的日志文件中产生一个随机密码，可以使用命令查看：</p>
+<ul>
+<li>  <strong>cat /var/log/mysqld.log</strong> ：查看日志文件全部内容</li>
+<li>  <strong>grep “password” /var/log/mysqld.log</strong> ：使用正则匹配日志文件中的password关键字</li>
+</ul>
+<h5 id="跳过密码认证"><a href="#跳过密码认证" class="headerlink" title="跳过密码认证"></a>跳过密码认证</h5><p>随机密码登录失败时，需要配置跳过认证阶段，登录后使用sql语句更新密码</p>
+<ul>
+<li>  <strong>vi /etc/my.cnf</strong>：修改配置文件，添加<strong>skip-grant-tables</strong>后保存退出，表示登录不验证</li>
+</ul>
+<!---->
+
+<ul>
+<li><ul>
+<li>  <strong>mysqld_safe –skip-grant-tables –skip-networking&amp;</strong> 命令效果相同</li>
+</ul>
+</li>
+</ul>
+<!---->
+
+<ul>
+<li>  重启mysql服务，使用mysql直接登录mysql客户端</li>
+</ul>
+<h5 id="使用sql语句修改登录密码"><a href="#使用sql语句修改登录密码" class="headerlink" title="使用sql语句修改登录密码"></a>使用sql语句修改登录密码</h5><ul>
+<li>  <strong>mysql -u root -p</strong>：使用命令登录mysql，命令回车后输入日志中密码，登录mysql</li>
+<li>  <strong>ALTER USER ‘root’@’localhost’ IDENTIFIED BY ‘xxxxxxxx’;</strong> 修改root账户的密码为xxxxxxxx</li>
+</ul>
+<!---->
+
+<ul>
+<li><ul>
+<li>如果是 skip-grant-tables 情况下执行该语句，会提示不可以执行<ul>
+<li>  可以使用更新 user 表中密码数据的方式：</li>
+<li>  <strong>update mysql.user set authentication_string=PASSWORD(‘newPassword’) where USER=’root’;</strong> 更新密码</li>
+<li>  <strong>flush privileges;</strong> 刷新权限表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!---->
+
+<ul>
+<li>  默认密码策略要求密码是大小写字母+数字+特殊字符的组合且最少8位</li>
+<li>  密码修改完成后，退出，使用新密码重新登录</li>
+</ul>
+<h4 id="1-6-允许远程登录"><a href="#1-6-允许远程登录" class="headerlink" title="1.6 允许远程登录"></a>1.6 允许远程登录</h4><h5 id="1-6-1-设置允许其他端、navicate-远程连接。"><a href="#1-6-1-设置允许其他端、navicate-远程连接。" class="headerlink" title="1.6.1 设置允许其他端、navicate 远程连接。"></a>1.6.1 设置允许其他端、navicate 远程连接。</h5><ul>
+<li>  mysql 中开启远程访问权限，mysql 库中的 user 表新增一条记录 host 为“%”，user为“root”。</li>
+</ul>
+<pre><code># 连接客户端（远程登录限制）
+mysql -u root -p Root@2020  
+mysql&gt; use mysql;
+
+# 查看 root 用户信息，host = localhost 表示只可以本地连接，不可以远程连接
+select * from user where user =&#39;root&#39;;
+
+update user set host = &#39;%&#39; where user = &#39;root&#39;;
+# 或者是下面命令
+# ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;Root@2021&#39;;
+# 如果上句运行失败，则使用下面命令
+# mysql&gt; grant all on *.* to root@&quot;%&quot; identified by &quot;Root@2021&quot;;
+mysql&gt; flush privileges;</code></pre>
+<h5 id="1-6-2-检查-Linux-防火墙设置"><a href="#1-6-2-检查-Linux-防火墙设置" class="headerlink" title="1.6.2 检查 Linux 防火墙设置"></a>1.6.2 检查 Linux 防火墙设置</h5><p>MySQL 默认占用端口号为 3306，因此需要</p>
+<ol>
+<li> 如果是云服务器，则要在安全组中开放 3306 端口</li>
+<li> 服务器防火墙开放 3306 端口</li>
+</ol>
+<pre><code># 查看firewalld状态，dead 状态代表防火墙未开启，active代表已开启
+systemctl status firewalld
+# 查看防火墙是否已开放3306端口
+firewall-cmd --query-port=3306/tcp
+# 设置3306端口为永久开放
+firewall-cmd --add-port=3306/tcp --permanent
+
+# 设置后重启防火墙（设置了新的端口记得先关闭，再重启）
+systemctl restart firewalld</code></pre>
+<h4 id="1-7-yum-安装常见问题"><a href="#1-7-yum-安装常见问题" class="headerlink" title="1.7 yum 安装常见问题"></a>1.7 yum 安装常见问题</h4><h5 id="1-7-1-wget-下载失败"><a href="#1-7-1-wget-下载失败" class="headerlink" title="1.7.1 wget 下载失败"></a>1.7.1 wget 下载失败</h5><p>Cannot write to ‘mysql57-community-release-el7-8.noarch.rpm’ (Permission denied).</p>
+<p>表示下载文件时权限不够，可以加 <strong>sudo</strong> 命令或使用 <strong>su root</strong> 切换至管理器权限下载文件</p>
+<h5 id="1-7-2-速度慢，换镜像"><a href="#1-7-2-速度慢，换镜像" class="headerlink" title="1.7.2 速度慢，换镜像"></a>1.7.2 速度慢，换镜像</h5><p>修改CentOS 默认 yum 源为国内yum镜像源</p>
+<ol>
+<li> 修改为163镜像源</li>
+</ol>
+<ul>
+<li><ul>
+<li>备份yum源文件，<strong>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</strong><ul>
+<li>  进入yum源文件夹，<strong>cd /etc/yum.repos.d/</strong></li>
+<li>  下载163镜像源文件，<strong>wget <a target="_blank" rel="noopener" href="http://mirrors.163.com/.help/CentOS7-Base-163.repo">http://mirrors.163.com/.help/CentOS7-Base-163.repo</a></strong></li>
+<li>  运行yum命令生成缓存，<strong>yum makecache</strong></li>
+<li>  更新yum会显示163信息，<strong>yum -y update</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li> 修改为阿里云镜像源</li>
+</ol>
+<ul>
+<li>  使用阿里源的方法基本一样，阿里yum源文件下载地址为<strong>wget -O /etc/yum.repos.d/CentOS-Base.repo <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/repo/Centos-7.repo">http://mirrors.aliyun.com/repo/Centos-7.repo</a></strong></li>
+</ul>
+<h5 id="1-7-3-安装报错：No-package-mysql-server-available"><a href="#1-7-3-安装报错：No-package-mysql-server-available" class="headerlink" title="1.7.3 安装报错：No package mysql-server available."></a>1.7.3 安装报错：No package mysql-server available.</h5><p>CentOS7 安装 mysql 报错：No package mysql-server available. Error: Nothing to do</p>
+<p>报错原因：CentOS7 自带 MariaDB 而不是 MySQL，MariaDB 和 MySQL 一样也是开元的数据库，可以使用 <strong>yum -y install mariadb-server mariadb</strong> 命令安装，而安装 MySQL 需要先添加 社区 repo</p>
+<p>解决办法：</p>
+<ol>
+<li> 下载文件，<strong>wget <a target="_blank" rel="noopener" href="http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm">http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</a></strong></li>
+<li> 执行文件， <strong>rpm -ivh mysql-community-release-el7-5.noarch.rpm</strong></li>
+<li> 之后再次使用命令安装</li>
+</ol>
+<h5 id="1-7-4-GPG-Keys-are-configured-as-…"><a href="#1-7-4-GPG-Keys-are-configured-as-…" class="headerlink" title="1.7.4 GPG Keys are configured as …"></a>1.7.4 GPG Keys are configured as …</h5><p>报错信息： GPG Keys are configured as: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</p>
+<p>错误原因：GPG keys是安装包发布时生成的密钥，安装是需要核对密钥来确保安全性，MySQL的GRG 升级了</p>
+<p><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/checking-rpm-signature.html">https://dev.mysql.com/doc/refman/5.7/en/checking-rpm-signature.html</a></p>
+<p>解决办法：</p>
+<ol>
+<li> 需要重新获取GRG，使用命令 <strong>rpm –import <a target="_blank" rel="noopener" href="https://repo.mysql.com/RPM-GPG-KEY-mysql-2022">https://repo.mysql.com/RPM-GPG-KEY-mysql-2022</a></strong>获取后，重新安装MySQL</li>
+<li> 如果重新获取GRG后，安装仍然显示该错误，则考虑安装时跳过GRG检查</li>
+</ol>
+<ul>
+<li><ul>
+<li>安装命令最后使用**–nogpgcheck** 跳过<ul>
+<li>  编辑 yum 配置文件， <strong>/etc/yum.repos.d/mysql-community.repo</strong>，修改其中的 gpgcheck=0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>[mysql57-community]
+name=MySQL 5.7 Community Server
+baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</code></pre>
+<h4 id="1-8-MySQL-卸载"><a href="#1-8-MySQL-卸载" class="headerlink" title="1.8 MySQL 卸载"></a>1.8 MySQL 卸载</h4><p><strong>rpm -qa|grep -i mysql</strong>，查看是否安装MySQL，如果安装过，则要先移除安装</p>
+<ul>
+<li>  <strong>yum -y remove &lt;全名称&gt;</strong> ：卸载相关模块</li>
+<li>  如上述命令卸载不掉，则使用命令 <strong>rpm -er &lt;全名称&gt;</strong></li>
+</ul>
+<p><strong>whereis mysql</strong>，查看MySQL文件信息</p>
+<p>删除MySQL相关文件</p>
+<ul>
+<li>  <strong>find / -name mysql</strong>，查看系统中MySQL相关文件信息</li>
+<li>  对找到的相关文件夹，使用 <strong>rm -rf</strong> 命令依次删除</li>
+</ul>
+<h3 id="2-压缩包安装-MySQL"><a href="#2-压缩包安装-MySQL" class="headerlink" title="2. 压缩包安装 MySQL"></a>2. 压缩包安装 MySQL</h3><h2 id="三、Docker-中安装-MySQL"><a href="#三、Docker-中安装-MySQL" class="headerlink" title="三、Docker 中安装 MySQL"></a>三、Docker 中安装 MySQL</h2><p>mysql 的容器我们可以让 docker 创建和执行，但是 mysql 的数据不能仅存在容器内，需要我们开辟一个外部路径专门用来存储 mysql 数据。</p>
+<h3 id="1-安装-MySQL"><a href="#1-安装-MySQL" class="headerlink" title="1. 安装 MySQL"></a>1. 安装 MySQL</h3><pre><code>docker run -p 3306:3306 --name mysql -v /mydata/mysql/log:/var/log/mysql -v /mydata/mysql/data:/var/lib/mysql -v /mydata/mysql/conf:/etc/mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
+ 简单讲解一下，
+ -p 3306:3306：将容器的3306端口映射到主机的3306端口
+ -v 源地址(宿主机):目标地址(容器)，将主机的/mydata/mysql/log挂载到mysql容器的/var/log/mysql目录
+ -e 指定容器内的环境变量,这里是指定mysql密码为root
+ -d 后台运行容器，并返回容器ID
+ mysql:5.7 指定mysql版本，具体版本可以在https://hub.docker.com 查询</code></pre>
+<h3 id="2-验证-MySQL-是否安装成功"><a href="#2-验证-MySQL-是否安装成功" class="headerlink" title="2. 验证 MySQL 是否安装成功"></a>2. 验证 MySQL 是否安装成功</h3><pre><code>docker ps</code></pre>
+<p>如下，如果显示了 mysql 就是安装成功了<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8ae46ac44e0f46ed8506089a6205fef8~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<h3 id="3-开启-MySQL-远程访问权限："><a href="#3-开启-MySQL-远程访问权限：" class="headerlink" title="3. 开启 MySQL 远程访问权限："></a>3. 开启 MySQL 远程访问权限：</h3><pre><code>先进入mysql容器
+docker exec -it mysql /bin/bash
+登录mysql，密码就是我们初始化时设置的root
+mysql -uroot -p
+然后开始开启远程访问权限
+use mysql;
+select host,user from user;</code></pre>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7214fe4092e142278770d0a86baae2a3~tplv-k3u1fbpfcp-zoom-1.image"><br>查看 host 不是 %，需要先更新成 %（如果是 % 跳过，直接进行下面的授权）：然后开始授权</p>
+<h3 id="4-MySQL-防火墙配置"><a href="#4-MySQL-防火墙配置" class="headerlink" title="4. MySQL 防火墙配置"></a>4. MySQL 防火墙配置</h3><p>上面对 mysql 本身开启了远程访问权限，下面需要配置防火墙，阿里云还需要在控制台配置安全组开放 3306 端口。</p>
+<pre><code># 如果firewalld 没有开启，先开启下
+service firewalld start
+#开放3306端口
+firewall-cmd --permanent --add-port=3306/tcp;
+#重启防火墙(修改配置后要重启防火墙)
+firewall-cmd --reload</code></pre>
+<p>最后配置 mysql 自启：此时使用 navicat 可以访问 MySQL 了</p>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="docker-run-之后没有启动（启动后自动退出）"><a href="#docker-run-之后没有启动（启动后自动退出）" class="headerlink" title="docker run 之后没有启动（启动后自动退出）"></a>docker run 之后没有启动（启动后自动退出）</h4><ul>
+<li>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/x1064320359/article/details/120816832">https://blog.csdn.net/x1064320359/article/details/120816832</a></li>
+<li>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40191181/article/details/116733889">https://blog.csdn.net/qq_40191181/article/details/116733889</a></li>
+</ul>
+<h4 id="mysqld-Can’t-read-dir-of-‘-etc-mysql-conf-d-‘-Errcode-2-No-such-file-or-directory"><a href="#mysqld-Can’t-read-dir-of-‘-etc-mysql-conf-d-‘-Errcode-2-No-such-file-or-directory" class="headerlink" title="mysqld: Can’t read dir of ‘/etc/mysql/conf.d/‘ (Errcode: 2 - No such file or directory)"></a>mysqld: Can’t read dir of ‘/etc/mysql/conf.d/‘ (Errcode: 2 - No such file or directory)</h4><ul>
+<li>  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/eternality/p/17170773.html">https://www.cnblogs.com/eternality/p/17170773.html</a></li>
+<li>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45564783/article/details/126440171">https://blog.csdn.net/qq_45564783/article/details/126440171</a></li>
+</ul>
+<h4 id="chown-changing-ownership-of-‘-var-lib-mysql-‘-Permission-denied"><a href="#chown-changing-ownership-of-‘-var-lib-mysql-‘-Permission-denied" class="headerlink" title="chown: changing ownership of ‘/var/lib/mysql/‘: Permission denied"></a>chown: changing ownership of ‘/var/lib/mysql/‘: Permission denied</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/miachen520/article/details/122389701">https://blog.csdn.net/miachen520/article/details/122389701</a></p>
+<h3 id="阿里云资源安装-mysql"><a href="#阿里云资源安装-mysql" class="headerlink" title="阿里云资源安装 mysql"></a>阿里云资源安装 mysql</h3><p>可以在 <a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instances/images">阿里云镜像中心</a> 搜索相关的镜像，会跳转到docker官网镜像处。</p>
+<p>MySQL镜像使用步骤：</p>
+<ol>
+<li> 使用命令查询mysql镜像信息：<strong>docker search mysql</strong></li>
+<li> 从远程仓库拉取mysql镜像，<strong>docker pull mysql</strong></li>
+<li> 通过docker run 运行镜像</li>
+</ol>
+<ul>
+<li><ul>
+<li>-d 进行后台运行<ul>
+<li>  -p 指定mysql镜像映射的主机端口</li>
+<li>  -e 后跟 mysql 的参数，来连接查询数据库的名称和连接密钥</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li> 如命令：<strong>docker run -d -p 3306:3306 -e MYSQL—_ROOT_PASSWORD=root -e MYSQL_DATABASE=datebase mysql:latest</strong></li>
+</ol>
+<ul>
+<li><ul>
+<li>属性名称必须要大写，否则无效<ul>
+<li>  <strong>-e MYSQL_ROOT_PASSWORD=root</strong>：设置 MySQL 服务 root 用户的密码为root</li>
+<li>  <strong>-e MYSQL_DATABASE=datebase</strong> ，创建一个名为databse的数据库</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li> 运行成功后，可以进入到mysql镜像中并查看mysql信息</li>
+</ol>
+<!---->
+
+<ol>
+<li><ol>
+<li> 使用<strong>docker ps</strong> 查看当前执行的镜像的ID，</li>
+<li> 使用命令进入到docker镜像中：<strong>docker exec -it 镜像ID bash</strong> ，进入后命令行前缀用户就变成了容器ID。</li>
+<li> 进入容器中，就相当于进入了一个轻量级Linux，命令是相同的</li>
+<li> 进入mysql镜像后，使用命令连接mysql：<strong>mysql –user=root –password</strong> 或<strong>mysql -h localhost -u root -p</strong> 然后输入密码登录</li>
+</ol>
+</li>
+</ol>
+<p><strong>错误：</strong> 服务器上通过docker命令运行和访问正常，但是使用navicate远程连接mysql时报错如下：<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee917ea24d6b41e8a63f008dde01cf86~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<ul>
+<li>  首先通过mysql镜像的ID进入到镜像中，并连接mysql <strong>mysql -u root -p</strong> 输入密码</li>
+<li>  开启远程访问权限</li>
+</ul>
+<!---->
+
+<ul>
+<li><ul>
+<li>查看数据库信息<strong>show databases;</strong><ul>
+<li>  切换使用mysql数据库：<strong>use mysql;</strong></li>
+<li>  查询user表权限信息：<strong>select host,user from user</strong></li>
+<li>  <strong>ALTER USER ‘root’@’%’ IDENTIFIED WITH mysql_native_password BY ‘root’;</strong></li>
+<li>  刷新操作：<strong>flush privileges;</strong></li>
+<li>  然后可以远程使用navicate连接了。</li>
+<li>  原因：镜像中root用户已经有了远程连接的权限，但是模式不一样导致无法连接，因此要将root用户的密码改成 mysql_native_password 模式即可。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!---->
+
+<ul>
+<li>  <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f3bffa972c9544139221d9c702c770e5~tplv-k3u1fbpfcp-zoom-1.image"></li>
+</ul>
+<p><strong>问题：</strong> 每次运行mysql时使用命令创建数据库，当服务stop之后，数据库就没了，下次运行要重新创建？</p>
+<ul>
+<li>  如果每次都重新run运行mysql镜像，那么每次启动后服务的ID是不同的，就是不同的服务，则数据库是一个原始的数据库</li>
+<li>  而使用命令 <strong>docker ps -a</strong> 可以查看所有的服务，找到之前服务的ID，直接 <strong>docker start ID</strong> 可以运行已经存在的服务，且配置是一样的。<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5fd0b0a11d0c449f811cf1c0867c4990~tplv-k3u1fbpfcp-zoom-1.image"></li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">shone</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://shonee.github.io/mysql-an-zhuang-shi-fen-xiang-xi-ban/">http://shonee.github.io/mysql-an-zhuang-shi-fen-xiang-xi-ban/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">shone</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'rKdDOYBXeWyhIXTnI9VOk6gu-gzGzoHsz',
+        appKey: 'Nnww7B3HOEUZ36LQCdBphN9i',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/chrome-cha-jian-shi-yong-zhi-nan-chi-xu-geng-xin/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="chrome 插件食用指南！【亲测可用】【持续更新】">
+                        
+                        <span class="card-title">chrome 插件食用指南！【亲测可用】【持续更新】</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+Chrome 插件是 Chrome 浏览器一大特色，是一种可以增强 Chrome 浏览器功能的小型软件程序，可以实现改善用户体验、丰富浏览器功能、以及自定义浏览器界面等功能。
+下载和安装插件Chrome 插件使用的前提是要有一个支持 ch
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/chrome/" class="post-category">
+                                    chrome
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/chrome-%E6%8F%92%E4%BB%B6/">
+                        <span class="chip bg-color">chrome 插件</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/">
+                        <span class="chip bg-color">持续更新</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/hexo-shi-xian-you-hua-wen-zhang-biao-ti-zhong-wen-zi-fu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Hexo 实现优化文章标题中文字符">
+                        
+                        <span class="card-title">Hexo 实现优化文章标题中文字符</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Hexo 创建文章标题命令设置文章标题Hexo 新建一篇博客文章时使用如下命令
+hexo new [layout] 'titleName'
+
+layout 是一个可选参数，用来指定创建文章对应的布局，即文章最终会被分配到的文件夹路径
+lay
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            shone
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="2621145115"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.5'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">shone</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">69.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shonee" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1048394082@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1048394082" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1048394082" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7bc8c63dc080f8a8c553737fd00a5efc";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- 给博客添加动态标签 -->
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+
+</html>

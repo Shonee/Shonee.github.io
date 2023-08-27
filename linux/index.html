@@ -1,0 +1,2349 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="linux, 爪哇程序人生">
+    <meta name="description" content="你若花开，蝴蝶自来。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>linux | 爪哇程序人生</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <!-- 添加动态诗词 链：https://www.jinrishici.com/ -->
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">爪哇程序人生</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/navigate" class="waves-effect waves-light">
+      
+      <i class="fas fa-location-arrow" style="zoom: 0.6;"></i>
+      
+      <span>导航</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">爪哇程序人生</div>
+        <div class="logo-desc">
+            
+            你若花开，蝴蝶自来。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/navigate" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-location-arrow"></i>
+			
+			导航
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">linux</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-12-16
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-08-27
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    29 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>Linux是一种自由和开放源码的系统，存在着许多不同的Linux版本，但它们都使用了Linux内核。Linux可以安装在各种计算机硬件设备中，如手机、平板电脑、路由器、台式计算机等。</p>
+<a id="more"></a>
+
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="Linux系统安装"><a href="#Linux系统安装" class="headerlink" title="Linux系统安装"></a>Linux系统安装</h2><h3 id="虚拟机安装"><a href="#虚拟机安装" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/babyxue/article/details/80970526">参考教程</a> </p>
+</blockquote>
+<h3 id="虚拟机克隆"><a href="#虚拟机克隆" class="headerlink" title="虚拟机克隆"></a>虚拟机克隆</h3><ul>
+<li>关闭当前系统</li>
+<li>使用虚拟机完整克隆系统</li>
+<li>进入新系统修改相关配置<ul>
+<li>修改ip地址</li>
+<li>修改主机名：<code>hostnamectl set-hostname &lt;新的主机名&gt;</code> </li>
+<li>修改ip地址和主机名映射</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a>Linux目录结构</h3><blockquote>
+<p>Linux根目录为<code>/</code>，可以使用<code>cd /</code>进入根目录，可以使用<code>pwd</code>查看当前所在目录位置。</p>
+</blockquote>
+<p>根目录 <code>/</code>的结构为：</p>
+<img src="/imgs/linux/image-20201217170543598.png" alt="Linux目录结构" style="zoom:80%;" />
+
+<ul>
+<li>bin：binaries，存放二进制可执行文件</li>
+<li>sbin：super user binaries，存放二进制可执行文件，只有root超级用户可以访问</li>
+<li>etc：etcetera，存放系统配置文件</li>
+<li>usr：unix shared resources，用于存放共享的系统资源</li>
+<li>home：存放用户文件的根目录</li>
+<li>root：超级用户目录</li>
+<li>dev：devices，用于存放设备文件</li>
+<li>lib：library，存放跟文件系统中的程序运行所需要的共享库以及内核模块</li>
+<li>mnt：mount，系统管理员安装临时文件系统的安装点</li>
+<li>boot：存放用于系统引导时使用的各种文件</li>
+<li>tmp：temporary，用于存放各种临时文件</li>
+<li>var：variable，用于存放运行时需要改变数据的文件</li>
+</ul>
+<p>Linux系统中<code>/</code>路径下使用命令查看内容：</p>
+<img src="/imgs/linux/image-20201217171828595.png" alt="使用ll查看内容" style="zoom:80%;" />
+
+<h2 id="Linux配置"><a href="#Linux配置" class="headerlink" title="Linux配置"></a>Linux配置</h2><h3 id="网络IP设置"><a href="#网络IP设置" class="headerlink" title="网络IP设置"></a>网络IP设置</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://dechen.blog.csdn.net/article/details/105407711?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param">教程</a> </p>
+<p>centOS7中使用ens33代替了eth0文件，即文件<code>/etc/sysconfig/network-scripts/ifcfg-ens33</code>。</p>
+<p>使用时，如果需要，可以将ens33文件重命名为eth0后，更改配置，重新启动网络。</p>
+</blockquote>
+<ul>
+<li><p>修改主机名：<code>vi /etc/sysconfig/network</code> </p>
+<pre class="line-numbers language-xml"><code class="language-xml">#/etc/sysconfig/network
+NETWORKING=yes        #网络是否工作，不可以为no
+HOSTNAME=shizhan    #主机名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>修改ip地址和主机名的映射关系：<code>vi /etc/hosts</code> </p>
+<pre class="line-numbers language-xml"><code class="language-xml">/etc/hosts
+127.0.0.1 localhost  ...
+192.168.2.2 CentOS1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<p><strong>设置IP为静态地址</strong>：</p>
+<ol>
+<li><p>查看虚拟机提供给系统的网段</p>
+<img src="/imgs/linux/image-20201218093833425.png" alt="虚拟机网段" style="zoom:80%;" />
+</li>
+<li><p>修改IP地址，使用管理员权限执行命令：<code>vi /etc/sysconfig/network-scripts/ifcfg-ens33</code></p>
+<pre class="line-numbers language-vim"><code class="language-vim">#ifcfg<span class="token operator">-</span>ens33
+TYPE<span class="token operator">=</span>Ethernet
+BOOTPROTO<span class="token operator">=</span>static    #static为静态ip，dhcp为自动获取动态ip
+DEFROUTE<span class="token operator">=</span>yes
+
+NAME<span class="token operator">=</span>ens33            #网卡设备名，要和文件名一致，如修改成eth0，则此处也要一致
+
+DEVICE<span class="token operator">=</span>ens33        #网卡设备名，要和文件名一致，如修改成eth0，则此处也要一致
+ONBOOT<span class="token operator">=</span>yes            #yes<span class="token operator">=</span>网卡随网络服务启动  系统默认不启动，这里一定要设置成启动
+
+#默认为dhcp，修改为static时需要新增下面部分内容
+DNS1<span class="token operator">=</span><span class="token number">114.114</span><span class="token operator">.</span><span class="token number">114.114</span>    #DNS服务器ip地址
+IPADDR<span class="token operator">=</span><span class="token number">192.168</span><span class="token operator">.</span><span class="token number">2.10</span>        #网卡为当前系统配置的静态ip地址
+NETMASK<span class="token operator">=</span><span class="token number">255.255</span><span class="token operator">.</span><span class="token number">255.0</span>    #子网掩码
+GATEWAY<span class="token operator">=</span><span class="token number">192.168</span><span class="token operator">.</span><span class="token number">2.1</span>        #网关<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p> 重启网络服务：<code>service network restart</code> 或者 <code>systemtcl restart network</code> </p>
+</li>
+<li><p>如果需要，则关闭系统防火墙：<code>systemctl stop firewalld</code> </p>
+</li>
+<li><p>查看修改后的ip地址：<code>ifconfig</code> 或者 <code>ip addr show</code> </p>
+<img src="/imgs/linux/image-20201218092804966.png" alt="image-20201218092804966" style="zoom:80%;" />
+
+</li>
+</ol>
+<h3 id="防火墙配置"><a href="#防火墙配置" class="headerlink" title="防火墙配置"></a><strong>防火墙配置</strong></h3><blockquote>
+<p>CentOS7默认采用的是firewalld管理netfilter子系统，底层调用的仍然是iptables命令。</p>
+</blockquote>
+<p>firewalld：dynamic firewall daemon，支持ipv4和ipv6.</p>
+<ul>
+<li>firewalld可以动态修改单条规则，并不需要像iptables那样，在修改了规则后必须全部刷新才可以生效。</li>
+<li>firewalld在使用上要比iptables更人性化。</li>
+</ul>
+<img src="/imgs/linux/image-20201218112535580.png" alt="Linux防火墙结构" style="zoom:80%;" />
+
+<p><strong>firewalld配置方式：</strong></p>
+<ul>
+<li>firewall-config：GUI工具</li>
+<li>firewall-cmd：命令行工具<ul>
+<li>firewall-cmd –version：查看版本号</li>
+<li>firewall-cmd –state：查看防火墙状态</li>
+<li>firewall-cmd –list-all：查看全部信息</li>
+<li>firewall-cmd –list-ports：只看端口信息</li>
+<li>等其他</li>
+</ul>
+</li>
+<li>直接编辑xml文件，编辑后需要reload才会生效</li>
+</ul>
+<p><strong>配置文件存放位置：</strong>firewalld的配置文件以xml文件为主（主配置文件为firewalld.conf），有两个位置</p>
+<ul>
+<li><code>/etc/firewalld/</code> ：存放修改过的配置，优先查找，找不到才去查找默认的配置</li>
+<li><code>/usr/lib/firewalld/</code>：默认的配置</li>
+<li>修改配置的时候只需要将<code>/usr/lib/firewalld/</code>复制到<code>/etc/firewalld/</code> 进行修改即可。</li>
+</ul>
+<h4 id="防火墙相关命令："><a href="#防火墙相关命令：" class="headerlink" title="防火墙相关命令："></a><strong>防火墙相关命令：</strong></h4><ul>
+<li>systemctl status firewalld：查看防火墙状态</li>
+<li>systemctl stop firewalld：临时关闭防火墙</li>
+<li>systemctl disable firewalld：禁止防火墙开机自启动</li>
+<li>service firewalld start：开启防火墙</li>
+<li><strong>service firewalld restart：重启防火墙</strong></li>
+<li>service firewalld stop：关闭防火墙</li>
+<li>开端口命令：firewall-cmd –zone=public –add-port=8080/tcp –permanent<ul>
+<li>–zone：作用域</li>
+<li>–add-port=8080/tcp：添加端口，格式即 端口/协议</li>
+<li>–permanent：永久生效，不加此参数重启后失效</li>
+</ul>
+</li>
+</ul>
+<h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><blockquote>
+<p>命令格式：命令 -选项 参数</p>
+<p>如： ls -a /usr   =&gt;  显示/usr目录下所有文件信息</p>
+</blockquote>
+<h3 id="关机-重启命令"><a href="#关机-重启命令" class="headerlink" title="关机/重启命令"></a>关机/重启命令</h3><ul>
+<li>shutdown：系统关机<ul>
+<li>-r：关机后立即重启</li>
+<li>-h：halt，关机后不重新启动，关闭电源</li>
+</ul>
+</li>
+<li>reboot：重新启动，类似 shutdown -r</li>
+</ul>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ul>
+<li>内部命令：属于Shell解析器的一部分<ul>
+<li>pwd：print working directory，显示当前工作目录</li>
+<li>cd：change directory，切换目录</li>
+<li>help：帮助，后跟命令，可以查看该命令的详细描述，如 help cd</li>
+</ul>
+</li>
+<li>外部命令：独立于Shell解析器之外的文件程序<ul>
+<li>ls：list，显示文件和目录列表，可以指定选项和参数，不指定默认所在目录<ul>
+<li>-l：long，输入文件和目录的详细信息，和 ll 命令相同</li>
+<li>-a：all，所有文件和目录，包括隐藏文件和特殊目录</li>
+<li>-t：time</li>
+</ul>
+</li>
+<li>mkdir：make directory，创建目录</li>
+<li>cp：copy，复制文件或目录</li>
+<li>man：manual，查看帮助文档，后跟命令，如 man ls</li>
+</ul>
+</li>
+<li>快捷键：<ul>
+<li>ctrl + c：停止当前进程</li>
+<li>ctrl + r：查看命令历史</li>
+<li>ctrl + l：清屏，与clear命令作用相同</li>
+</ul>
+</li>
+<li>查看本机ip地址<ul>
+<li>ifconfig</li>
+<li>ip address</li>
+</ul>
+</li>
+</ul>
+<h3 id="系统状态"><a href="#系统状态" class="headerlink" title="系统状态"></a>系统状态</h3><ul>
+<li>top：显示当前系统中耗费资源最多的进程，动态列表</li>
+<li>ps：显示瞬间的进程状态<ul>
+<li>-e/-A：显示所有进程，环境变量</li>
+<li>-f：全格式</li>
+<li>-a：显示所有用户的所有进程（包括其他用户）</li>
+<li>-u：按用户名和启动时间的顺序来显示进程</li>
+<li>-x：显示无控制终端的进程</li>
+</ul>
+</li>
+<li>kill：杀死一个进程<ul>
+<li>kill -9 pid ：杀死指定pid的进程</li>
+</ul>
+</li>
+<li>df：显示文件系统磁盘空间的使用情况</li>
+<li>ifconfig：网卡网络配置详解</li>
+<li>ping：测试网络的连通性（后跟ip或域名）</li>
+<li>netstat：显示网络状态信息<ul>
+<li>-a：显示所有的连接和监听端口</li>
+<li>-t：tcp，仅显示tcp相关选项</li>
+<li>-u：udp，仅显示udp相关选项</li>
+<li>-n：拒绝显示别名，能显示数字的全部转化成数字</li>
+<li>-p：显示建立相关链接的程序名</li>
+</ul>
+</li>
+<li>free：显示当前内存和交换空间的使用情况</li>
+<li>du：显示指定文件（目录）已使用的磁盘空间的总和<ul>
+<li>-h：human-readable，文件大小以K，M，G为单位显示</li>
+<li>-s：summarize，只显示各档案大小的总和</li>
+</ul>
+</li>
+</ul>
+<h3 id="操作文件或目录"><a href="#操作文件或目录" class="headerlink" title="操作文件或目录"></a>操作文件或目录</h3><ul>
+<li>mkdir：make directory，创建目录<ul>
+<li>-p：parents，创建指定目录时，如果父目录不存在则会先生父目录</li>
+</ul>
+</li>
+<li>touch：创建空文件</li>
+<li>cp：copy，复制文件或目录<ul>
+<li>-r：recursive，递归处理，将指定目录下的文件与子目录一块拷贝</li>
+</ul>
+</li>
+<li>mv：move，移动文件或目录，文件或目录改名</li>
+<li><code>echo &quot;abc&quot; &gt; file3.txt</code> ：将字符串内容输出到file3文件中，没有则先创建文件<ul>
+<li><strong><code>&gt;</code> ：代表覆盖内容</strong></li>
+<li><strong><code>&gt;&gt;</code>：代表在文件中追加内容</strong></li>
+</ul>
+</li>
+<li>less、more、cat，都是查看输出文件内容的命令，可以配合 <code>&gt;</code> 命令输出内容到新文件中<ol>
+<li><code>cat 1.txt &gt; file4.txt</code></li>
+<li><code> less 1.txt &gt; file5.txt</code> </li>
+<li><code>more 1.txt &gt; file6.txt</code> </li>
+</ol>
+</li>
+<li>rm：remove，删除文件<ul>
+<li><code>-i</code>：删除前逐一询问确认</li>
+<li>-r：recursive，同时删除该目录下的所有文件</li>
+<li>-f：force，强制删除文件或目录（递归删除）</li>
+</ul>
+</li>
+<li>rmdir：remove directory，删除空目录</li>
+<li>cat：catenate，显示文本内容</li>
+<li>more、less：分页显示文本文件内容</li>
+<li>head、tail：查看文本中开头或结尾部分的内容<ul>
+<li>head -n 5 a.log：查看a.log文件的前5行</li>
+<li>tail -F b.log：follow，循环读取文件内容</li>
+</ul>
+</li>
+<li>wc：word count，统计文本的行数、字数、字符数<ul>
+<li>-m：统计文本字符数</li>
+<li>-w：统计文本字数</li>
+<li>-l：统计文本行数</li>
+</ul>
+</li>
+<li>find：在文件系统中查找指定的文件，<code>find/etc/ -name &quot;aaa&quot;</code>：在/etc/目录下查找名为aaa的文件</li>
+<li>grep：在指定的文本文件中查找指定的字符串</li>
+</ul>
+<h3 id="压缩-解压命令"><a href="#压缩-解压命令" class="headerlink" title="压缩/解压命令"></a>压缩/解压命令</h3><ul>
+<li>gzip [参数项] 文件名：压缩/解压文件或目录，压缩文件后缀名为gz<ul>
+<li>-d：decompress，将压缩文件解压</li>
+<li>-l：list，显示压缩文件的大小，未压缩文件的大小，压缩比</li>
+<li>-v：verbose，显示文件名和压缩比</li>
+<li>-num：用指定的数字num来调整压缩的速度，如：<ul>
+<li>-1或–fase表示最快压缩方法，低压缩比</li>
+<li>-9或–best表示最慢压缩方法，高压缩比</li>
+<li>系统缺省值（默认）为6</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>bzip2  [参数项] 文件名：压缩/解压文件或目录，压缩文件后缀为bz2<ul>
+<li>-z：compress，压缩的参数</li>
+<li>-d：decompress，解压缩的参数</li>
+<li>-c：将压缩过程产生的数据输出到屏幕上</li>
+<li>-num：同gzip中数字功能</li>
+</ul>
+</li>
+<li>tar  [参数项] 文件名：文件、目录打包/解包<ul>
+<li>-c：create，建立一个压缩文件的参数指令</li>
+<li>-x：extract，解开一个压缩文件的参数指令</li>
+<li>-z：是否需要用gzip压缩</li>
+<li>-j：是否使用bzip2压缩</li>
+<li>-v：verbose，压缩过程中显示文件</li>
+<li>-f：使用档名，在f之后要立即接档名（file）</li>
+</ul>
+</li>
+</ul>
+<h2 id="Vim编辑器"><a href="#Vim编辑器" class="headerlink" title="Vim编辑器"></a>Vim编辑器</h2><h3 id="Vim工作模式"><a href="#Vim工作模式" class="headerlink" title="Vim工作模式"></a>Vim工作模式</h3><img src="/imgs/linux/image-20201218170322451.png" alt="vim工作模式" style="zoom:67%;" />
+
+
+
+<h3 id="定位命令"><a href="#定位命令" class="headerlink" title="定位命令"></a>定位命令</h3><ul>
+<li>:set nu：显示行号</li>
+<li>:set nonu：取消行号</li>
+<li>gg：小写，定位到文本的第一行</li>
+<li>G：大写，定位到文本的最后一行</li>
+<li>:n：定位到文本的第n行</li>
+</ul>
+<h3 id="插入命令"><a href="#插入命令" class="headerlink" title="插入命令"></a>插入命令</h3><ul>
+<li>i：小写，在光标<strong>前</strong>插入内容</li>
+<li>I：大写，在光标当前行<strong>开始处</strong>插入内容</li>
+<li>a：小写，在光标<strong>后</strong>插入内容</li>
+<li>A：大写，在光标当前行<strong>末尾处</strong>插入内容</li>
+<li>o：小写，在光标当前行的<strong>下一行插入新行</strong></li>
+<li>O：大写，在光标当前行的<strong>上一行插入新行</strong></li>
+</ul>
+<h3 id="替换和取消"><a href="#替换和取消" class="headerlink" title="替换和取消"></a>替换和取消</h3><ul>
+<li>yy：复制当前行；nyy：复制n行</li>
+<li>p：粘贴</li>
+<li>u：undo，取消上一步操作</li>
+<li>Ctrl + r：redo，返回到undo之前，即撤销撤销</li>
+<li>r：替换光标所在处的字符</li>
+<li>R：从光标处开始替换，按Esc后结束</li>
+</ul>
+<h3 id="删除命令"><a href="#删除命令" class="headerlink" title="删除命令"></a>删除命令</h3><ul>
+<li>x：删除光标所在字符</li>
+<li>nx：删除光标所在处后的n个字符</li>
+<li>dd：删除光标所在行</li>
+<li>D：删除光标所在处到行尾的所有内容</li>
+<li>ndd：删除光标所在行开始的n行</li>
+<li>dG：删除光标所在行到末尾行的所有内容</li>
+<li>:5,7d：删除指定范围的行，此处是删除第5、7行</li>
+</ul>
+<h3 id="相关快捷键"><a href="#相关快捷键" class="headerlink" title="相关快捷键"></a>相关快捷键</h3><ul>
+<li>Shift + zz：保存退出，与<code>:wq</code>命令作用相同</li>
+<li>v：进入字符可视模式，选择单个字符，按y复制，按p粘贴</li>
+<li>V或Shift + v：进入行可视模式，选择行，按y复制，按p粘贴</li>
+<li>Ctrl + v：进入块可视模式，选择块，按y复制，按p粘贴</li>
+</ul>
+<h2 id="Linux用户和权限"><a href="#Linux用户和权限" class="headerlink" title="Linux用户和权限"></a>Linux用户和权限</h2><blockquote>
+<p>Linux操作系统是一个多用户操作系统，允许多用户同时登录到系统上并使用资源。系统会根据账户来区分每个用户的文件，任务和工作环境，使得每个用户工作都不受干扰。</p>
+</blockquote>
+<h3 id="用户类别"><a href="#用户类别" class="headerlink" title="用户类别"></a>用户类别</h3><ul>
+<li>超级用户：root，UID=0</li>
+<li>伪用户：UID在1-499<ul>
+<li>伪用户不能登录系统，且没有宿主目录</li>
+<li>如系统和服务相关的：bin、daemon、shutdown等</li>
+<li>进程相关的：mail、news、games等</li>
+</ul>
+</li>
+<li>普通用户：UID在500-60000</li>
+<li>普通用户切换至root用户：$ su -&gt; 输入密码就可切换为root用户</li>
+<li>root用户切换至普通用户：$ su &lt;用户名&gt; 即可切换为指定用户</li>
+</ul>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><ul>
+<li><p><strong><code>/etc/passwd</code>：保存用户信息的文件</strong></p>
+<p>使用<code>cat /etc/passwd</code>查看文件，内容<strong>格式</strong>为：</p>
+<img src="/imgs/linux/image-20201219171544970.png" alt="用户文件内容" style="zoom:67%;" />
+
+<ul>
+<li>root - 用户名：用户登录系统的用户名</li>
+<li>x - 密码：密码位</li>
+<li>0 - UID：用户标识号</li>
+<li>0 - GID：默认组标识号</li>
+<li>root - 描述信息：存放用户的描述信息</li>
+<li>/root - 宿主目录：用户登录系统的默认目录，默认是在/home/下</li>
+<li>/bin/bash - 命令解析器：用户使用的Shell，默认是bash</li>
+</ul>
+</li>
+<li><p><strong><code>/etc/shadow</code>：保存密码的文件</strong></p>
+<p>使用命令<code>cat /etc/shadow</code>查看，内容格式如图所示，依次表示含义为：</p>
+<img src="/imgs/linux/image-20201219172418997.png" alt="用户密码文件内容" style="zoom:67%;" />
+
+<ul>
+<li>用户名：登录系统的用户名</li>
+<li>密码：加密密码</li>
+<li>最后一次修改时间：最后一次修改密码距离现今的天数</li>
+<li>最小时间间隔：两次修改密码间隔最小时间</li>
+<li>最大时间间隔：~</li>
+<li>警告时间</li>
+<li>账号限制时间</li>
+<li>失效时间</li>
+<li>标志</li>
+</ul>
+</li>
+<li><p><strong><code>/etc/group</code>：保存用户组的文件</strong></p>
+<blockquote>
+<p>每个用户至少属于一个组；每个组可以包含多个用户；同一个组的用户拥有组的权限；</p>
+</blockquote>
+<img src="/imgs/linux/image-20201219173014652.png" alt="用户组文件内容" style="zoom:67%;" />
+
+<ul>
+<li>组名：</li>
+<li>组密码：密码位，一般不使用</li>
+<li>GID：组标识号</li>
+<li>组内用户列表：属于改组的用户的列表</li>
+</ul>
+</li>
+<li><p><code>/etc/gshadow</code>：保存用户组密码的文件</p>
+</li>
+<li><p><code>/etc/default/useradd</code>：用户配置文件</p>
+</li>
+</ul>
+<h3 id="操作用户命令"><a href="#操作用户命令" class="headerlink" title="操作用户命令"></a>操作用户命令</h3><ul>
+<li>查看用户信息：<ul>
+<li>查看当前登录用户信息:：<code>w/who/whoami</code></li>
+<li>查看历史登录用户信息：<code>last</code></li>
+<li>查看系统所有用户信息：<ul>
+<li>用户信息保存在<code>/etc/passwd</code>文件下，查看用户完整信息：<code>cat /etc/passwd</code><ul>
+<li>可以使用cut命令截取只显示用户名称：<code>cut -d: -f1 /etc/passwd</code></li>
+<li>-d:，表示定义以:为截取分隔符</li>
+<li>-f1，表示截取显示信息的第一列域信息</li>
+</ul>
+</li>
+<li>还可以使用<code>getent passwd</code>命令来查看完成用户信息，使用cut截取</li>
+<li>可以使用<code>compgen -u</code>命令查看所有用户名</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>useradd</code> ：<strong>添加用户</strong><ul>
+<li>-u：uid，指定用户标识ID</li>
+<li>-g：gid，指定所属的组名ID</li>
+<li>-G：Groups，指定多个组，使用逗号， 间隔</li>
+<li>-c：comment，用户描述</li>
+<li>-e：expire date，失效时间</li>
+<li>例如创建用户du的命令：<code>useradd -u 888 -g users -G sys,root -c &quot;hr du&quot; du passwd du</code> </li>
+</ul>
+</li>
+<li>修改指定用户的密码：切换用户至root，使用<code>passwd [username]</code> 为用户设置新密码</li>
+<li><code>usermod</code>：user modify，<strong>修改用户</strong><ul>
+<li>-l：修改用户名，如将用户a名称改为b的命令是：<code>usermod -l a b</code> </li>
+<li>-g：添加组，为用户tom添加sys组：<code>usermod -g sys tom</code> </li>
+<li>-G：添加多个组，使用逗号间隔</li>
+<li>-L：Lock，锁定账户密码</li>
+<li>-U：Unlock，解锁账户密码</li>
+</ul>
+</li>
+<li><code>userdel</code>：user delete，<strong>删除用户</strong><ul>
+<li>-r：remove，删除账号同时删除账号相关目录 </li>
+</ul>
+</li>
+</ul>
+<h3 id="操作组命令"><a href="#操作组命令" class="headerlink" title="操作组命令"></a>操作组命令</h3><ul>
+<li>groups：显示用户所属组</li>
+<li>groupadd：添加组<ul>
+<li>-g：指定组gid</li>
+</ul>
+</li>
+<li>groupmod：修改组<ul>
+<li>-n：new group，修改组名</li>
+</ul>
+</li>
+<li>groupdel：删除组</li>
+</ul>
+<h3 id="权限操作命令"><a href="#权限操作命令" class="headerlink" title="权限操作命令"></a>权限操作命令</h3><p><strong>三种基本权限：</strong>r（read）读权限；w（write）写权限；x（execute）执行权限；</p>
+<img src="/imgs/linux/image-20201219195144607.png" alt="文件权限信息" style="zoom:67%;" />
+
+<ul>
+<li>第1位：表示文件类型，d-目录，-普通文件，I-链接文件</li>
+<li>第2-4位：所属用户权限，用u（user）表示</li>
+<li>第5-7位：所属组权限，用g（group）表示</li>
+<li>第8-10位：其他用户权限，用o（other）表示</li>
+<li>2-10位标识所有的权限，用a（all）表示</li>
+<li><code>-rwxrw-r--</code>：表示一个普通文件，所属用户有读/写/执行权限，同组用户有读/写权限，其他组只有读权限</li>
+</ul>
+<p><strong>更改文件权限操作：</strong></p>
+<ul>
+<li>chmod：change mode，修改文件权限<ul>
+<li>-R：Receusive，表示其下的文件和子目录做相同的权限操作</li>
+<li>如：<code>chmod u+x a.txt</code>  ：为a.txt文件的所属用户添加执行权限</li>
+</ul>
+</li>
+<li>使用数字来表示权限：r=4，w=2，x=1，-=0<ul>
+<li>如：<code>chmod 750 b.txt</code>：表示文件b.txt，所属用户有读/写/执行权限，所属组有读/执行/权限，其他无</li>
+</ul>
+</li>
+</ul>
+<h2 id="Linux中安装软件"><a href="#Linux中安装软件" class="headerlink" title="Linux中安装软件"></a>Linux中安装软件</h2><h3 id="RPM"><a href="#RPM" class="headerlink" title="RPM"></a>RPM</h3><blockquote>
+<p>RedHat Package Manager，RedHat软件包管理工具</p>
+</blockquote>
+<p>相关参数：</p>
+<ul>
+<li>i：install，安装应用程序</li>
+<li>e：erase，卸载应用程序</li>
+<li>vh：verbose hash，显示安装进度</li>
+<li>U：update，升级软件包</li>
+<li>qa：query all，显示所有已安装软件包</li>
+<li>结合grep命令使用</li>
+</ul>
+<h3 id="YUM"><a href="#YUM" class="headerlink" title="YUM"></a>YUM</h3><blockquote>
+<p>Yellow dog Updater，Modified  是一个在Fedora和RedHat以及SUSE、CentOS中的Shell前端软件包管理器。</p>
+</blockquote>
+<ul>
+<li><p>yum instll gcc-c++</p>
+</li>
+<li><p>yum remove gcc-c++</p>
+</li>
+<li><p>yum update gcc-c++</p>
+</li>
+<li><p>yum 安装软件时出现 is this ok [y/d/n]：</p>
+<ul>
+<li>y：下载安装</li>
+<li>n：不安装</li>
+<li>d：只下载不安装</li>
+</ul>
+</li>
+</ul>
+<h3 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h3><ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.jdkdownload.com/">JDK下载</a> </p>
+</li>
+<li><p>将<code>jdk-8u181-linux-x64.tar.gz</code>传至Linux系统中</p>
+<ul>
+<li>使用FTP连接Linux进行文件传输，前提是Linux系统要安装FTP服务，且开启FTP的21端口</li>
+<li>在XShell中使用命令传输文件，使用 <code>rz</code> 命令，实现windows项Linux传输文件，选择单个文件</li>
+<li>使用<code>sz</code>命令，实现从Linux向windows传输文件</li>
+</ul>
+</li>
+<li><p>解压缩，命令 <code>tar -zxvf jdk-8u181-linux-x64.tar.gz /usr/local </code> 解压缩到<code>/usr/local</code>中 </p>
+</li>
+<li><p>配置环境变量</p>
+<ol>
+<li><p>使用命令<code>vi /etc/profile</code> 编辑系统环境变量设置</p>
+</li>
+<li><p>最后追加内容：</p>
+<pre><code>export JAVA_HOME=/usr/local/jdk1.7.0_45
+export PATH=$PATH:$JAVA_HOME/bin</code></pre>
+</li>
+<li><p>刷新环境变量 <code>source /etc/profile</code> </p>
+</li>
+</ol>
+</li>
+<li><p>测试JDK环境，命令：<code>java -version</code> ，显示当前版本号即表示成功</p>
+<img src="/imgs/linux/image-20201219204628690.png" alt="image-20201219204628690" style="zoom:67%;" />
+
+</li>
+</ol>
+<h3 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h3><ol>
+<li><p>上传<code>apache-tomcat-7.0.68.tar.gz</code>到Linux系统</p>
+</li>
+<li><p>解压缩文件到指定目录，<code>tar -zxvf apache-tomcat-7.0.68.tar.gz -C /usr/local</code> </p>
+</li>
+<li><p>启动tomcat，进入tomcat/bin目录下，执行启动文件<code>./startup.sh</code> </p>
+<img src="/imgs/linux/image-20201220100649965.png" alt="启动tomcat" style="zoom:67%;" />
+</li>
+<li><p>显示启动后使用命令查看tomcat是否已经启动成功：</p>
+<ol>
+<li><p><code>netstat -nltp</code>：查看系统当前监听的端口情况</p>
+</li>
+<li><p>8080端口开启，表示启动成功</p>
+<img src="/imgs/linux/image-20201220094551030.png" alt="tomcat运行成功" style="zoom:67%;" />
+</li>
+<li><p>此时访问ip:8080可以看到如下，则表示tomcat安装成功。</p>
+<img src="/imgs/linux/image-20201220101613257.png" alt="image-20201220101613257" style="zoom:50%;" />
+</li>
+</ol>
+</li>
+<li><p><strong>Tomcat启动时常见问题</strong></p>
+<ol>
+<li><p>如果8080端口没有监听，说明tomcat启动失败</p>
+<img src="/imgs/linux/image-20201220094454339.png" alt="tomcat启动失败" style="zoom:67%;" />
+</li>
+<li><p>若tomcat启动失败，查看tomcat日志</p>
+<pre class="line-numbers language-cmd"><code class="language-cmd">cd tomcat/logs
+cat catalina.out    #查看日志文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>日志文件内容如下：表示启动时tomcat没有找到指定的Java环境</p>
+<img src="/imgs/linux/image-20201220101025996.png" alt="tomcat启动失败日志信息" style="zoom:67%;" />
+</li>
+<li><p>检查配置环境变量时JDK路径错误，修改后重新启动tomcat，查看端口情况如下：启动成功</p>
+<img src="/imgs/linux/image-20201220094551030.png" alt="tomcat运行成功" style="zoom:67%;" />
+</li>
+<li><p>如果tomcat已经启动，外部访问仍然失败，则要检查防火墙是否关闭或者是否允许8080端口通行。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><blockquote>
+<p>yum安装是最简单的，使用压缩包安装失败，因此换用了yum方式。 <a target="_blank" rel="noopener" href="https://blog.csdn.net/ntuxiaolei/article/details/81777335?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">参考教程</a> </p>
+</blockquote>
+<ol>
+<li><p>查看是否使用yum安装过mysql，使用命令：<code>rpm -qa | grep -i mysql</code> </p>
+<ul>
+<li><p>如下图显示已经安装的相关模块，则要先卸载，再重新安装</p>
+<img src="/imgs/linux/image-20201221195202378.png" alt="image-20201221195202378" style="zoom:80%;" />
+
+<ul>
+<li><code>yum -y remove &lt;全名称&gt;</code>：卸载相关模块</li>
+<li>如果上述命令卸载不掉，则使用命令： <code>rpm -er &lt;全名称&gt;</code> </li>
+</ul>
+</li>
+<li><p>如果执行后无任何变化，则表示没有安装，可以正常进行</p>
+</li>
+</ul>
+</li>
+<li><p>使用yum命令下载并安装mysql相关服务</p>
+<pre class="line-numbers language-cmd"><code class="language-cmd"># cd /usr/local        #进入/usr/local文件夹下
+# wget http://repo.mysql.com/mysql57-community-release-el7-8.noarch.rpm #下载.rpm文件
+# rpm -ivh mysql57-community-release-el7-8.noarch.rpm #
+# yum -y install mysql-server    #安装mysql服务
+#也可以指定安装目录
+# yum --install root=/usr/local/mysql --releaserver=/ -y install mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>等待所有服务模块安装完成</p>
+<img src="/imgs/linux/image-20201221203743558.png" alt="image-20201221203743558" style="zoom:67%;" />
+</li>
+<li><p>mysql相关配置文件路径，并配置mysql的配置文件</p>
+<ul>
+<li><p>配置文件：<code>/etc/my.cnf</code></p>
+</li>
+<li><p>日志文件：<code>/var/log/mysqld.log</code></p>
+</li>
+<li><p>服务启动脚本：<code>/usr/lib/systemd/system/mysqld.service</code></p>
+</li>
+<li><p>socket文件：<code>/var/run/mysqld/mysqld.pid</code></p>
+</li>
+<li><p>添加mysl配置内容：</p>
+<pre class="line-numbers language-cnf"><code class="language-cnf">[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+server_id = 1
+expire_logs_days = 3
+
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>启动mysql服务，相关命令：</p>
+<ul>
+<li><code>systemctl start mysqld.service</code>：开启mysql服务</li>
+<li><code>system status mysqld.service</code>：查看mysql服务状态，<ul>
+<li>-l：查看详细状态信息</li>
+</ul>
+</li>
+<li><code>systemctl stop mysql.service</code>：停止mysql服务</li>
+<li><code>systemctl restart mysql.service</code>：重启mysql服务</li>
+</ul>
+</li>
+<li><p>设置mysql开机自启动</p>
+<ul>
+<li><code>systemctl enable mysqld</code>：</li>
+<li><code>systemctl daemon-reload</code>：</li>
+</ul>
+</li>
+<li><p><strong>修改mysql密码</strong></p>
+<blockquote>
+<p>安装mysql后，会在相应的日志文件中产生一个随机密码，可以使用命令查看</p>
+<ul>
+<li>cat /var/log/mysqld.log    ：查看日志文件全部内容</li>
+<li>grep “password” /var/log/mysqld.log   ：正则匹配日志文件中的password关键字</li>
+</ul>
+</blockquote>
+<p>使用命令登录mysql：<code>mysql -u root -p</code>：命令回车后输入日志中密码，登录mysql</p>
+<ul>
+<li><p>登录成功，修改密码：<code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;rOOT@2020&#39;;</code>即root账户的密码修改为Root@2020</p>
+</li>
+<li><p>随机密码登录失败时，需要配置跳过认证阶段，登录后使用sql语句更新密码</p>
+<ol>
+<li><p>修改配置文件：<code>vi /etc/my.cnf</code> ，添加 skip-grant-tables 保存并退出，表示登录不验证</p>
+</li>
+<li><p>重启mysql服务，使用mysql直接登录mysql客户端</p>
+</li>
+<li><p>使用sql语句修改登录密码</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">#update user set password=password("Root@2020") where user="root";
+#mysql 5.7的数据库没有了password字段 用的是authentication_string字段
+use mysql;
+update mysql.user set authentication_string=password('Root@2020') where user='root' ;
+flush privileges;    #<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</li>
+<li><p><strong>修改密码策略</strong>（默认密码策略要求密码是大小写字母+数字+特殊字符的组合且最少8位）</p>
+</li>
+</ul>
+</li>
+<li><p>设置允许远程登录</p>
+</li>
+<li><p>设置允许其他端，navicate远程连接</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">mysql -u root -p Root@2020    #连接客户端
+mysql> use mysql;
+mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'Root@2020';
+#如果上句运行失败，则使用下面命令
+#mysql> grant all on *.* to root@"%" identified by "Root@2020";
+mysql> flush privileges;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h3 id="安装使用Redis"><a href="#安装使用Redis" class="headerlink" title="安装使用Redis"></a>安装使用Redis</h3><p>安装步骤： <a target="_blank" rel="noopener" href="https://wsk1103.github.io/2019/01/12/centos-7-%E5%AE%89%E8%A3%85Redis/">安装教程</a> </p>
+<ol>
+<li><p>如果电脑中没有安装过gcc依赖，则要先安装才行（否则编译时报错）</p>
+<blockquote>
+<p><code>$ yum -y install gcc</code></p>
+</blockquote>
+</li>
+<li><p>可以直接使用命令安装，但是安装的版本不能指定，一般就是比较低的版本</p>
+<blockquote>
+<p><code># yum install redis</code></p>
+</blockquote>
+</li>
+<li><p>使用命令下载文件后进行安装  进入到 usr/local 文件夹中下载</p>
+<blockquote>
+<p><code># wget http://download.redis.io/releases/redis-5.0.4.tar.gz</code></p>
+</blockquote>
+</li>
+<li><p>解压压缩包  <code># tar zxvf redis-5.0.4.tar.gz</code> </p>
+</li>
+<li><p>解压后进入到 redis-5.0.4 目录下，进行编译</p>
+<ol>
+<li>先编译库  <code># make MALLOC=libc</code></li>
+<li>再编译资源（安装） <code># cd src &amp;&amp; make install</code></li>
+</ol>
+</li>
+<li><p>编译安装完成，可以启动redis服务了</p>
+</li>
+<li><p>为了使用redis更加方便，需要对redis进行一定的配置，redis-5.0.4下的redis.conf文件</p>
+</li>
+<li><p>将配置文件复制到etc文件夹下  <code>cp redis.conf /etc</code> ，然后进行更改（也可更改后复制）</p>
+<blockquote>
+<p><code># vi redis.conf</code>     etc是系统配置文件存放的目录，方便配置</p>
+</blockquote>
+<ol>
+<li>允许其他ip访问 ：将 <code>bind 127.0.0.1</code> 注释掉，此处限制了访问redis的地址</li>
+<li>解除安全保护机制：修改 <code>protected-mode yes</code> 为 <code>protected-mode no</code></li>
+<li>修改redis启动为守护进程：修改 <code>daemonize no</code> 为  <code>daemonize yes</code> </li>
+</ol>
+</li>
+<li><p><strong>启动修改后redis服务   <code>redis-server /etc/redis.conf</code></strong> 👍</p>
+<img src="/../../../markdownLog/%25E9%259D%25A2%25E8%25AF%2595%25E6%2589%25BE%25E5%25B7%25A5%25E4%25BD%259C/assets/image-20201101215817433.png" alt="image-20201101215817433" style="zoom:80%;" />
+</li>
+<li><p>服务启动后，可以使用命令启动客户端进行测试  <code>redis-cli</code> </p>
+<ol>
+<li><p>模拟客户端发起通信 <code>redis-cli</code></p>
+</li>
+<li><p>如果不成功，要退出后重新进行 <code>exit</code></p>
+<img src="/../../../markdownLog/%25E9%259D%25A2%25E8%25AF%2595%25E6%2589%25BE%25E5%25B7%25A5%25E4%25BD%259C/assets/image-20201101215939224.png" alt="image-20201101215939224" style="zoom:80%;" />
+</li>
+</ol>
+</li>
+<li><p>设置redis启动服务脚本（使用systemd管理redis）</p>
+<ol>
+<li><p>在 <code>/usr/lib/systemd/system</code> 目录下新建文件 <code>redis.service</code> ，并添加内容如下：</p>
+<pre class="line-numbers language-linux"><code class="language-linux">[Unit]
+Decription=Redis 6379
+After=syslog.target network.target
+[Service]
+Type=forking
+PrivateTmp=yes
+Restart=always
+ExecStart=/usr/local/bin/redis-server /etc/redis.conf
+ExecStop=/usr/local/bin/redis-cli -h 127.0.0.1 -p 6379 -a jcon shutdown
+User=root
+Group=root
+LimitCORE=infinity
+LimitNOFILE=100000
+LimitNPROC=100000
+[Install]
+WantedBy=multi-user.target<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>设置完毕后，可以使用系统命令开启关闭redis</p>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>3. 好像没有成功，等等再试</code></pre>
+<ol start="12">
+<li><p>设置redis开机自启动</p>
+<ol>
+<li><p>复制一份 <strong>utils/redis_init_script</strong> 到 <strong>/etc/init.d/</strong></p>
+</li>
+<li><p>修改 <code>redis_init_script</code> 文件，指定具体的启动文件</p>
+<img src="/../../../markdownLog/%25E9%259D%25A2%25E8%25AF%2595%25E6%2589%25BE%25E5%25B7%25A5%25E4%25BD%259C/assets/image-20201102094652970.png" alt="image-20201102094652970" style="zoom:80%;" />
+</li>
+<li><p>设置自启动命令 <code># chkconfig redis_init_script on</code> ，</p>
+</li>
+<li><p>如果关闭自启动，将on换成off</p>
+</li>
+</ol>
+</li>
+<li><p>修改Redis的密码</p>
+<img src="/../../../markdownLog/%25E9%259D%25A2%25E8%25AF%2595%25E6%2589%25BE%25E5%25B7%25A5%25E4%25BD%259C/assets/image-20201102094737334.png" alt="image-20201102094737334" style="zoom:80%;" />
+</li>
+<li><p>redis<a target="_blank" rel="noopener" href="https://juejin.im/post/6844903889242685454">安装过程常见错误</a> </p>
+</li>
+</ol>
+<h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38118016/article/details/89949131">参考教程–安装成功！</a> </p>
+<ol>
+<li>查看Linux distribution版本号：<code>cat /etc/redhat-release</code> </li>
+<li>nginx不在默认的yum源中，需要将nginx加入到yum中 <code>rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</code>  <ul>
+<li>或者：<code>sudo yum -y install epel-release</code>添加Nginx存储库</li>
+</ul>
+</li>
+<li>查看nginx是否存在：<code>yum repolist</code> </li>
+<li>在yum中安装nginx：<code>yum install nginx</code> </li>
+<li>安装完成测试本地访问：<code>curl -i localhost</code>返回响应信息<ul>
+<li>或者浏览器访问<a target="_blank" rel="noopener" href="http://localhost查看是否显示nginx页面/">http://localhost查看是否显示nginx页面</a></li>
+</ul>
+</li>
+<li>使用外网访问（设置防火墙）<ul>
+<li>允许http通信：<code>sudo fireawall-cmd --permanent --zone=public --add-service=http</code></li>
+<li>语序https通信：<code>sudo fireawall-cmd --permanent --zone=public --add-service=https</code></li>
+<li>重新加载防火墙配置：<code>sudo firewall-cmd --reload</code></li>
+</ul>
+</li>
+</ol>
+<p>Nginx 的相关操作命令：</p>
+<ul>
+<li><p>查看版本信息：nginx -V</p>
+</li>
+<li><p>启动 Nginx 服务：systemctl start nginx</p>
+</li>
+<li><p>停止 Nginx 服务：systemctl stop nginx</p>
+</li>
+<li><p>重启 Nginx 服务：systemctl restart nginx</p>
+</li>
+<li><p>重新加载 Nginx 配置文件，以优雅的方式重启：Nginx systemctl reload nginx</p>
+</li>
+<li><p>设置开机自启动：systemctl enable nginx</p>
+</li>
+<li><p> 停止开机自启动systemctl disable nginx</p>
+</li>
+<li><p>查看nginx的状态及进程、端口</p>
+<ul>
+<li>1、systemctl status nginx.service    （nginx服务状态）</li>
+<li>2、netstat -antp | grep :                    （查看所有端口的占用情况）</li>
+<li>3、netstat -antp | grep :80                （查看80端口占用）</li>
+<li>4、ps aux | grep nginx                       （查看nginx进程运行状态）</li>
+<li>5、ps -ef | grep nginx                         （查看Nginx运行端口号和安装位置）</li>
+</ul>
+</li>
+<li><p>杀掉进程</p>
+<ul>
+<li>1、killall -9 nginx                                 （杀死所有nginx相关进程）</li>
+<li>2、kill -9 pid1 and kill -9 pid2            （杀掉两个制定pid的进程）</li>
+</ul>
+</li>
+</ul>
+<p><strong>nginx配置文件路径</strong></p>
+<ol>
+<li>主配置文件：/etc/nginx/nginx.conf</li>
+<li>子配置文件：/etc/nginx/conf.d/default.conf</li>
+</ol>
+<pre class="line-numbers language-conf"><code class="language-conf">server &#123;
+    listen       80;    //要监听的端口，即访问时 url:port
+    server_name  localhost;
+
+    #charset koi8-r;
+    #access_log  /var/log/nginx/host.access.log  main;    #日志
+
+    #文件上传大小限制
+    client_max_body_size    1000m;
+
+    #静态资源文件
+    #location / &#123;
+    #    root   /usr/share/nginx/html;
+    #    index  index.html index.htm;
+    #&#125;
+
+    #此处修改针对不同请求url分发到不同服务地址
+    location ~ /eduservice/&#123;
+        proxy_pass http://localhost;
+    &#125;
+    #对象存储
+    location ~ /eduoss/&#123;
+        proxy_pass http://localhost;
+    &#125;
+    #视频点播资源
+    location ~ /eduvod/&#123;
+        proxy_pass http://localhost;
+    &#125;
+
+    #error_page  404              /404.html;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="卸载Nginx"><a href="#卸载Nginx" class="headerlink" title="卸载Nginx"></a>卸载Nginx</h3><ul>
+<li><p>停止Nginx服务：<code>systemctl stop nginx</code></p>
+</li>
+<li><p>删除Nginx自动启动：<code>systemctl disable nginx</code></p>
+</li>
+<li><p>删除Nginx相关源文件</p>
+<pre class="line-numbers language-cmd"><code class="language-cmd">rm -rf /etc/nginx/
+rm -rf /etc/init.d/nginx
+rm -rf /usr/sbin/nginx
+apt-get remove nginx*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>移除yum中的Nginx模块：<code>yum remove nginx</code></p>
+</li>
+</ul>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><h4 id="使用yum安装"><a href="#使用yum安装" class="headerlink" title="使用yum安装"></a>使用yum安装</h4><ol>
+<li>使用yum命令安装git：<code>yum -y install git</code> </li>
+<li>安装完成后，使用命令查看版本信息：<code>git --version</code> </li>
+<li>安装完成后的git路径在 <code>usr/libexec/git-core</code> 下</li>
+<li>此种方式安装的git版本比较早，不是最新版。</li>
+</ol>
+<h4 id="下载软件包本地安装"><a href="#下载软件包本地安装" class="headerlink" title="下载软件包本地安装"></a>下载软件包本地安装</h4><ol>
+<li>在github上找到git的最新版本，下载tar.gz包，地址：<a target="_blank" rel="noopener" href="https://github.com/git/git/releases">https://github.com/git/git/releases</a></li>
+<li>下载最新版本的tar.gz包至本地，并使用工具上传到linux服务器中</li>
+<li>使用命令解压压缩包：<code>tar -zxvf git-2.22.0.tar.gz</code> </li>
+<li>进入解压后的文件夹：<code>cd git-2.22.0.tar.gz</code>  </li>
+<li>解压后拿到源码信息，就要对源码进行编译，首先安装编译需要的依赖：<code>yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker</code>  </li>
+<li>安装依赖时会自动使用yum安装git，可使用命令卸载旧版本：<code>yum -y remove git</code> </li>
+<li>编译git源码：<code>make prefix=/usr/local/git all</code> </li>
+<li>安装git至指定路径：<code>make prefix=/usr/local/git install</code>  </li>
+<li>配置环境变量：<code>vi /etc/profile</code> <ul>
+<li>在配置文件底部添加内容：<code>export PATH=$PATH:/usr/local/git/bin</code> </li>
+</ul>
+</li>
+<li>刷新环境变量：<code>source /etc/profile</code> </li>
+<li>查看git是否完成安装：<code>git --version</code> </li>
+</ol>
+<h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h3><h1 id="Linux常见问题"><a href="#Linux常见问题" class="headerlink" title="Linux常见问题"></a>Linux常见问题</h1><h2 id="Ubuntu系统远程连接"><a href="#Ubuntu系统远程连接" class="headerlink" title="Ubuntu系统远程连接"></a>Ubuntu系统远程连接</h2><blockquote>
+<p>实验室服务器系统</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/acf728fd440982f8e510a3a9.html">ubuntu修改登录密码</a> </p>
+<p>du:123456</p>
+<p>root:root</p>
+<p>win本地使用Xshell连接远程Linux系统时，连接失败。如果本地对linux可以ping通，远程ping本地不通，则应该是：（解决后连接成功）</p>
+<p><img src="/imgs/linux/image-20201120122929012.png" alt="image-20201120122929012"></p>
+<h2 id="Linux虚拟机"><a href="#Linux虚拟机" class="headerlink" title="Linux虚拟机"></a>Linux虚拟机</h2><h4 id="执行sudo-su命令时提示-“用户不在sudoers文件中，此事将被报告。”"><a href="#执行sudo-su命令时提示-“用户不在sudoers文件中，此事将被报告。”" class="headerlink" title="执行sudo su命令时提示 “用户不在sudoers文件中，此事将被报告。”"></a>执行<code>sudo su</code>命令时提示 “用户不在sudoers文件中，此事将被报告。”</h4><p><strong>问题：</strong>使用shone切换至管理员权限时，<code>sudo su</code>命令提示 shone用户不在sudoers文件中，此事将被报告。</p>
+<ul>
+<li>sudo ：后跟命令，当前用户以root身份执行本身没有权限的操作，需要验证当前用户密码</li>
+<li>sudo su：使用sudo 给su命令提权，而su命令需要执行该命令的用户在sudoers中有权限</li>
+<li>su：不跟用户的su命令就代表切换至root账户，即su root（默认缺省为root）</li>
+<li>su root：切换至root用户，验证root密码，不改变所在目录</li>
+<li>su - root：切换至root用户，并进入到root用户对应目录下</li>
+<li>su shone：切换至shone用户</li>
+</ul>
+<p><strong>原因：</strong>并不是所有的用户都可以执行sudo命令，配置文件/etc/sudoers中记录有权限执行sudo的用户。我们可以对配置文件进行编辑，添加当前用户的权限，配置完成后再次使用sudo命令成功执行。而sudoers文件是root用户只读文件，修改后需要使用命令<code>wq!</code>强制保存。</p>
+<p><strong>解决办法：</strong></p>
+<ol>
+<li><p>使用命令<code>su root</code>切换至root用户，需要验证root用户密码</p>
+</li>
+<li><p>查看<code>/etc/sudoers</code>文件内容是否包含当前用户权限</p>
+</li>
+<li><p><code>vim /etc/sudoers</code>编辑文件增加shone用户的sudo权限</p>
+<pre class="line-numbers language-sudoers"><code class="language-sudoers">## root用户默认存在，可以添加其他用户权限
+root     ALL=(ALL:ALL) ALL
+shone    ALL=(ALL:ALL) ALL<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>注意<code>/etc/sudoers</code>文件的权限是440只读文件，编辑文件内容需增加写入权限或强制修改保存</p>
+<ul>
+<li><code>chmod u+w /etc/sudoers</code>，增加写入权限</li>
+<li><code>chmod 740 /etc/sudoers</code>，增加root用户的全部权限（4+2+1）</li>
+<li>或者编辑完成后使用命令<code>:wq!</code>强制保存修改</li>
+</ul>
+</li>
+<li><p><code>su shone</code>切换至普通用户，测试权限是否增加成功</p>
+</li>
+</ol>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">shone</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://shonee.github.io/linux/">http://shonee.github.io/linux/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">shone</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'rKdDOYBXeWyhIXTnI9VOk6gu-gzGzoHsz',
+        appKey: 'Nnww7B3HOEUZ36LQCdBphN9i',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/hexo-next-enhance/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Hexo使用Next主题的优化策略">
+                        
+                        <span class="card-title">Hexo使用Next主题的优化策略</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Next主题进阶使用学习。
+ 
+
+
+
+1.设置头像边框为圆形和旋转特效自己设置：
+
+系统自带：next已经内置了可以调节的功能，只需要将开关打开即可
+
+
+2.本地搜索根目录下使用git命令：npm install hexo-generato
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/hexo-change-theme/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Hexo使用Next主题">
+                        
+                        <span class="card-title">Hexo使用Next主题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Next是一款符合程序员审美的主题，Hexo中切换Next主题的方式非常简单，只需要将主题文件拷贝至根目录下的themes文件夹中，然后修改_config.yml文件中的theme字段即可。  
+Next主题主题下载Git命令行下载# He
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="2621145115"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.5'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">shone</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">69.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shonee" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1048394082@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1048394082" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1048394082" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7bc8c63dc080f8a8c553737fd00a5efc";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- 给博客添加动态标签 -->
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+
+</html>
